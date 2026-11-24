@@ -1,0 +1,55 @@
+# Prices the cost figures are computed from (req_004 v4.01). The ledger holds quantities
+# only; a dollar amount is always a quantity times a price from this file.
+#
+# Every price is quoted text, in US dollars, and is read as a decimal number, never a float.
+# When AWS publishes a new price list, change the prices and both dates together and raise
+# `version`.
+version: 1
+
+price_list:
+  offer: AmazonBedrock
+  region: us-east-1
+  published: "2026-11-11"    # the publication date inside the price list
+  read_on: "2026-11-16"      # the day the list was downloaded and compared
+  source: https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/current/us-east-1/index.json
+
+# Standard tier, on demand. A tuned model is billed at the same token prices as its base
+# model (the price list carries custom-model rows with the same amounts).
+bedrock:
+  "amazon.nova-pro-v1:0":
+    input_per_million: "0.80"
+    output_per_million: "3.20"
+    training_per_million: "8.00"
+    storage_per_model_month: "1.95"
+  "amazon.nova-lite-v1:0":
+    input_per_million: "0.06"
+    output_per_million: "0.24"
+    training_per_million: "2.00"
+    storage_per_model_month: "1.95"
+
+# SageMaker training instances, on demand, us-east-1 (req_003 v3.03). Per instance and hour.
+# From the AmazonSageMaker price list published 2026-11-14, as recorded in the execution
+# plan on that day; to be read again from the list at the first signed-in session.
+sagemaker:
+  price_list:
+    offer: AmazonSageMaker
+    region: us-east-1
+    published: "2026-11-14"
+    read_on: "2026-11-14"
+  training:
+    ml.g5.xlarge: "1.408"
+    ml.g6.xlarge: "1.127"
+
+  # A real-time endpoint, on demand, us-east-1 (req_005 v5.02): what one instance costs for
+  # every hour it is kept running, busy or idle. Read from the public AmazonSageMaker price
+  # list (usage type USE1-Host:ml.g5.xlarge). Used only by the cost model's always-on
+  # scenario: the project never created an endpoint.
+  hosting:
+    price_list:
+      offer: AmazonSageMaker
+      region: us-east-1
+      published: "2026-11-23"    # price list version 20261123184802
+      read_on: "2026-11-23"
+      source: https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonSageMaker/current/us-east-1/index.json
+    instances:
+      ml.g5.xlarge: "1.408"

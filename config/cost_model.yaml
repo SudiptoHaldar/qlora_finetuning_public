@@ -1,0 +1,59 @@
+# The cost model (req_005 v5.02): what each arm cost and what it would cost to use. Read by
+# scripts/comparison_cost.py and qlora_finetuning/comparison/cost.py. Every dollar figure is
+# a quantity from the ledger times a price from pricing.yaml; this file holds no price and no
+# run id. Relative paths are resolved from the repository root.
+version: 1
+verified_on: "2026-11-23"
+
+# Committed: the cost record (JSON and Markdown, under comparison.yaml's report_dir) and the
+# amounts the owner read from the AWS bill.
+report_stem: cost_model
+bill_file: reports/comparison/aws_bill.json
+
+# The committed records that say which run is which. An arm name alone never does: dozens
+# of runs carry arm A1.
+records:
+  six_arm: reports/comparison/six_arm_test_runs.json    # the six test runs (v5.01)
+  jobs: reports/local_qlora/sagemaker_jobs.json         # every SageMaker job and its runs
+  selection: reports/local_qlora/adapter_selection.json # A1's training run and scoring run
+  tuning: reports/frontier/nova_tuning.json             # each tuned Nova model's job
+
+# How Path A's serving cost is stated (the owner's decision, 2026-11-23; question Q10).
+serving:
+  hours_per_month: 730
+  # An always-on endpoint: one instance, billed every hour, at these shares of the
+  # throughput the test job measured.
+  utilizations: ["1", "0.5", "0.1", "0.01"]
+  # A batch job: started for a batch of questions, stopped when done.
+  batch_sizes: [100, 1000, 2898, 10000, 100000]
+  batch_jobs_per_month: 1         # what a break-even against a monthly Nova cost assumes
+
+# Storage of a tuned Nova model is shown for these numbers of months.
+storage_months: [1, 12]
+
+# What this account may send to each Nova arm, in requests a minute. From Service Quotas,
+# read on the date below; none is adjustable. A break-even volume above a limit is shown as
+# not reachable here. The limits are also in reqspecs/references/tech/bedrock_nova.md.
+account_limits:
+  read_on: "2026-11-16"
+  requests_per_minute:
+    B0-Lite: 200
+    B1-Lite: 200
+    B0-Pro: 25
+    B1-Pro: 20
+
+# The reconciliation with the AWS bill, by service. `where` is the ledger's name for the
+# place the service's runs were made. An entered amount agrees when it is within the larger
+# of the two tolerances.
+reconciliation:
+  services:
+    bedrock: bedrock
+    sagemaker: sagemaker
+  tolerance_usd: "0.50"
+  tolerance_percent: "2"
+
+# Left out of the model, and named as left out in the record (the owner's decision).
+left_out:
+  - S3 storage and requests
+  - CloudWatch logs
+  - data transfer

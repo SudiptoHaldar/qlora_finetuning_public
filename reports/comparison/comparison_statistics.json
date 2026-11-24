@@ -1,0 +1,1677 @@
+{
+  "arms": {
+    "A0": {
+      "by_steps": [
+        {
+          "examples": 1709,
+          "percent": "1.52",
+          "right": 26,
+          "steps": "1"
+        },
+        {
+          "examples": 966,
+          "percent": "0.10",
+          "right": 1,
+          "steps": "2"
+        },
+        {
+          "examples": 223,
+          "percent": "0.00",
+          "right": 0,
+          "steps": "3 or more"
+        }
+      ],
+      "categories": {
+        "bad_program": 2325,
+        "cut_off": 298,
+        "evidence": 0,
+        "kind": 20,
+        "no_program": 0,
+        "not_executable": 136,
+        "operation": 1,
+        "order": 0,
+        "other": 0,
+        "scale": 0,
+        "sign": 0,
+        "steps_fewer": 2,
+        "steps_more": 89
+      },
+      "dev": {
+        "examples": 499,
+        "execution_accuracy": 6,
+        "percent": "1.20"
+      },
+      "example_ids": {
+        "bad_program": [
+          "C/2010/page_272.pdf-1",
+          "CDNS/2018/page_32.pdf-2",
+          "ETR/2008/page_376.pdf-2"
+        ],
+        "cut_off": [
+          "ABMD/2012/page_75.pdf-1",
+          "ETR/2008/page_313.pdf-3",
+          "AMT/2012/page_121.pdf-1"
+        ],
+        "kind": [
+          "HUM/2018/page_46.pdf-2",
+          "HUM/2015/page_46.pdf-2",
+          "EOG/2017/page_78.pdf-1"
+        ],
+        "not_executable": [
+          "ETR/2009/page_107.pdf-2",
+          "STT/2007/page_95.pdf-1",
+          "HUM/2016/page_133.pdf-2"
+        ],
+        "operation": [
+          "HUM/2008/page_18.pdf-1"
+        ],
+        "steps_fewer": [
+          "RSG/2017/page_74.pdf-2",
+          "MSI/2008/page_71.pdf-1"
+        ],
+        "steps_more": [
+          "PPG/2013/page_54.pdf-2",
+          "UAA/2016/page_81.pdf-4",
+          "GS/2013/page_167.pdf-2"
+        ]
+      },
+      "examples": 2898,
+      "execution_accuracy_by_company": {
+        "high": "1.56",
+        "low": "0.40"
+      },
+      "label": "Qwen3-4B, untuned",
+      "latency_seconds": {
+        "mean": "1.321",
+        "median": "1.506",
+        "p95": "1.592"
+      },
+      "metrics": {
+        "answer_accuracy": {
+          "count": 320,
+          "interval": {
+            "high": "12.22",
+            "low": "9.94"
+          },
+          "percent": "11.04"
+        },
+        "execution_accuracy": {
+          "count": 27,
+          "interval": {
+            "high": "1.31",
+            "low": "0.59"
+          },
+          "percent": "0.93"
+        },
+        "format_validity": {
+          "count": 2630,
+          "interval": {
+            "high": "91.82",
+            "low": "89.65"
+          },
+          "percent": "90.75"
+        },
+        "program_match": {
+          "count": 1,
+          "interval": {
+            "high": "0.10",
+            "low": "0.00"
+          },
+          "percent": "0.03"
+        }
+      },
+      "not_in_the_format": 268,
+      "path": "A",
+      "right": 27,
+      "run_id": "20261123T183543Z-eval-qwen3-4b-test-ea44",
+      "stop_reasons": {
+        "end": 2600,
+        "length": 298
+      },
+      "tuned": false
+    },
+    "A1": {
+      "by_steps": [
+        {
+          "examples": 1709,
+          "percent": "81.04",
+          "right": 1385,
+          "steps": "1"
+        },
+        {
+          "examples": 966,
+          "percent": "66.25",
+          "right": 640,
+          "steps": "2"
+        },
+        {
+          "examples": 223,
+          "percent": "43.05",
+          "right": 96,
+          "steps": "3 or more"
+        }
+      ],
+      "categories": {
+        "bad_program": 6,
+        "cut_off": 0,
+        "evidence": 247,
+        "kind": 2,
+        "no_program": 0,
+        "not_executable": 3,
+        "operation": 87,
+        "order": 57,
+        "other": 0,
+        "scale": 0,
+        "sign": 0,
+        "steps_fewer": 274,
+        "steps_more": 101
+      },
+      "dev": {
+        "examples": 499,
+        "execution_accuracy": 358,
+        "percent": "71.74"
+      },
+      "example_ids": {
+        "bad_program": [
+          "AMT/2012/page_121.pdf-1",
+          "AMT/2012/page_119.pdf-1",
+          "APD/2013/page_81.pdf-2"
+        ],
+        "evidence": [
+          "FIS/2016/page_64.pdf-4",
+          "C/2008/page_111.pdf-4",
+          "HUM/2018/page_46.pdf-2"
+        ],
+        "kind": [
+          "MSI/2009/page_67.pdf-3",
+          "PPG/2018/page_85.pdf-1"
+        ],
+        "not_executable": [
+          "MSI/2009/page_69.pdf-2",
+          "AMT/2007/page_32.pdf-3",
+          "CME/2017/page_89.pdf-4"
+        ],
+        "operation": [
+          "C/2010/page_272.pdf-1",
+          "CME/2012/page_73.pdf-2",
+          "MSI/2009/page_67.pdf-1"
+        ],
+        "order": [
+          "APD/2019/page_53.pdf-2",
+          "TMUS/2018/page_35.pdf-1",
+          "AMT/2006/page_31.pdf-3"
+        ],
+        "steps_fewer": [
+          "CDNS/2018/page_32.pdf-2",
+          "ANSS/2012/page_92.pdf-1",
+          "AMT/2005/page_84.pdf-4"
+        ],
+        "steps_more": [
+          "KHC/2017/page_21.pdf-4",
+          "MS/2013/page_277.pdf-2",
+          "V/2016/page_132.pdf-2"
+        ]
+      },
+      "examples": 2898,
+      "execution_accuracy_by_company": {
+        "high": "76.47",
+        "low": "69.63"
+      },
+      "label": "Qwen3-4B with QLoRA",
+      "latency_seconds": {
+        "mean": "0.771",
+        "median": "0.728",
+        "p95": "1.056"
+      },
+      "metrics": {
+        "answer_accuracy": {
+          "count": 1941,
+          "interval": {
+            "high": "68.67",
+            "low": "65.29"
+          },
+          "percent": "66.98"
+        },
+        "execution_accuracy": {
+          "count": 2121,
+          "interval": {
+            "high": "74.78",
+            "low": "71.60"
+          },
+          "percent": "73.19"
+        },
+        "format_validity": {
+          "count": 2898,
+          "interval": {
+            "high": "100.00",
+            "low": "100.00"
+          },
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1972,
+          "interval": {
+            "high": "69.74",
+            "low": "66.36"
+          },
+          "percent": "68.05"
+        }
+      },
+      "not_in_the_format": 0,
+      "path": "A",
+      "right": 2121,
+      "run_id": "20261123T201754Z-eval-qwen3-4b-tuned-test-074f",
+      "stop_reasons": {
+        "end": 2898
+      },
+      "tuned": true
+    },
+    "B0-Lite": {
+      "by_steps": [
+        {
+          "examples": 1709,
+          "percent": "25.75",
+          "right": 440,
+          "steps": "1"
+        },
+        {
+          "examples": 966,
+          "percent": "3.83",
+          "right": 37,
+          "steps": "2"
+        },
+        {
+          "examples": 223,
+          "percent": "3.14",
+          "right": 7,
+          "steps": "3 or more"
+        }
+      ],
+      "categories": {
+        "bad_program": 1178,
+        "cut_off": 4,
+        "evidence": 70,
+        "kind": 9,
+        "no_program": 0,
+        "not_executable": 148,
+        "operation": 92,
+        "order": 38,
+        "other": 0,
+        "scale": 0,
+        "sign": 0,
+        "steps_fewer": 74,
+        "steps_more": 801
+      },
+      "dev": {
+        "examples": 499,
+        "execution_accuracy": 123,
+        "percent": "24.65"
+      },
+      "example_ids": {
+        "bad_program": [
+          "ABMD/2012/page_75.pdf-1",
+          "ETR/2008/page_313.pdf-3",
+          "C/2010/page_272.pdf-1"
+        ],
+        "cut_off": [
+          "APTV/2018/page_36.pdf-1",
+          "CDNS/2007/page_93.pdf-3",
+          "APTV/2014/page_49.pdf-2"
+        ],
+        "evidence": [
+          "RSG/2008/page_114.pdf-1",
+          "ETR/2011/page_228.pdf-1",
+          "APD/2019/page_39.pdf-2"
+        ],
+        "kind": [
+          "CME/2017/page_83.pdf-5",
+          "APD/2019/page_53.pdf-1",
+          "MSI/2009/page_67.pdf-3"
+        ],
+        "not_executable": [
+          "KHC/2017/page_21.pdf-4",
+          "UAA/2017/page_52.pdf-2",
+          "EOG/2017/page_78.pdf-1"
+        ],
+        "operation": [
+          "CDNS/2018/page_32.pdf-2",
+          "ABMD/2009/page_85.pdf-1",
+          "AMT/2007/page_111.pdf-4"
+        ],
+        "order": [
+          "ETR/2016/page_403.pdf-3",
+          "ETR/2016/page_18.pdf-2",
+          "EOG/2016/page_80.pdf-2"
+        ],
+        "steps_fewer": [
+          "HWM/2016/page_52.pdf-2",
+          "PPG/2013/page_54.pdf-2",
+          "CME/2017/page_99.pdf-4"
+        ],
+        "steps_more": [
+          "STT/2008/page_116.pdf-1",
+          "FIS/2016/page_64.pdf-4",
+          "STT/2012/page_42.pdf-4"
+        ]
+      },
+      "examples": 2898,
+      "execution_accuracy_by_company": {
+        "high": "18.61",
+        "low": "14.66"
+      },
+      "label": "Nova Lite, untuned",
+      "latency_seconds": {
+        "mean": "0.463",
+        "median": "0.430",
+        "p95": "0.717"
+      },
+      "metrics": {
+        "answer_accuracy": {
+          "count": 830,
+          "interval": {
+            "high": "30.30",
+            "low": "27.02"
+          },
+          "percent": "28.64"
+        },
+        "execution_accuracy": {
+          "count": 484,
+          "interval": {
+            "high": "18.08",
+            "low": "15.36"
+          },
+          "percent": "16.70"
+        },
+        "format_validity": {
+          "count": 2764,
+          "interval": {
+            "high": "96.14",
+            "low": "94.58"
+          },
+          "percent": "95.38"
+        },
+        "program_match": {
+          "count": 406,
+          "interval": {
+            "high": "15.29",
+            "low": "12.73"
+          },
+          "percent": "14.01"
+        }
+      },
+      "not_in_the_format": 134,
+      "path": "B",
+      "right": 484,
+      "run_id": "20261123T072634Z-eval-nova-lite-test-e25a",
+      "stop_reasons": {
+        "end": 2894,
+        "length": 4
+      },
+      "tuned": false
+    },
+    "B0-Pro": {
+      "by_steps": [
+        {
+          "examples": 1709,
+          "percent": "44.70",
+          "right": 764,
+          "steps": "1"
+        },
+        {
+          "examples": 966,
+          "percent": "24.02",
+          "right": 232,
+          "steps": "2"
+        },
+        {
+          "examples": 223,
+          "percent": "13.00",
+          "right": 29,
+          "steps": "3 or more"
+        }
+      ],
+      "categories": {
+        "bad_program": 829,
+        "cut_off": 8,
+        "evidence": 149,
+        "kind": 3,
+        "no_program": 0,
+        "not_executable": 66,
+        "operation": 55,
+        "order": 64,
+        "other": 0,
+        "scale": 0,
+        "sign": 0,
+        "steps_fewer": 97,
+        "steps_more": 602
+      },
+      "dev": {
+        "examples": 499,
+        "execution_accuracy": 190,
+        "percent": "38.08"
+      },
+      "example_ids": {
+        "bad_program": [
+          "C/2010/page_272.pdf-1",
+          "ETR/2008/page_376.pdf-2",
+          "KHC/2017/page_21.pdf-4"
+        ],
+        "cut_off": [
+          "HWM/2015/page_95.pdf-2",
+          "ETR/2011/page_316.pdf-1",
+          "C/2016/page_333.pdf-1"
+        ],
+        "evidence": [
+          "GS/2014/page_47.pdf-3",
+          "ETR/2011/page_228.pdf-1",
+          "MS/2012/page_150.pdf-1"
+        ],
+        "kind": [
+          "GS/2018/page_134.pdf-2",
+          "GS/2018/page_108.pdf-2",
+          "CME/2010/page_69.pdf-4"
+        ],
+        "not_executable": [
+          "PPG/2013/page_54.pdf-2",
+          "KIM/2010/page_94.pdf-2",
+          "EOG/2017/page_78.pdf-1"
+        ],
+        "operation": [
+          "HUM/2015/page_46.pdf-1",
+          "PPG/2012/page_47.pdf-2",
+          "AMT/2005/page_84.pdf-1"
+        ],
+        "order": [
+          "C/2008/page_212.pdf-3",
+          "EOG/2016/page_80.pdf-2",
+          "EW/2013/page_83.pdf-2"
+        ],
+        "steps_fewer": [
+          "ANSS/2012/page_92.pdf-1",
+          "AMT/2005/page_84.pdf-4",
+          "C/2015/page_314.pdf-2"
+        ],
+        "steps_more": [
+          "STT/2008/page_116.pdf-1",
+          "FIS/2016/page_64.pdf-4",
+          "FIS/2016/page_64.pdf-3"
+        ]
+      },
+      "examples": 2898,
+      "execution_accuracy_by_company": {
+        "high": "37.87",
+        "low": "32.23"
+      },
+      "label": "Nova Pro, untuned",
+      "latency_seconds": {
+        "mean": "0.962",
+        "median": "0.912",
+        "p95": "1.596"
+      },
+      "metrics": {
+        "answer_accuracy": {
+          "count": 1344,
+          "interval": {
+            "high": "48.14",
+            "low": "44.55"
+          },
+          "percent": "46.38"
+        },
+        "execution_accuracy": {
+          "count": 1025,
+          "interval": {
+            "high": "37.09",
+            "low": "33.64"
+          },
+          "percent": "35.37"
+        },
+        "format_validity": {
+          "count": 2890,
+          "interval": {
+            "high": "99.90",
+            "low": "99.52"
+          },
+          "percent": "99.72"
+        },
+        "program_match": {
+          "count": 850,
+          "interval": {
+            "high": "31.02",
+            "low": "27.67"
+          },
+          "percent": "29.33"
+        }
+      },
+      "not_in_the_format": 8,
+      "path": "B",
+      "right": 1025,
+      "run_id": "20261123T172210Z-eval-nova-pro-test-6176",
+      "stop_reasons": {
+        "end": 2889,
+        "length": 9
+      },
+      "tuned": false
+    },
+    "B1-Lite": {
+      "by_steps": [
+        {
+          "examples": 1709,
+          "percent": "80.34",
+          "right": 1373,
+          "steps": "1"
+        },
+        {
+          "examples": 966,
+          "percent": "66.05",
+          "right": 638,
+          "steps": "2"
+        },
+        {
+          "examples": 223,
+          "percent": "26.01",
+          "right": 58,
+          "steps": "3 or more"
+        }
+      ],
+      "categories": {
+        "bad_program": 9,
+        "cut_off": 0,
+        "evidence": 232,
+        "kind": 3,
+        "no_program": 0,
+        "not_executable": 28,
+        "operation": 95,
+        "order": 63,
+        "other": 0,
+        "scale": 0,
+        "sign": 0,
+        "steps_fewer": 288,
+        "steps_more": 111
+      },
+      "dev": {
+        "examples": 499,
+        "execution_accuracy": 329,
+        "percent": "65.93"
+      },
+      "example_ids": {
+        "bad_program": [
+          "APD/2013/page_81.pdf-2",
+          "DG/2006/page_58.pdf-2",
+          "STZ/2010/page_51.pdf-3"
+        ],
+        "evidence": [
+          "C/2008/page_111.pdf-4",
+          "C/2009/page_195.pdf-1",
+          "KIM/2010/page_103.pdf-2"
+        ],
+        "kind": [
+          "HUM/2018/page_46.pdf-2",
+          "ABMD/2008/page_52.pdf-2",
+          "PPG/2018/page_85.pdf-1"
+        ],
+        "not_executable": [
+          "APD/2019/page_108.pdf-2",
+          "MS/2013/page_240.pdf-1",
+          "ETR/2017/page_477.pdf-1"
+        ],
+        "operation": [
+          "C/2010/page_272.pdf-1",
+          "HUM/2015/page_46.pdf-2",
+          "C/2015/page_314.pdf-3"
+        ],
+        "order": [
+          "ETR/2016/page_403.pdf-3",
+          "TMUS/2018/page_35.pdf-1",
+          "HWM/2018/page_69.pdf-1"
+        ],
+        "steps_fewer": [
+          "ABMD/2012/page_75.pdf-1",
+          "CDNS/2018/page_32.pdf-2",
+          "ANSS/2012/page_92.pdf-1"
+        ],
+        "steps_more": [
+          "KHC/2017/page_21.pdf-4",
+          "V/2016/page_132.pdf-2",
+          "RSG/2014/page_73.pdf-2"
+        ]
+      },
+      "examples": 2898,
+      "execution_accuracy_by_company": {
+        "high": "74.91",
+        "low": "67.78"
+      },
+      "label": "Nova Lite, tuned",
+      "latency_seconds": {
+        "mean": "0.460",
+        "median": "0.458",
+        "p95": "0.591"
+      },
+      "metrics": {
+        "answer_accuracy": {
+          "count": 2037,
+          "interval": {
+            "high": "71.91",
+            "low": "68.60"
+          },
+          "percent": "70.29"
+        },
+        "execution_accuracy": {
+          "count": 2069,
+          "interval": {
+            "high": "73.02",
+            "low": "69.74"
+          },
+          "percent": "71.39"
+        },
+        "format_validity": {
+          "count": 2898,
+          "interval": {
+            "high": "100.00",
+            "low": "100.00"
+          },
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1916,
+          "interval": {
+            "high": "67.81",
+            "low": "64.39"
+          },
+          "percent": "66.11"
+        }
+      },
+      "not_in_the_format": 0,
+      "path": "B",
+      "right": 2069,
+      "run_id": "20261123T165542Z-eval-nova-lite-tuned-test-b4bf",
+      "stop_reasons": {
+        "end": 2898
+      },
+      "tuned": true
+    },
+    "B1-Pro": {
+      "by_steps": [
+        {
+          "examples": 1709,
+          "percent": "82.68",
+          "right": 1413,
+          "steps": "1"
+        },
+        {
+          "examples": 966,
+          "percent": "71.43",
+          "right": 690,
+          "steps": "2"
+        },
+        {
+          "examples": 223,
+          "percent": "34.08",
+          "right": 76,
+          "steps": "3 or more"
+        }
+      ],
+      "categories": {
+        "bad_program": 31,
+        "cut_off": 0,
+        "evidence": 199,
+        "kind": 7,
+        "no_program": 0,
+        "not_executable": 7,
+        "operation": 89,
+        "order": 62,
+        "other": 0,
+        "scale": 0,
+        "sign": 0,
+        "steps_fewer": 215,
+        "steps_more": 109
+      },
+      "dev": {
+        "examples": 499,
+        "execution_accuracy": 359,
+        "percent": "71.94"
+      },
+      "example_ids": {
+        "bad_program": [
+          "HUM/2018/page_46.pdf-2",
+          "KHC/2016/page_94.pdf-2",
+          "C/2015/page_314.pdf-3"
+        ],
+        "evidence": [
+          "STT/2008/page_116.pdf-1",
+          "C/2009/page_195.pdf-1",
+          "KIM/2010/page_103.pdf-2"
+        ],
+        "kind": [
+          "ABMD/2012/page_75.pdf-1",
+          "HUM/2015/page_46.pdf-2",
+          "GS/2018/page_134.pdf-1"
+        ],
+        "not_executable": [
+          "ETR/2011/page_364.pdf-3",
+          "ETR/2004/page_335.pdf-3",
+          "CDNS/2018/page_32.pdf-1"
+        ],
+        "operation": [
+          "C/2010/page_272.pdf-1",
+          "HWM/2015/page_95.pdf-2",
+          "CME/2012/page_73.pdf-2"
+        ],
+        "order": [
+          "TMUS/2018/page_35.pdf-1",
+          "APD/2016/page_52.pdf-1",
+          "OKE/2012/page_91.pdf-1"
+        ],
+        "steps_fewer": [
+          "CDNS/2018/page_32.pdf-2",
+          "ANSS/2012/page_92.pdf-1",
+          "AMT/2005/page_84.pdf-4"
+        ],
+        "steps_more": [
+          "KHC/2017/page_21.pdf-4",
+          "STT/2012/page_42.pdf-4",
+          "MS/2013/page_277.pdf-2"
+        ]
+      },
+      "examples": 2898,
+      "execution_accuracy_by_company": {
+        "high": "77.69",
+        "low": "72.11"
+      },
+      "label": "Nova Pro, tuned",
+      "latency_seconds": {
+        "mean": "0.599",
+        "median": "0.587",
+        "p95": "0.736"
+      },
+      "metrics": {
+        "answer_accuracy": {
+          "count": 2139,
+          "interval": {
+            "high": "75.43",
+            "low": "72.22"
+          },
+          "percent": "73.81"
+        },
+        "execution_accuracy": {
+          "count": 2179,
+          "interval": {
+            "high": "76.74",
+            "low": "73.60"
+          },
+          "percent": "75.19"
+        },
+        "format_validity": {
+          "count": 2898,
+          "interval": {
+            "high": "100.00",
+            "low": "100.00"
+          },
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1999,
+          "interval": {
+            "high": "70.60",
+            "low": "67.25"
+          },
+          "percent": "68.98"
+        }
+      },
+      "not_in_the_format": 0,
+      "path": "B",
+      "right": 2179,
+      "run_id": "20261123T181752Z-eval-nova-pro-tuned-test-79c0",
+      "stop_reasons": {
+        "end": 2898
+      },
+      "tuned": true
+    }
+  },
+  "checks": [
+    {
+      "detail": "the six-arm record passed C1 to C8; the cost record passed K1 to K8",
+      "id": "R1",
+      "name": "Records in place",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "6 arms, 2,898 replies each, the same examples in one order",
+      "id": "R2",
+      "name": "Replies found",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "the four metrics of every arm equal the six-arm record when rescored",
+      "id": "R3",
+      "name": "Counts agree",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "the shared config files and the gold flags have the frozen hashes",
+      "id": "R4",
+      "name": "Nothing frozen has changed",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "every interval contains its figure",
+      "id": "R5",
+      "name": "Intervals hold their figures",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "the four counts of every pair sum to the examples and match the arms' counts",
+      "id": "R6",
+      "name": "Pairs add up",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "every dollar figure is the cost record's, for the same six runs",
+      "id": "R7",
+      "name": "Costs taken, not computed",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "34 placeholders filled; ids are test ids; no resource name, no text",
+      "id": "R8",
+      "name": "No text, nothing by hand",
+      "passed": true,
+      "reservation": false
+    }
+  ],
+  "companies": 43,
+  "cost_provisional": false,
+  "costs": {
+    "A0": {
+      "per_1000_correct": "60.318025",
+      "per_1000_questions": "0.561969",
+      "usd": "1.628587"
+    },
+    "A1": {
+      "per_1000_correct": "0.472800",
+      "per_1000_questions": "0.346035",
+      "usd": "1.002809"
+    },
+    "B0-Lite": {
+      "per_1000_correct": "0.282602",
+      "per_1000_questions": "0.047198",
+      "usd": "0.136780"
+    },
+    "B0-Pro": {
+      "per_1000_correct": "1.764557",
+      "per_1000_questions": "0.624110",
+      "usd": "1.808671"
+    },
+    "B1-Lite": {
+      "per_1000_correct": "0.061637",
+      "per_1000_questions": "0.044005",
+      "usd": "0.127526"
+    },
+    "B1-Pro": {
+      "per_1000_correct": "0.784070",
+      "per_1000_questions": "0.589541",
+      "usd": "1.708489"
+    }
+  },
+  "freeze_sha256": "1785a84a3817ca63878462a91178d28e6d35762a3896e2afb5abd62658f64ea4",
+  "generated_by": "python -m scripts.comparison_report build",
+  "other_pairs": [
+    {
+      "both_right": 6,
+      "both_wrong": 2393,
+      "only_first": 21,
+      "only_second": 478,
+      "pair": [
+        "A0",
+        "B0-Lite"
+      ]
+    },
+    {
+      "both_right": 13,
+      "both_wrong": 1859,
+      "only_first": 14,
+      "only_second": 1012,
+      "pair": [
+        "A0",
+        "B0-Pro"
+      ]
+    },
+    {
+      "both_right": 25,
+      "both_wrong": 827,
+      "only_first": 2,
+      "only_second": 2044,
+      "pair": [
+        "A0",
+        "B1-Lite"
+      ]
+    },
+    {
+      "both_right": 25,
+      "both_wrong": 717,
+      "only_first": 2,
+      "only_second": 2154,
+      "pair": [
+        "A0",
+        "B1-Pro"
+      ]
+    },
+    {
+      "both_right": 440,
+      "both_wrong": 733,
+      "only_first": 1681,
+      "only_second": 44,
+      "pair": [
+        "A1",
+        "B0-Lite"
+      ]
+    },
+    {
+      "both_right": 922,
+      "both_wrong": 674,
+      "only_first": 1199,
+      "only_second": 103,
+      "pair": [
+        "A1",
+        "B0-Pro"
+      ]
+    },
+    {
+      "both_right": 344,
+      "both_wrong": 1733,
+      "only_first": 140,
+      "only_second": 681,
+      "pair": [
+        "B0-Lite",
+        "B0-Pro"
+      ]
+    },
+    {
+      "both_right": 446,
+      "both_wrong": 681,
+      "only_first": 38,
+      "only_second": 1733,
+      "pair": [
+        "B0-Lite",
+        "B1-Pro"
+      ]
+    },
+    {
+      "both_right": 926,
+      "both_wrong": 730,
+      "only_first": 99,
+      "only_second": 1143,
+      "pair": [
+        "B0-Pro",
+        "B1-Lite"
+      ]
+    }
+  ],
+  "overlap": {
+    "all_tuned_right": 1807,
+    "any_tuned_right": 2401,
+    "no_arm_right": 467,
+    "tuned_arms": [
+      "A1",
+      "B1-Lite",
+      "B1-Pro"
+    ]
+  },
+  "pairs": [
+    {
+      "both_right": 25,
+      "both_wrong": 775,
+      "difference_points": "72.26",
+      "favours": "A1",
+      "interval": {
+        "high": "73.84",
+        "low": "70.63"
+      },
+      "interval_by_company": {
+        "high": "75.40",
+        "low": "68.76"
+      },
+      "only_first": 2096,
+      "only_second": 2,
+      "p_adjusted": "7.26e-625",
+      "p_value": "1.21e-625",
+      "pair": [
+        "A1",
+        "A0"
+      ],
+      "settled": true
+    },
+    {
+      "both_right": 452,
+      "both_wrong": 797,
+      "difference_points": "54.69",
+      "favours": "B1-Lite",
+      "interval": {
+        "high": "56.56",
+        "low": "52.76"
+      },
+      "interval_by_company": {
+        "high": "58.54",
+        "low": "51.14"
+      },
+      "only_first": 1617,
+      "only_second": 32,
+      "p_adjusted": "1.02e-428",
+      "p_value": "2.04e-429",
+      "pair": [
+        "B1-Lite",
+        "B0-Lite"
+      ],
+      "settled": true
+    },
+    {
+      "both_right": 974,
+      "both_wrong": 668,
+      "difference_points": "39.82",
+      "favours": "B1-Pro",
+      "interval": {
+        "high": "41.75",
+        "low": "37.89"
+      },
+      "interval_by_company": {
+        "high": "43.04",
+        "low": "37.00"
+      },
+      "only_first": 1205,
+      "only_second": 51,
+      "p_adjusted": "1.73e-286",
+      "p_value": "4.34e-287",
+      "pair": [
+        "B1-Pro",
+        "B0-Pro"
+      ],
+      "settled": true
+    },
+    {
+      "both_right": 1958,
+      "both_wrong": 556,
+      "difference_points": "-2.00",
+      "favours": "B1-Pro",
+      "interval": {
+        "high": "-0.66",
+        "low": "-3.31"
+      },
+      "interval_by_company": {
+        "high": "-0.17",
+        "low": "-3.55"
+      },
+      "only_first": 163,
+      "only_second": 221,
+      "p_adjusted": "7.15e-3",
+      "p_value": "3.57e-3",
+      "pair": [
+        "A1",
+        "B1-Pro"
+      ],
+      "settled": true
+    },
+    {
+      "both_right": 1883,
+      "both_wrong": 591,
+      "difference_points": "1.79",
+      "favours": "A1",
+      "interval": {
+        "high": "3.21",
+        "low": "0.38"
+      },
+      "interval_by_company": {
+        "high": "3.52",
+        "low": "-0.03"
+      },
+      "only_first": 238,
+      "only_second": 186,
+      "p_adjusted": "1.32e-2",
+      "p_value": "1.32e-2",
+      "pair": [
+        "A1",
+        "B1-Lite"
+      ],
+      "settled": false
+    },
+    {
+      "both_right": 1934,
+      "both_wrong": 584,
+      "difference_points": "3.80",
+      "favours": "B1-Pro",
+      "interval": {
+        "high": "5.11",
+        "low": "2.48"
+      },
+      "interval_by_company": {
+        "high": "5.17",
+        "low": "2.24"
+      },
+      "only_first": 245,
+      "only_second": 135,
+      "p_adjusted": "5.41e-8",
+      "p_value": "1.80e-8",
+      "pair": [
+        "B1-Pro",
+        "B1-Lite"
+      ],
+      "settled": true
+    }
+  ],
+  "passed": true,
+  "provisional": false,
+  "schema": 1,
+  "settings": {
+    "company_seed": 20261116,
+    "confidence_percent": 95,
+    "pairs": [
+      [
+        "A1",
+        "A0"
+      ],
+      [
+        "B1-Lite",
+        "B0-Lite"
+      ],
+      [
+        "B1-Pro",
+        "B0-Pro"
+      ],
+      [
+        "A1",
+        "B1-Pro"
+      ],
+      [
+        "A1",
+        "B1-Lite"
+      ],
+      [
+        "B1-Pro",
+        "B1-Lite"
+      ]
+    ],
+    "resamples": 10000,
+    "seed": 20261115,
+    "smallest_p": "0.0001",
+    "step_groups": [
+      1,
+      2,
+      3
+    ]
+  },
+  "test_examples": 2898,
+  "unanswered_ids": [
+    "C/2010/page_272.pdf-1",
+    "KHC/2017/page_21.pdf-4",
+    "ANSS/2012/page_92.pdf-1",
+    "AMT/2005/page_84.pdf-4",
+    "HWM/2015/page_95.pdf-2",
+    "PPG/2008/page_19.pdf-1",
+    "HUM/2018/page_46.pdf-2",
+    "C/2009/page_195.pdf-1",
+    "KIM/2010/page_103.pdf-2",
+    "HWM/2016/page_53.pdf-1",
+    "V/2016/page_132.pdf-2",
+    "KIM/2010/page_94.pdf-2",
+    "TMUS/2018/page_35.pdf-1",
+    "ETR/2013/page_28.pdf-1",
+    "ETR/2011/page_228.pdf-1",
+    "MSI/2009/page_69.pdf-2",
+    "RSG/2014/page_73.pdf-2",
+    "PPG/2010/page_45.pdf-2",
+    "AMT/2010/page_113.pdf-1",
+    "APD/2013/page_44.pdf-2",
+    "PPG/2010/page_68.pdf-1",
+    "HUM/2015/page_46.pdf-1",
+    "PPG/2012/page_47.pdf-2",
+    "MSI/2008/page_71.pdf-3",
+    "APD/2016/page_117.pdf-2",
+    "AMT/2004/page_46.pdf-3",
+    "BKR/2018/page_51.pdf-1",
+    "MSI/2018/page_32.pdf-2",
+    "RSG/2012/page_124.pdf-2",
+    "V/2013/page_116.pdf-1",
+    "FIS/2016/page_49.pdf-2",
+    "CME/2010/page_104.pdf-3",
+    "AMAT/2015/page_33.pdf-2",
+    "RSG/2017/page_74.pdf-2",
+    "AMT/2012/page_111.pdf-4",
+    "RSG/2010/page_135.pdf-1",
+    "ETR/2017/page_20.pdf-1",
+    "CME/2017/page_61.pdf-1",
+    "CME/2012/page_107.pdf-1",
+    "AMAT/2012/page_37.pdf-2",
+    "APD/2016/page_85.pdf-1",
+    "GS/2012/page_129.pdf-4",
+    "MS/2017/page_57.pdf-1",
+    "MSI/2013/page_87.pdf-2",
+    "DG/2008/page_73.pdf-4",
+    "EOG/2018/page_99.pdf-1",
+    "LLY/2018/page_75.pdf-4",
+    "EOG/2017/page_85.pdf-1",
+    "HUM/2005/page_80.pdf-1",
+    "CME/2017/page_57.pdf-3",
+    "MSI/2008/page_71.pdf-1",
+    "HWM/2015/page_87.pdf-1",
+    "RSG/2017/page_98.pdf-1",
+    "APD/2014/page_50.pdf-2",
+    "ETR/2011/page_382.pdf-1",
+    "EOG/2018/page_89.pdf-2",
+    "AMT/2006/page_61.pdf-3",
+    "AMT/2006/page_96.pdf-2",
+    "HUM/2017/page_45.pdf-3",
+    "AMT/2005/page_84.pdf-1",
+    "PKG/2006/page_65.pdf-4",
+    "ABMD/2008/page_87.pdf-1",
+    "GS/2013/page_195.pdf-1",
+    "APD/2018/page_41.pdf-1",
+    "ETR/2002/page_266.pdf-2",
+    "GS/2014/page_80.pdf-3",
+    "ETFC/2007/page_22.pdf-4",
+    "DG/2008/page_73.pdf-3",
+    "CME/2012/page_73.pdf-1",
+    "STT/2001/page_41.pdf-1",
+    "PPG/2011/page_28.pdf-2",
+    "ETR/2008/page_343.pdf-4",
+    "RSG/2012/page_121.pdf-2",
+    "APD/2016/page_106.pdf-1",
+    "HWM/2016/page_53.pdf-2",
+    "C/2009/page_194.pdf-3",
+    "AMT/2014/page_64.pdf-1",
+    "AMT/2008/page_60.pdf-2",
+    "PPG/2011/page_46.pdf-2",
+    "ETFC/2007/page_123.pdf-1",
+    "ETR/2004/page_335.pdf-2",
+    "C/2010/page_306.pdf-3",
+    "FIS/2006/page_88.pdf-1",
+    "CDNS/2012/page_41.pdf-2",
+    "ETR/2008/page_401.pdf-3",
+    "ETR/2004/page_86.pdf-1",
+    "PPG/2013/page_76.pdf-1",
+    "EXPD/2018/page_27.pdf-1",
+    "ETR/2008/page_154.pdf-3",
+    "PPG/2016/page_52.pdf-1",
+    "TROW/2011/page_13.pdf-3",
+    "KHC/2018/page_27.pdf-3",
+    "OKE/2007/page_56.pdf-1",
+    "PKG/2006/page_65.pdf-2",
+    "AMAT/2012/page_35.pdf-2",
+    "GS/2018/page_212.pdf-2",
+    "AMAT/2017/page_31.pdf-2",
+    "PPG/2005/page_24.pdf-2",
+    "STZ/2005/page_57.pdf-3",
+    "STT/2013/page_107.pdf-2",
+    "KHC/2018/page_27.pdf-1",
+    "UAA/2016/page_80.pdf-1",
+    "AMAT/2012/page_35.pdf-1",
+    "AMAT/2014/page_37.pdf-4",
+    "MSI/2007/page_68.pdf-1",
+    "ETR/2017/page_379.pdf-2",
+    "APD/2013/page_81.pdf-2",
+    "ETR/2004/page_163.pdf-5",
+    "ABMD/2015/page_93.pdf-2",
+    "KIM/2009/page_25.pdf-1",
+    "ETR/2008/page_362.pdf-3",
+    "GS/2012/page_89.pdf-3",
+    "STT/2006/page_92.pdf-4",
+    "MSI/2009/page_69.pdf-3",
+    "GS/2018/page_76.pdf-3",
+    "V/2013/page_113.pdf-1",
+    "CME/2010/page_27.pdf-3",
+    "CME/2010/page_113.pdf-3",
+    "HOLX/2005/page_27.pdf-1",
+    "CME/2012/page_103.pdf-1",
+    "ETR/2017/page_19.pdf-4",
+    "AMT/2005/page_77.pdf-3",
+    "ETR/2017/page_414.pdf-1",
+    "EW/2014/page_35.pdf-1",
+    "STT/2008/page_139.pdf-4",
+    "GS/2012/page_56.pdf-1",
+    "KHC/2018/page_27.pdf-2",
+    "ABMD/2006/page_65.pdf-1",
+    "GS/2012/page_95.pdf-3",
+    "AMT/2007/page_116.pdf-1",
+    "APD/2013/page_44.pdf-1",
+    "STT/2013/page_54.pdf-4",
+    "BKR/2018/page_105.pdf-1",
+    "GS/2012/page_95.pdf-1",
+    "ETR/2004/page_159.pdf-4",
+    "ETR/2008/page_343.pdf-3",
+    "APD/2014/page_71.pdf-1",
+    "AMAT/2017/page_33.pdf-4",
+    "C/2018/page_296.pdf-4",
+    "APD/2015/page_105.pdf-1",
+    "GS/2012/page_152.pdf-2",
+    "HWM/2015/page_72.pdf-2",
+    "GRMN/2006/page_91.pdf-2",
+    "C/2016/page_333.pdf-2",
+    "APD/2019/page_100.pdf-2",
+    "PPG/2006/page_22.pdf-2",
+    "CME/2010/page_71.pdf-3",
+    "APD/2018/page_113.pdf-1",
+    "EW/2016/page_92.pdf-3",
+    "ETR/2002/page_266.pdf-1",
+    "RSG/2013/page_92.pdf-1",
+    "HUM/2007/page_18.pdf-2",
+    "ETR/2016/page_324.pdf-3",
+    "APD/2014/page_50.pdf-1",
+    "FIS/2007/page_33.pdf-2",
+    "AMT/2010/page_113.pdf-2",
+    "FIS/2010/page_89.pdf-1",
+    "PPG/2013/page_54.pdf-1",
+    "APD/2015/page_54.pdf-1",
+    "ETR/2017/page_373.pdf-1",
+    "CDNS/2016/page_32.pdf-1",
+    "ETR/2011/page_364.pdf-3",
+    "C/2008/page_212.pdf-2",
+    "RSG/2009/page_118.pdf-2",
+    "TMUS/2017/page_52.pdf-1",
+    "HUM/2017/page_45.pdf-1",
+    "CME/2010/page_113.pdf-6",
+    "AMT/2007/page_111.pdf-1",
+    "PPG/2008/page_19.pdf-2",
+    "ETR/2004/page_335.pdf-3",
+    "GRMN/2008/page_98.pdf-2",
+    "AMT/2003/page_85.pdf-1",
+    "CME/2017/page_37.pdf-1",
+    "ETR/2008/page_267.pdf-3",
+    "GS/2012/page_89.pdf-2",
+    "CME/2010/page_45.pdf-3",
+    "GS/2013/page_47.pdf-1",
+    "MSI/2005/page_64.pdf-1",
+    "V/2013/page_116.pdf-2",
+    "AMAT/2012/page_37.pdf-3",
+    "ETR/2004/page_160.pdf-3",
+    "CDNS/2016/page_32.pdf-4",
+    "C/2008/page_189.pdf-4",
+    "ABMD/2006/page_62.pdf-1",
+    "MSI/2009/page_67.pdf-3",
+    "BKR/2018/page_51.pdf-2",
+    "C/2009/page_38.pdf-1",
+    "ETR/2011/page_358.pdf-2",
+    "HUM/2008/page_18.pdf-1",
+    "LLY/2008/page_43.pdf-1",
+    "AMT/2006/page_31.pdf-2",
+    "AMT/2005/page_84.pdf-2",
+    "ABMD/2006/page_62.pdf-2",
+    "CDNS/2018/page_32.pdf-3",
+    "TROW/2013/page_25.pdf-1",
+    "STT/2008/page_116.pdf-2",
+    "CME/2012/page_107.pdf-2",
+    "HUM/2017/page_45.pdf-2",
+    "AMT/2004/page_46.pdf-4",
+    "V/2009/page_89.pdf-2",
+    "HUM/2018/page_129.pdf-4",
+    "GS/2012/page_57.pdf-3",
+    "ETR/2008/page_401.pdf-2",
+    "C/2016/page_120.pdf-3",
+    "ETR/2008/page_267.pdf-1",
+    "CME/2010/page_71.pdf-1",
+    "AMAT/2017/page_31.pdf-3",
+    "PPG/2018/page_32.pdf-2",
+    "HWM/2018/page_41.pdf-1",
+    "MSI/2009/page_67.pdf-2",
+    "CME/2017/page_57.pdf-4",
+    "AMAT/2017/page_33.pdf-3",
+    "AMT/2008/page_96.pdf-3",
+    "MS/2017/page_57.pdf-2",
+    "GS/2013/page_97.pdf-3",
+    "ETR/2008/page_27.pdf-2",
+    "AMT/2012/page_56.pdf-3",
+    "HWM/2016/page_119.pdf-1",
+    "GS/2013/page_54.pdf-2",
+    "ETR/2011/page_398.pdf-1",
+    "CME/2012/page_73.pdf-3",
+    "GS/2016/page_186.pdf-3",
+    "ETR/2011/page_398.pdf-2",
+    "MSI/2008/page_73.pdf-4",
+    "HWM/2018/page_110.pdf-2",
+    "ETR/2017/page_379.pdf-3",
+    "ETR/2008/page_401.pdf-1",
+    "STT/2017/page_100.pdf-1",
+    "HWM/2015/page_92.pdf-2",
+    "ETR/2009/page_141.pdf-1",
+    "AMT/2012/page_56.pdf-2",
+    "UAA/2016/page_81.pdf-3",
+    "ABMD/2003/page_22.pdf-1",
+    "PKG/2004/page_23.pdf-1",
+    "EOG/2017/page_93.pdf-1",
+    "ETR/2011/page_435.pdf-2",
+    "ETR/2016/page_267.pdf-4",
+    "EOG/2017/page_102.pdf-2",
+    "ETR/2009/page_107.pdf-1",
+    "CME/2017/page_99.pdf-3",
+    "ETR/2016/page_505.pdf-1",
+    "STT/2014/page_99.pdf-3",
+    "HST/2007/page_62.pdf-3",
+    "AMT/2012/page_111.pdf-2",
+    "AMT/2006/page_107.pdf-2",
+    "HWM/2016/page_50.pdf-2",
+    "AMAT/2014/page_37.pdf-3",
+    "APD/2013/page_47.pdf-1",
+    "ETR/2011/page_364.pdf-2",
+    "LLY/2018/page_75.pdf-2",
+    "ETR/2011/page_281.pdf-1",
+    "AMT/2004/page_102.pdf-2",
+    "ETR/2016/page_505.pdf-3",
+    "AMT/2003/page_85.pdf-4",
+    "PPG/2011/page_28.pdf-1",
+    "TMUS/2017/page_52.pdf-3",
+    "ETR/2017/page_414.pdf-2",
+    "ANSS/2014/page_57.pdf-1",
+    "HWM/2016/page_118.pdf-2",
+    "C/2010/page_229.pdf-2",
+    "CDNS/2018/page_82.pdf-1",
+    "DISH/2002/page_94.pdf-2",
+    "UAA/2017/page_86.pdf-4",
+    "C/2018/page_200.pdf-1",
+    "GS/2012/page_129.pdf-2",
+    "AMAT/2014/page_37.pdf-2",
+    "CME/2012/page_42.pdf-1",
+    "APD/2013/page_47.pdf-2",
+    "GS/2012/page_129.pdf-1",
+    "AMT/2007/page_32.pdf-3",
+    "HUM/2010/page_101.pdf-2",
+    "AMT/2005/page_77.pdf-1",
+    "AMT/2014/page_120.pdf-1",
+    "ETR/2008/page_266.pdf-4",
+    "AMT/2005/page_84.pdf-3",
+    "ETR/2008/page_266.pdf-1",
+    "ETR/2011/page_273.pdf-1",
+    "TROW/2013/page_25.pdf-4",
+    "AMAT/2017/page_31.pdf-1",
+    "ETR/2013/page_136.pdf-4",
+    "AMT/2003/page_85.pdf-2",
+    "ETR/2016/page_403.pdf-2",
+    "PPG/2003/page_45.pdf-2",
+    "HWM/2018/page_69.pdf-2",
+    "ANSS/2008/page_89.pdf-1",
+    "PPG/2018/page_32.pdf-1",
+    "STT/2001/page_74.pdf-1",
+    "HOLX/2005/page_27.pdf-2",
+    "PPG/2006/page_21.pdf-2",
+    "GS/2013/page_151.pdf-1",
+    "APTV/2013/page_48.pdf-1",
+    "MSI/2009/page_116.pdf-1",
+    "ETR/2004/page_163.pdf-1",
+    "APD/2015/page_100.pdf-1",
+    "AMT/2010/page_115.pdf-1",
+    "APD/2013/page_81.pdf-1",
+    "APD/2015/page_100.pdf-2",
+    "ETR/2011/page_146.pdf-2",
+    "FIS/2006/page_48.pdf-1",
+    "HOLX/2008/page_145.pdf-1",
+    "AMT/2002/page_104.pdf-1",
+    "ETR/2017/page_401.pdf-3",
+    "ETR/2004/page_86.pdf-2",
+    "APD/2017/page_37.pdf-1",
+    "MSI/2018/page_32.pdf-1",
+    "MSI/2007/page_102.pdf-3",
+    "HWM/2015/page_73.pdf-2",
+    "AMAT/2015/page_31.pdf-2",
+    "ETR/2008/page_343.pdf-1",
+    "ETR/2004/page_159.pdf-3",
+    "PPG/2012/page_76.pdf-2",
+    "ABMD/2012/page_75.pdf-2",
+    "PPG/2006/page_22.pdf-1",
+    "AMT/2012/page_121.pdf-4",
+    "ETR/2008/page_343.pdf-2",
+    "AMAT/2016/page_30.pdf-1",
+    "C/2008/page_105.pdf-3",
+    "AMT/2012/page_111.pdf-3",
+    "AMT/2012/page_121.pdf-2",
+    "ETR/2011/page_492.pdf-1",
+    "GS/2012/page_186.pdf-1",
+    "HWM/2016/page_118.pdf-1",
+    "ETR/2008/page_313.pdf-1",
+    "AMAT/2015/page_31.pdf-4",
+    "ETR/2017/page_401.pdf-4",
+    "GS/2012/page_58.pdf-1",
+    "GS/2015/page_70.pdf-2",
+    "STT/2011/page_94.pdf-3",
+    "CME/2010/page_45.pdf-4",
+    "FIS/2010/page_89.pdf-2",
+    "C/2008/page_173.pdf-1",
+    "ETR/2016/page_267.pdf-3",
+    "ETR/2015/page_18.pdf-1",
+    "BKR/2017/page_105.pdf-2",
+    "APTV/2018/page_36.pdf-3",
+    "APTV/2015/page_50.pdf-3",
+    "BKR/2018/page_52.pdf-1",
+    "EXPD/2017/page_30.pdf-3",
+    "ABMD/2015/page_93.pdf-3",
+    "HOLX/2011/page_122.pdf-3",
+    "HOLX/2011/page_142.pdf-3",
+    "KIM/2010/page_94.pdf-4",
+    "ANSS/2014/page_49.pdf-3",
+    "ABMD/2003/page_22.pdf-3",
+    "BKR/2018/page_127.pdf-2",
+    "ABMD/2003/page_22.pdf-4",
+    "APTV/2013/page_48.pdf-3",
+    "KIM/2014/page_59.pdf-2",
+    "EXPD/2018/page_27.pdf-3",
+    "ETR/2011/page_341.pdf-3",
+    "C/2010/page_223.pdf-3",
+    "ABMD/2006/page_75.pdf-1",
+    "ETR/2003/page_84.pdf-2",
+    "STT/2008/page_83.pdf-2",
+    "CDNS/2012/page_30.pdf-4",
+    "ABMD/2009/page_56.pdf-1",
+    "ETR/2003/page_84.pdf-1",
+    "APD/2016/page_57.pdf-2",
+    "AMAT/2014/page_18.pdf-2",
+    "PPG/2011/page_70.pdf-1",
+    "RSG/2015/page_126.pdf-2",
+    "AMT/2004/page_81.pdf-1",
+    "PPG/2011/page_70.pdf-2",
+    "ETR/2011/page_324.pdf-4",
+    "MSI/2006/page_61.pdf-4",
+    "APD/2018/page_59.pdf-1",
+    "ETR/2017/page_316.pdf-2",
+    "C/2010/page_223.pdf-2",
+    "AMT/2008/page_32.pdf-2",
+    "CDNS/2018/page_31.pdf-1",
+    "GS/2012/page_165.pdf-3",
+    "EW/2016/page_79.pdf-3",
+    "AMT/2005/page_85.pdf-2",
+    "MS/2014/page_292.pdf-1",
+    "ETR/2011/page_341.pdf-2",
+    "ETR/2002/page_24.pdf-4",
+    "ETR/2013/page_118.pdf-3",
+    "APD/2014/page_44.pdf-2",
+    "KHC/2016/page_23.pdf-2",
+    "ETR/2015/page_131.pdf-4",
+    "AMT/2004/page_81.pdf-3",
+    "CDNS/2006/page_30.pdf-4",
+    "AMT/2012/page_125.pdf-1",
+    "APD/2016/page_96.pdf-2",
+    "ETR/2011/page_324.pdf-3",
+    "AMT/2008/page_32.pdf-4",
+    "MSI/2006/page_61.pdf-2",
+    "TROW/2010/page_22.pdf-3",
+    "TROW/2010/page_22.pdf-1",
+    "CDNS/2012/page_30.pdf-2",
+    "STT/2008/page_83.pdf-1",
+    "ETR/2011/page_341.pdf-1",
+    "BKR/2017/page_103.pdf-2",
+    "ETR/2011/page_376.pdf-3",
+    "AMAT/2014/page_18.pdf-1",
+    "ETR/2017/page_26.pdf-1",
+    "ETR/2015/page_131.pdf-3",
+    "APTV/2014/page_49.pdf-1",
+    "APTV/2014/page_49.pdf-3",
+    "DG/2005/page_44.pdf-2",
+    "ETFC/2011/page_144.pdf-2",
+    "MSI/2014/page_76.pdf-3",
+    "CME/2017/page_40.pdf-2",
+    "ETR/2008/page_298.pdf-3",
+    "V/2014/page_126.pdf-2",
+    "CME/2010/page_91.pdf-2",
+    "ABMD/2007/page_78.pdf-2",
+    "STT/2009/page_25.pdf-2",
+    "PPG/2006/page_42.pdf-1",
+    "STT/2009/page_127.pdf-3",
+    "AMT/2007/page_29.pdf-2",
+    "ETR/2015/page_17.pdf-4",
+    "FIS/2006/page_31.pdf-1",
+    "ABC/2005/page_49.pdf-1",
+    "HWM/2015/page_173.pdf-1",
+    "CME/2017/page_40.pdf-1",
+    "HWM/2017/page_42.pdf-2",
+    "CME/2017/page_89.pdf-3",
+    "AMT/2006/page_113.pdf-1",
+    "GS/2018/page_69.pdf-2",
+    "RSG/2015/page_98.pdf-1",
+    "AMT/2012/page_118.pdf-4",
+    "GS/2018/page_78.pdf-2",
+    "MSI/2008/page_69.pdf-2",
+    "AMT/2010/page_99.pdf-2",
+    "APD/2018/page_121.pdf-2",
+    "HUM/2017/page_118.pdf-2",
+    "ETR/2004/page_212.pdf-2",
+    "AMT/2006/page_104.pdf-2",
+    "ETR/2011/page_301.pdf-3",
+    "PPG/2006/page_42.pdf-2",
+    "ABMD/2005/page_29.pdf-1",
+    "BKR/2017/page_56.pdf-1",
+    "GRMN/2008/page_85.pdf-2",
+    "DG/2005/page_44.pdf-3",
+    "MSI/2007/page_70.pdf-3",
+    "PPG/2018/page_85.pdf-1",
+    "ETR/2017/page_143.pdf-3",
+    "ETR/2004/page_281.pdf-2",
+    "MSI/2012/page_87.pdf-3",
+    "MSI/2008/page_69.pdf-3",
+    "AMT/2016/page_125.pdf-2",
+    "C/2009/page_197.pdf-1",
+    "AMT/2008/page_107.pdf-3",
+    "CME/2010/page_69.pdf-4",
+    "HWM/2015/page_173.pdf-2",
+    "STT/2011/page_69.pdf-3",
+    "GS/2017/page_86.pdf-1",
+    "FIS/2016/page_31.pdf-4",
+    "AMT/2006/page_104.pdf-1",
+    "GS/2014/page_51.pdf-1",
+    "ETR/2016/page_150.pdf-4",
+    "AMT/2008/page_107.pdf-2",
+    "CME/2010/page_69.pdf-3",
+    "ABMD/2012/page_79.pdf-2",
+    "ETFC/2012/page_43.pdf-3",
+    "MSI/2012/page_87.pdf-1",
+    "MSI/2008/page_69.pdf-1",
+    "ETR/2017/page_372.pdf-2",
+    "AMT/2012/page_118.pdf-3",
+    "KHC/2018/page_132.pdf-2",
+    "STT/2007/page_111.pdf-4",
+    "MAR/2004/page_45.pdf-2",
+    "ANSS/2012/page_93.pdf-2",
+    "ABMD/2007/page_78.pdf-3",
+    "PPG/2012/page_29.pdf-4",
+    "ABMD/2007/page_78.pdf-4"
+  ]
+}

@@ -1,0 +1,43 @@
+# AWS foundation: the non-secret names the code needs (req_000 v0.05).
+# Read by scripts/aws_check.py, which compares each value with the live account.
+# No credentials and no email address belong here. Credentials stay in the AWS CLI profile.
+version: 1
+verified_on: "2026-11-14"
+
+profile: qlora
+account_id: "123456789012"   # keep quoted: unquoted it loads as a number
+region: us-east-1
+
+bucket:
+  name: qlora-sagemaker-123456789012
+  prefixes:
+    data: data/            # training and validation files
+    sagemaker: sagemaker/  # SageMaker job outputs
+    bedrock: bedrock/      # Bedrock customization outputs
+    adapters: adapters/    # selected LoRA adapters
+
+roles:
+  sagemaker_execution:
+    arn: arn:aws:iam::123456789012:role/qlora-sagemaker-execution
+    trusted_service: sagemaker.amazonaws.com
+  bedrock_customization:
+    arn: arn:aws:iam::123456789012:role/qlora-bedrock-customization
+    trusted_service: bedrock.amazonaws.com
+    inline_policy: qlora-bedrock-s3
+
+quota:
+  service_code: sagemaker
+  usage: training job usage   # quota name is "<instance type> for <usage>"
+  minimum: 1
+  instance_types:
+    - ml.g5.xlarge
+    - ml.g6.xlarge
+
+bedrock:
+  fine_tunable_models:
+    - "amazon.nova-pro-v1:0:300k"
+    - "amazon.nova-lite-v1:0:300k"
+
+budget:
+  name: qlora-finetuning
+  cap_usd: 300

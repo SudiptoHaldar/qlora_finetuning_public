@@ -1,0 +1,31 @@
+# The frozen train/test split of FinQA (req_001 v1.02). Both training paths and the final
+# comparison use the split these settings produce. It is built once into the committed
+# manifest below; after that, changing a value here makes the split check fail, on purpose.
+# Relative paths are resolved from the repository root.
+version: 1
+verified_on: "2026-11-15"
+
+# Examples that share this key always land on the same side.
+#   company = the first part of the example id; report = company + year; page = one page.
+# Company is used because annual reports repeat prior years' numbers, so a split by report
+# would let training see numbers that test questions rest on.
+group_by: company
+
+# Fixed before any split was computed. Never change it to get a nicer split.
+seed: 20261115
+
+train_fraction: 0.65             # the brief: 65% for training, the rest for testing
+train_fraction_tolerance: 0.005  # the split check fails outside 64.5% to 65.5%
+
+# Carved out of the training side, by whole groups, never above this size.
+dev_size: 500
+dev_size_tolerance: 25           # the check fails if dev falls below dev_size minus this
+quick_dev_size: 200              # a fixed subset of dev for fast baselines
+
+# The split report counts test examples whose evidence shares a row name and a number of at
+# least this many digits with a training table.
+leakage_min_digits: 4
+
+manifest_file: splits/finqa_split_manifest.json   # committed; written once
+unlock_file: splits/test_unlock.json              # absent until req_005 v5.01 creates it
+report_dir: reports/data                          # committed split report

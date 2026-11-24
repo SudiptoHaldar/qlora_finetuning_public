@@ -1,0 +1,64 @@
+# The FinQA dataset the project uses (req_001 v1.01): which repository, which commit, which
+# bytes, and what the data is expected to look like. Nothing here is a secret.
+# Relative paths are resolved from the repository root.
+version: 1
+verified_on: "2026-11-15"
+
+finqa:
+  repo_id: bevaya/FinQA                    # Hugging Face dataset repository
+  former_repo_id: rootsautomation/FinQA    # old name; it redirects. A note only, never used
+  revision: 3d6a736bc67e06bc15fbf3618d88204a57c5b25e   # full commit hash; never a branch name
+
+  snapshot_dir: artifacts/data/finqa       # git-ignored; files land in <snapshot_dir>/<revision>/
+  report_dir: reports/data                 # committed schema report
+  report_max_ids_listed: 20                # the Markdown report lists ids for a class up to this size
+
+  # Checked after download and on every load.
+  files:
+    - official_split: train
+      path: data/train-00000-of-00001.parquet
+      sha256: 55dc8ef7405e8edb86743c14120f50280aed3fcb41505270160e0b77819ee339
+      bytes: 30089143
+      rows: 6251
+    - official_split: validation
+      path: data/validation-00000-of-00001.parquet
+      sha256: b21e85e33138739d6bd51c63144a5eaf30026d89e161092999f7c22daa76a1ea
+      bytes: 4196010
+      rows: 883
+    - official_split: test
+      path: data/test-00000-of-00001.parquet
+      sha256: 4f5edc88f1e8bf34a005d2bd39bf1a0e7419eed72998ea2fdd31fa1a15f85bb0
+      bytes: 5415145
+      rows: 1147
+
+  # What the schema report checks the data against. A mismatch is a failed check.
+  expected:
+    columns:
+      id: string
+      filename: string
+      pre_text: "list[string]"
+      post_text: "list[string]"
+      table: "list[list[string]]"
+      table_ori: "list[list[string]]"
+      question: string
+      answer: string
+      exe_ans: string
+      explanation: string
+      ann_table_rows: "list[int32]"
+      ann_text_rows: "list[int32]"
+      steps: "struct{op: list[string], arg1: list[string], arg2: list[string], res: list[string]}"
+      program: string
+      program_re: string
+      gold_inds: string
+    # <company>/<year>/page_<n>.pdf-<index>; the four groups are read into each record.
+    id_pattern: '^([^/]+)/(\d{4})/page_(\d+)\.pdf-(\d+)$'
+    operations:
+      [add, subtract, multiply, divide, exp, greater,
+       table_sum, table_average, table_max, table_min]
+    constants:
+      [const_1, const_2, const_3, const_4, const_5, const_6, const_7, const_8, const_9,
+       const_10, const_100, const_1000, const_10000, const_100000, const_1000000,
+       const_1000000000, const_m1]
+    argument_kinds: [integer, decimal, reference, constant, percent, row_name, none]
+    arguments_per_step: 2
+    max_program_steps: 6

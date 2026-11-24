@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.finqa_gold_check",
+  "settings": {
+    "manifest_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "execution": {
+      "absolute": 1e-05,
+      "relative": 0.005
+    },
+    "answer": {
+      "absolute": 1e-05,
+      "relative": 0.005
+    }
+  },
+  "counts": {
+    "fit": 0,
+    "dev": 0,
+    "test": 0,
+    "total": 0
+  },
+  "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "flagged": []
+}

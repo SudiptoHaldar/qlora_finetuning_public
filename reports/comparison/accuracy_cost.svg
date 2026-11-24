@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Execution accuracy against cost per 1,000 questions</title>
+<desc>2,898 test questions; whiskers are 95% confidence intervals (here narrower than the markers). A0: 0.93% at $0.562 per 1,000 questions; A1: 73.19% at $0.346 per 1,000 questions; B0-Lite: 16.70% at $0.047 per 1,000 questions; B0-Pro: 35.37% at $0.624 per 1,000 questions; B1-Lite: 71.39% at $0.044 per 1,000 questions; B1-Pro: 75.19% at $0.590 per 1,000 questions</desc>
+<rect width="760" height="460" fill="#fcfcfb"/>
+<text x="64" y="26" font-size="15" font-weight="600" fill="#0b0b0b">Execution accuracy against cost per 1,000 questions</text>
+<text x="64" y="45" font-size="12" fill="#52514e">2,898 test questions; whiskers are 95% confidence intervals (here narrower than the markers)</text>
+<circle cx="69.0" cy="66" r="5" fill="#2a78d6"/>
+<text x="79.0" y="70" font-size="12" fill="#52514e">Qwen3-4B</text>
+<circle cx="158.0" cy="66" r="5" fill="#eb6834"/>
+<text x="168.0" y="70" font-size="12" fill="#52514e">Nova Lite</text>
+<circle cx="254.0" cy="66" r="5" fill="#1baf7a"/>
+<text x="264.0" y="70" font-size="12" fill="#52514e">Nova Pro</text>
+<circle cx="343.0" cy="66" r="4.5" fill="#52514e" stroke="#52514e" stroke-width="2"/>
+<text x="353.0" y="70" font-size="12" fill="#52514e">tuned</text>
+<circle cx="411.0" cy="66" r="4.5" fill="#fcfcfb" stroke="#52514e" stroke-width="2"/>
+<text x="421.0" y="70" font-size="12" fill="#52514e">untuned</text>
+<line x1="64" y1="404.0" x2="720" y2="404.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="408.0" font-size="11" text-anchor="end" fill="#52514e">0%</text>
+<line x1="64" y1="341.6" x2="720" y2="341.6" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="345.6" font-size="11" text-anchor="end" fill="#52514e">20%</text>
+<line x1="64" y1="279.2" x2="720" y2="279.2" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="283.2" font-size="11" text-anchor="end" fill="#52514e">40%</text>
+<line x1="64" y1="216.8" x2="720" y2="216.8" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="220.8" font-size="11" text-anchor="end" fill="#52514e">60%</text>
+<line x1="64" y1="154.4" x2="720" y2="154.4" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="158.4" font-size="11" text-anchor="end" fill="#52514e">80%</text>
+<line x1="64" y1="92.0" x2="720" y2="92.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="96.0" font-size="11" text-anchor="end" fill="#52514e">100%</text>
+<line x1="173.2" y1="92" x2="173.2" y2="404" stroke="#e4e3df" stroke-width="1"/>
+<text x="173.2" y="422" font-size="11" text-anchor="middle" fill="#52514e">$0.05</text>
+<line x1="299.7" y1="92" x2="299.7" y2="404" stroke="#e4e3df" stroke-width="1"/>
+<text x="299.7" y="422" font-size="11" text-anchor="middle" fill="#52514e">$0.10</text>
+<line x1="426.3" y1="92" x2="426.3" y2="404" stroke="#e4e3df" stroke-width="1"/>
+<text x="426.3" y="422" font-size="11" text-anchor="middle" fill="#52514e">$0.20</text>
+<line x1="593.7" y1="92" x2="593.7" y2="404" stroke="#e4e3df" stroke-width="1"/>
+<text x="593.7" y="422" font-size="11" text-anchor="middle" fill="#52514e">$0.50</text>
+<text x="392.0" y="448" font-size="12" text-anchor="middle" fill="#52514e">Cost per 1,000 questions, US dollars (logarithmic)</text>
+<text x="16" y="248.0" font-size="12" text-anchor="middle" fill="#52514e" transform="rotate(-90 16 248.0)">Execution accuracy</text>
+<path d="M615.0 399.9V402.2M611.0 399.9H619.0M611.0 402.2H619.0" stroke="#2a78d6" stroke-width="2" fill="none"/>
+<path d="M526.5 170.7V180.6M522.5 170.7H530.5M522.5 180.6H530.5" stroke="#2a78d6" stroke-width="2" fill="none"/>
+<path d="M162.6 347.6V356.1M158.6 347.6H166.6M158.6 356.1H166.6" stroke="#eb6834" stroke-width="2" fill="none"/>
+<path d="M634.2 288.3V299.0M630.2 288.3H638.2M630.2 299.0H638.2" stroke="#1baf7a" stroke-width="2" fill="none"/>
+<path d="M149.8 176.2V186.4M145.8 176.2H153.8M145.8 186.4H153.8" stroke="#eb6834" stroke-width="2" fill="none"/>
+<path d="M623.8 164.6V174.4M619.8 164.6H627.8M619.8 174.4H627.8" stroke="#1baf7a" stroke-width="2" fill="none"/>
+<circle cx="615.0" cy="401.1" r="7.5" fill="#fcfcfb"/>
+<circle cx="615.0" cy="401.1" r="5.5" fill="#fcfcfb" stroke="#2a78d6" stroke-width="2"/>
+<text x="625.0" y="405.1" font-size="12" font-weight="600" text-anchor="start" fill="#0b0b0b">A0</text>
+<circle cx="526.5" cy="175.6" r="7.5" fill="#fcfcfb"/>
+<circle cx="526.5" cy="175.6" r="5.5" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<text x="536.5" y="179.6" font-size="12" font-weight="600" text-anchor="start" fill="#0b0b0b">A1</text>
+<circle cx="162.6" cy="351.9" r="7.5" fill="#fcfcfb"/>
+<circle cx="162.6" cy="351.9" r="5.5" fill="#fcfcfb" stroke="#eb6834" stroke-width="2"/>
+<text x="172.6" y="355.9" font-size="12" font-weight="600" text-anchor="start" fill="#0b0b0b">B0-Lite</text>
+<circle cx="634.2" cy="293.6" r="7.5" fill="#fcfcfb"/>
+<circle cx="634.2" cy="293.6" r="5.5" fill="#fcfcfb" stroke="#1baf7a" stroke-width="2"/>
+<text x="644.2" y="297.6" font-size="12" font-weight="600" text-anchor="start" fill="#0b0b0b">B0-Pro</text>
+<circle cx="149.8" cy="181.3" r="7.5" fill="#fcfcfb"/>
+<circle cx="149.8" cy="181.3" r="5.5" fill="#eb6834" stroke="#eb6834" stroke-width="2"/>
+<text x="159.8" y="185.3" font-size="12" font-weight="600" text-anchor="start" fill="#0b0b0b">B1-Lite</text>
+<circle cx="623.8" cy="169.4" r="7.5" fill="#fcfcfb"/>
+<circle cx="623.8" cy="169.4" r="5.5" fill="#1baf7a" stroke="#1baf7a" stroke-width="2"/>
+<text x="633.8" y="173.4" font-size="12" font-weight="600" text-anchor="start" fill="#0b0b0b">B1-Pro</text>
+</svg>

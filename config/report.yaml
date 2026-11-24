@@ -1,0 +1,70 @@
+# The comparison report (req_005 v5.03): what it reads, what it writes, and the settings of
+# its statistics. Read by scripts/comparison_report.py. Relative paths are resolved from the
+# repository root. It holds no result, no run id, and no price.
+version: 1
+verified_on: "2026-11-23"
+
+# The committed records the report is built from. The six test runs are the ones the
+# six-arm record names; every dollar figure is the cost record's.
+records:
+  six_arm: reports/comparison/six_arm_test_runs.json
+  cost: reports/comparison/cost_model.json
+
+# What is written. The statistics record and the chart go to the comparison's report folder
+# (config/comparison.yaml, report_dir). The examples file holds dataset text: it must stay
+# under the git-ignored artifacts/ folder.
+outputs:
+  statistics_stem: comparison_statistics
+  chart: accuracy_cost.svg
+  report: reports/comparison_report.md
+  readme: README.md
+  examples: artifacts/comparison/error_examples.md
+
+# The confidence intervals: a paired percentile bootstrap. One set of resampled examples is
+# used for all six arms, so a difference between two arms stays paired. The interval by
+# company resamples whole companies (the split was made by company) and uses seed + 1.
+bootstrap:
+  resamples: 10000
+  seed: 20261115            # the project's seed (config/split.yaml)
+  confidence_percent: 95
+
+# The tested pairs, named before any test was computed (and after the counts of the six-arm
+# record were known). A difference is the first arm minus the second. Each pair gets
+# McNemar's exact test; the p-values of this list are adjusted together with Holm's method.
+pairs:
+  - [A1, A0]
+  - [B1-Lite, B0-Lite]
+  - [B1-Pro, B0-Pro]
+  - [A1, B1-Pro]
+  - [A1, B1-Lite]
+  - [B1-Pro, B1-Lite]
+
+# Execution accuracy is also given by the number of steps in the gold program. The last
+# number stands for "that many or more".
+step_groups: [1, 2, 3]
+
+# The local examples file: how many example ids per arm and error category.
+examples_per_category: 3
+
+# A p-value under this is shown as "below" it.
+smallest_p: "0.0001"
+
+# How each arm is named for a reader. No deployment name and no account number.
+arm_labels:
+  A0: "Qwen3-4B, untuned"
+  A1: "Qwen3-4B with QLoRA"
+  B0-Lite: "Nova Lite, untuned"
+  B1-Lite: "Nova Lite, tuned"
+  B0-Pro: "Nova Pro, untuned"
+  B1-Pro: "Nova Pro, tuned"
+
+# The accuracy-versus-cost chart, in SVG user units. One colour per base model; a tuned arm
+# is a filled marker and an untuned one a hollow marker. The three colours were checked
+# together for colour-blind separation on the light surface (2026-11-23).
+chart:
+  width: 760
+  height: 460
+  families:
+    "Qwen3-4B": {color: "#2a78d6", arms: [A0, A1]}
+    "Nova Lite": {color: "#eb6834", arms: [B0-Lite, B1-Lite]}
+    "Nova Pro": {color: "#1baf7a", arms: [B0-Pro, B1-Pro]}

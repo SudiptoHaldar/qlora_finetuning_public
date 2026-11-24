@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.finqa_serialize",
+  "prompt": {
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "version": 1,
+    "system_characters": 1331
+  },
+  "splits": {
+    "fit": {
+      "records": 4884,
+      "system_characters": 1331,
+      "user_characters": {
+        "min": 158,
+        "median": 560,
+        "p90": 955,
+        "p99": 1381,
+        "max": 3937
+      },
+      "target_characters": {
+        "min": 30,
+        "median": 46,
+        "p90": 73,
+        "p99": 116,
+        "max": 145
+      },
+      "records_without_text_evidence": 3094,
+      "records_by_number_of_passages": {
+        "0": 3094,
+        "1": 1289,
+        "2": 421,
+        "3_or_more": 80
+      },
+      "most_table_rows": 20,
+      "most_table_columns": 9,
+      "answers_written_out_from_scientific_notation": 124,
+      "yes_or_no_answers": 100,
+      "skipped_evidence_keys": [
+        {
+          "example_id": "RE/2010/page_120.pdf-2",
+          "key": "text_-1"
+        }
+      ],
+      "digest": "ce028ca2e912c096d4d6cce3f1d59d45d19682e745c8f0355f4e965cc62d48e3"
+    },
+    "dev": {
+      "records": 499,
+      "system_characters": 1331,
+      "user_characters": {
+        "min": 214,
+        "median": 581,
+        "p90": 1000,
+        "p99": 1253,
+        "max": 1763
+      },
+      "target_characters": {
+        "min": 28,
+        "median": 47,
+        "p90": 76,
+        "p99": 120,
+        "max": 145
+      },
+      "records_without_text_evidence": 293,
+      "records_by_number_of_passages": {
+        "0": 293,
+        "1": 153,
+        "2": 42,
+        "3_or_more": 11
+      },
+      "most_table_rows": 16,
+      "most_table_columns": 9,
+      "answers_written_out_from_scientific_notation": 14,
+      "yes_or_no_answers": 13,
+      "skipped_evidence_keys": [],
+      "digest": "9036cbf62a14e023dbfcce2dafed7d5e935dc3c68454425a555f76b3676dd168"
+    },
+    "quick_dev": {
+      "records": 200,
+      "system_characters": 1331,
+      "user_characters": {
+        "min": 214,
+        "median": 622.5,
+        "p90": 1039,
+        "p99": 1220,
+        "max": 1292
+      },
+      "target_characters": {
+        "min": 28,
+        "median": 46,
+        "p90": 76,
+        "p99": 97,
+        "max": 145
+      },
+      "records_without_text_evidence": 112,
+      "records_by_number_of_passages": {
+        "0": 112,
+        "1": 60,
+        "2": 20,
+        "3_or_more": 8
+      },
+      "most_table_rows": 16,
+      "most_table_columns": 8,
+      "answers_written_out_from_scientific_notation": 8,
+      "yes_or_no_answers": 5,
+      "skipped_evidence_keys": [],
+      "digest": "5868465645e6d590b90377fe46a246656e519473fa083566a2ea4103161e84af"
+    }
+  },
+  "checks": [
+    {
+      "id": "C1",
+      "name": "Target shape",
+      "passed": true,
+      "detail": "5,383 targets"
+    },
+    {
+      "id": "C2",
+      "name": "Program unchanged",
+      "passed": true,
+      "detail": "every program is the dataset's, character for character"
+    },
+    {
+      "id": "C3",
+      "name": "Answer form",
+      "passed": true,
+      "detail": "every answer is a plain number or yes/no"
+    },
+    {
+      "id": "C4",
+      "name": "Table shape",
+      "passed": true,
+      "detail": "every table has its header, separator, and rows"
+    },
+    {
+      "id": "C5",
+      "name": "Evidence complete",
+      "passed": true,
+      "detail": "every record shows exactly its text evidence"
+    },
+    {
+      "id": "C6",
+      "name": "Question present",
+      "passed": true,
+      "detail": "every user text ends with its question"
+    },
+    {
+      "id": "C7",
+      "name": "One system text",
+      "passed": true,
+      "detail": "prompt id d63742a62b76..."
+    },
+    {
+      "id": "C8",
+      "name": "Deterministic",
+      "passed": true,
+      "detail": "serializing again gives identical records"
+    },
+    {
+      "id": "C9",
+      "name": "Digests",
+      "passed": true,
+      "detail": "fit ce028ca2e912..., dev 9036cbf62a14..."
+    },
+    {
+      "id": "C10",
+      "name": "No test record",
+      "passed": true,
+      "detail": "every record is a fit or dev example"
+    }
+  ]
+}

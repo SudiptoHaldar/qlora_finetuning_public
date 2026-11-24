@@ -1,0 +1,603 @@
+{
+  "break_evens": [
+    {
+      "cheaper_above": "A0",
+      "cheaper_always": null,
+      "cheaper_below": "B0-Lite",
+      "kind": "volume",
+      "limit_note": "above what A0 can serve in a month (1,986,860) and B0-Lite can serve in a month (8,760,000)",
+      "pair": [
+        "A0",
+        "B0-Lite"
+      ],
+      "questions": 21777236,
+      "reachable": false,
+      "scenario": "always_on"
+    },
+    {
+      "cheaper_above": null,
+      "cheaper_always": "B0-Lite",
+      "cheaper_below": null,
+      "kind": "always",
+      "limit_note": "no volume to reach",
+      "pair": [
+        "A0",
+        "B0-Lite"
+      ],
+      "questions": null,
+      "reachable": true,
+      "scenario": "batch"
+    },
+    {
+      "cheaper_above": "A0",
+      "cheaper_always": null,
+      "cheaper_below": "B0-Pro",
+      "kind": "volume",
+      "limit_note": "above what B0-Pro can serve in a month (1,095,000)",
+      "pair": [
+        "A0",
+        "B0-Pro"
+      ],
+      "questions": 1646889,
+      "reachable": false,
+      "scenario": "always_on"
+    },
+    {
+      "cheaper_above": "A0",
+      "cheaper_always": null,
+      "cheaper_below": "B0-Pro",
+      "kind": "volume",
+      "limit_note": "within what both sides can serve in a month",
+      "pair": [
+        "A0",
+        "B0-Pro"
+      ],
+      "questions": 1212,
+      "reachable": true,
+      "scenario": "batch"
+    },
+    {
+      "cheaper_above": "A1",
+      "cheaper_always": null,
+      "cheaper_below": "B1-Lite",
+      "kind": "volume",
+      "limit_note": "above what A1 can serve in a month (3,400,174) and B1-Lite can serve in a month (8,760,000)",
+      "pair": [
+        "A1",
+        "B1-Lite"
+      ],
+      "questions": 23313104,
+      "reachable": false,
+      "scenario": "always_on"
+    },
+    {
+      "cheaper_above": "B1-Lite",
+      "cheaper_always": null,
+      "cheaper_below": "A1",
+      "kind": "volume",
+      "limit_note": "within what both sides can serve in a month",
+      "pair": [
+        "A1",
+        "B1-Lite"
+      ],
+      "questions": 7059,
+      "reachable": true,
+      "scenario": "batch"
+    },
+    {
+      "cheaper_above": "B1-Lite",
+      "cheaper_always": null,
+      "cheaper_below": "A1",
+      "kind": "volume",
+      "limit_note": "a volume over the models' whole use, not a month's: under a month at the smaller monthly limit",
+      "pair": [
+        "A1",
+        "B1-Lite"
+      ],
+      "questions": 26239,
+      "reachable": true,
+      "scenario": "making"
+    },
+    {
+      "cheaper_above": "A1",
+      "cheaper_always": null,
+      "cheaper_below": "B1-Pro",
+      "kind": "volume",
+      "limit_note": "above what B1-Pro can serve in a month (876,000)",
+      "pair": [
+        "A1",
+        "B1-Pro"
+      ],
+      "questions": 1740152,
+      "reachable": false,
+      "scenario": "always_on"
+    },
+    {
+      "cheaper_above": null,
+      "cheaper_always": "A1",
+      "cheaper_below": null,
+      "kind": "always",
+      "limit_note": "no volume to reach",
+      "pair": [
+        "A1",
+        "B1-Pro"
+      ],
+      "questions": null,
+      "reachable": true,
+      "scenario": "batch"
+    },
+    {
+      "cheaper_above": null,
+      "cheaper_always": "A1",
+      "cheaper_below": null,
+      "kind": "always",
+      "limit_note": "no volume to reach",
+      "pair": [
+        "A1",
+        "B1-Pro"
+      ],
+      "questions": null,
+      "reachable": true,
+      "scenario": "making"
+    }
+  ],
+  "checks": [
+    {
+      "detail": "6 arms, one run each, C1 to C8 passed",
+      "id": "K1",
+      "name": "Six test runs",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "tokens and billable seconds in the ledger equal the six-arm record and the job record",
+      "id": "K2",
+      "name": "Quantities found",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "Bedrock price list of 2026-11-11; SageMaker training 2026-11-14, hosting 2026-11-23",
+      "id": "K3",
+      "name": "Prices found",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "86 records: 4 train, 12 select, 8 test, 25 development, 37 no charge",
+      "id": "K4",
+      "name": "Every record placed",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "Path A $10.87, Path B $78.08: the same as the cap checks count",
+      "id": "K5",
+      "name": "Totals agree",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "2,898 examples per arm; equal input tokens within a path",
+      "id": "K6",
+      "name": "Same questions",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "10 break-evens, each marked; 4 not reachable here",
+      "id": "K7",
+      "name": "Reachable",
+      "passed": true,
+      "reservation": false
+    },
+    {
+      "detail": "2 entered amount(s), each within the tolerance",
+      "id": "K8",
+      "name": "Agrees with the bill",
+      "passed": true,
+      "reservation": false
+    }
+  ],
+  "estimates": [],
+  "generated_by": "python -m scripts.comparison_cost report",
+  "left_out": [
+    "S3 storage and requests",
+    "CloudWatch logs",
+    "data transfer"
+  ],
+  "making": {
+    "A1": {
+      "making_usd": "7.823004",
+      "select": {
+        "basis": "list price",
+        "billable_seconds": 4965,
+        "instance_type": "ml.g5.xlarge",
+        "records": 1,
+        "usd": "1.941867"
+      },
+      "storage": null,
+      "train": {
+        "basis": "list price",
+        "billable_seconds": 15037,
+        "instance_type": "ml.g5.xlarge",
+        "records": 1,
+        "usd": "5.881138"
+      }
+    },
+    "B1-Lite": {
+      "making_usd": "14.600000",
+      "select": null,
+      "storage": {
+        "months": {
+          "1": "1.950000",
+          "12": "23.400000"
+        },
+        "per_month": "1.950000",
+        "since": "2026-11-19"
+      },
+      "train": {
+        "basis": "billed",
+        "records": 1,
+        "usd": "14.600000"
+      }
+    },
+    "B1-Pro": {
+      "making_usd": "58.750000",
+      "select": null,
+      "storage": {
+        "months": {
+          "1": "1.950000",
+          "12": "23.400000"
+        },
+        "per_month": "1.950000",
+        "since": "2026-11-22"
+      },
+      "train": {
+        "basis": "billed",
+        "records": 1,
+        "usd": "58.750000"
+      }
+    }
+  },
+  "passed": true,
+  "prices": {
+    "bedrock": {
+      "models": {
+        "amazon.nova-lite-v1:0": {
+          "input_per_million": "0.06",
+          "output_per_million": "0.24",
+          "storage_per_model_month": "1.95",
+          "training_per_million": "2.00"
+        },
+        "amazon.nova-pro-v1:0": {
+          "input_per_million": "0.80",
+          "output_per_million": "3.20",
+          "storage_per_model_month": "1.95",
+          "training_per_million": "8.00"
+        }
+      },
+      "offer": "AmazonBedrock",
+      "published": "2026-11-11",
+      "read_on": "2026-11-16",
+      "region": "us-east-1"
+    },
+    "sagemaker": {
+      "hosting_per_hour": {
+        "ml.g5.xlarge": "1.408"
+      },
+      "hosting_published": "2026-11-23",
+      "training_per_hour": {
+        "ml.g5.xlarge": "1.408",
+        "ml.g6.xlarge": "1.127"
+      },
+      "training_published": "2026-11-14"
+    }
+  },
+  "project": {
+    "paths": {
+      "A": {
+        "cap": "100.000000",
+        "development": "0.419662",
+        "no_charge": "0.000000",
+        "select": "1.941867",
+        "test": "2.631396",
+        "total": "10.874062",
+        "train": "5.881138"
+      },
+      "B": {
+        "cap": "200.000000",
+        "development": "0.950738",
+        "no_charge": "0.000000",
+        "select": "0.000000",
+        "test": "3.781466",
+        "total": "78.082204",
+        "train": "73.350000"
+      },
+      "none": {
+        "cap": null,
+        "development": "0.000000",
+        "no_charge": "0.000000",
+        "select": "0.000000",
+        "test": "0.000000",
+        "total": "0.000000",
+        "train": "0.000000"
+      }
+    },
+    "records": {
+      "development": 25,
+      "no_charge": 37,
+      "select": 12,
+      "test": 8,
+      "train": 4
+    },
+    "storage_so_far": {
+      "B1-Lite": "1.950000",
+      "B1-Pro": "1.950000"
+    }
+  },
+  "provisional": false,
+  "reconciliation": [
+    {
+      "covered": true,
+      "entries": [
+        {
+          "agrees": true,
+          "billed_usd": "81.980000",
+          "covers_every_run": true,
+          "difference_usd": "-0.002204",
+          "entered_on": "2026-11-24",
+          "model_usd": "81.982204",
+          "through": "2026-11-23",
+          "tolerance_usd": "1.639600"
+        }
+      ],
+      "last_run_date": "2026-11-23",
+      "model_usd_to_date": "81.982204",
+      "service": "bedrock"
+    },
+    {
+      "covered": true,
+      "entries": [
+        {
+          "agrees": true,
+          "billed_usd": "10.870000",
+          "covers_every_run": true,
+          "difference_usd": "-0.004062",
+          "entered_on": "2026-11-24",
+          "model_usd": "10.874062",
+          "through": "2026-11-23",
+          "tolerance_usd": "0.500000"
+        }
+      ],
+      "last_run_date": "2026-11-23",
+      "model_usd_to_date": "10.874062",
+      "service": "sagemaker"
+    }
+  ],
+  "schema": 1,
+  "serving": {
+    "A0": {
+      "always_on": {
+        "at": [
+          {
+            "per_1000_questions": "0.517319",
+            "questions_per_month": "1986860.432203",
+            "utilization": "1.000000"
+          },
+          {
+            "per_1000_questions": "1.034637",
+            "questions_per_month": "993430.216101",
+            "utilization": "0.500000"
+          },
+          {
+            "per_1000_questions": "5.173187",
+            "questions_per_month": "198686.043220",
+            "utilization": "0.100000"
+          },
+          {
+            "per_1000_questions": "51.731867",
+            "questions_per_month": "19868.604322",
+            "utilization": "0.010000"
+          }
+        ],
+        "hourly_usd": "1.408000",
+        "monthly_usd": "1027.840000"
+      },
+      "batch": [
+        {
+          "per_1000_questions": "1.811290",
+          "questions": 100,
+          "usd": "0.181129"
+        },
+        {
+          "per_1000_questions": "0.646716",
+          "questions": 1000,
+          "usd": "0.646716"
+        },
+        {
+          "per_1000_questions": "0.561969",
+          "questions": 2898,
+          "usd": "1.628587"
+        },
+        {
+          "per_1000_questions": "0.530258",
+          "questions": 10000,
+          "usd": "5.302584"
+        },
+        {
+          "per_1000_questions": "0.518613",
+          "questions": 100000,
+          "usd": "51.861264"
+        }
+      ],
+      "instance_type": "ml.g5.xlarge",
+      "questions_per_hour": "2721.726619",
+      "questions_per_month": "1986860.432203",
+      "seconds_per_question": "1.322690",
+      "startup_seconds": "330.845000",
+      "startup_usd": "0.129397",
+      "steady_usd_per_question": "0.000517"
+    },
+    "A1": {
+      "always_on": {
+        "at": [
+          {
+            "per_1000_questions": "0.302290",
+            "questions_per_month": "3400173.849453",
+            "utilization": "1.000000"
+          },
+          {
+            "per_1000_questions": "0.604581",
+            "questions_per_month": "1700086.924726",
+            "utilization": "0.500000"
+          },
+          {
+            "per_1000_questions": "3.022904",
+            "questions_per_month": "340017.384945",
+            "utilization": "0.100000"
+          },
+          {
+            "per_1000_questions": "30.229043",
+            "questions_per_month": "34001.738495",
+            "utilization": "0.010000"
+          }
+        ],
+        "hourly_usd": "1.408000",
+        "monthly_usd": "1027.840000"
+      },
+      "batch": [
+        {
+          "per_1000_questions": "1.570003",
+          "questions": 100,
+          "usd": "0.157000"
+        },
+        {
+          "per_1000_questions": "0.429062",
+          "questions": 1000,
+          "usd": "0.429062"
+        },
+        {
+          "per_1000_questions": "0.346035",
+          "questions": 2898,
+          "usd": "1.002809"
+        },
+        {
+          "per_1000_questions": "0.314968",
+          "questions": 10000,
+          "usd": "3.149675"
+        },
+        {
+          "per_1000_questions": "0.303558",
+          "questions": 100000,
+          "usd": "30.355814"
+        }
+      ],
+      "instance_type": "ml.g5.xlarge",
+      "questions_per_hour": "4657.772397",
+      "questions_per_month": "3400173.849453",
+      "seconds_per_question": "0.772902",
+      "startup_seconds": "324.131000",
+      "startup_usd": "0.126771",
+      "steady_usd_per_question": "0.000302"
+    }
+  },
+  "serving_assumptions": {
+    "batch_jobs_per_month": 1,
+    "hours_per_month": 730,
+    "limits_read_on": "2026-11-16",
+    "requests_per_minute": {
+      "B0-Lite": 200,
+      "B0-Pro": 25,
+      "B1-Lite": 200,
+      "B1-Pro": 20
+    }
+  },
+  "six_arm_freeze_sha256": "1785a84a3817ca63878462a91178d28e6d35762a3896e2afb5abd62658f64ea4",
+  "test_examples": 2898,
+  "test_pass": {
+    "A0": {
+      "billable_seconds": 4164,
+      "correct": 27,
+      "instance_type": "ml.g5.xlarge",
+      "path": "A",
+      "per_1000_correct": "60.318025",
+      "per_1000_correct_steady": "55.525537",
+      "per_1000_questions": "0.561969",
+      "per_1000_questions_steady": "0.517319",
+      "questions": 2898,
+      "run_id": "20261123T183543Z-eval-qwen3-4b-test-ea44",
+      "run_seconds": "3833.155000",
+      "seconds_per_question": "1.322690",
+      "startup_seconds": "330.845000",
+      "steady_usd": "1.499190",
+      "usd": "1.628587"
+    },
+    "A1": {
+      "billable_seconds": 2564,
+      "correct": 2121,
+      "instance_type": "ml.g5.xlarge",
+      "path": "A",
+      "per_1000_correct": "0.472800",
+      "per_1000_correct_steady": "0.413030",
+      "per_1000_questions": "0.346035",
+      "per_1000_questions_steady": "0.302290",
+      "questions": 2898,
+      "run_id": "20261123T201754Z-eval-qwen3-4b-tuned-test-074f",
+      "run_seconds": "2239.869000",
+      "seconds_per_question": "0.772902",
+      "startup_seconds": "324.131000",
+      "steady_usd": "0.876038",
+      "usd": "1.002809"
+    },
+    "B0-Lite": {
+      "correct": 484,
+      "input_tokens": 1773547,
+      "model_id": "amazon.nova-lite-v1:0",
+      "output_tokens": 126528,
+      "path": "B",
+      "per_1000_correct": "0.282602",
+      "per_1000_questions": "0.047198",
+      "questions": 2898,
+      "run_id": "20261123T072634Z-eval-nova-lite-test-e25a",
+      "usd": "0.136780"
+    },
+    "B0-Pro": {
+      "correct": 1025,
+      "input_tokens": 1773547,
+      "model_id": "amazon.nova-pro-v1:0",
+      "output_tokens": 121823,
+      "path": "B",
+      "per_1000_correct": "1.764557",
+      "per_1000_questions": "0.624110",
+      "questions": 2898,
+      "run_id": "20261123T172210Z-eval-nova-pro-test-6176",
+      "usd": "1.808671"
+    },
+    "B1-Lite": {
+      "correct": 2069,
+      "input_tokens": 1773547,
+      "model_id": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/308jz60uh4a5",
+      "output_tokens": 87972,
+      "path": "B",
+      "per_1000_correct": "0.061637",
+      "per_1000_questions": "0.044005",
+      "questions": 2898,
+      "run_id": "20261123T165542Z-eval-nova-lite-tuned-test-b4bf",
+      "usd": "0.127526"
+    },
+    "B1-Pro": {
+      "correct": 2179,
+      "input_tokens": 1773547,
+      "model_id": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/62v0vii1ge23",
+      "output_tokens": 90516,
+      "path": "B",
+      "per_1000_correct": "0.784070",
+      "per_1000_questions": "0.589541",
+      "questions": 2898,
+      "run_id": "20261123T181752Z-eval-nova-pro-tuned-test-79c0",
+      "usd": "1.708489"
+    }
+  },
+  "through": "2026-11-23"
+}

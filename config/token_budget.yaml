@@ -1,0 +1,30 @@
+# Token lengths and limits (req_001 v1.04): which tokenizer counts, how long a training
+# sequence may be, and how long a reply may be. Both training paths read the two limits from
+# here. Relative paths are resolved from the repository root.
+version: 1
+verified_on: "2026-11-15"
+
+# The tokenizer of the model Path A trains. Tokenizer files only: no weights, no GPU.
+tokenizer:
+  model_id: Qwen/Qwen3-4B
+  revision: 1cfa9a7208912126459214e8b04321603b3df60c   # full commit hash; req_003 loads the model at the same one
+  # SHA-256 over the vocabulary, the chat template, and the end token. It proves that the
+  # tokenizer in use is this one, however it was loaded.
+  fingerprint: e2d3cbac3923643bb0a5d1f0045aad8728663a6ff2f6df7a4872ee6a4a218fae
+  # What the chat template puts at the end of a prompt when thinking is switched off.
+  thinking_off_suffix: "<think>\n\n</think>\n\n"
+
+# Longest full training sequence, in tokens: the chat-templated system and user texts, the
+# target, and the end token. Nothing is ever truncated to fit: a longer record is an error.
+# 2,048 fits every fit and dev record (the longest is 1,862). The plan's first value, 1,536,
+# left two fit examples out.
+max_length: 2048
+
+# Longest reply a model may generate, in new tokens. The longest correct reply is 80.
+max_new_tokens: 192
+
+# The report counts the records longer than each of these.
+thresholds: [768, 1024, 1280, 1536, 2048]
+longest_listed: 10                # how many of the longest records the report lists by id
+
+report_dir: reports/data          # committed token budget report

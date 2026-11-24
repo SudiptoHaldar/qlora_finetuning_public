@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.nova_export",
+  "passed": true,
+  "export_id": "c2d67fe65c7f",
+  "inputs": {
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "split_content_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "schema_version": "bedrock-conversation-2024",
+    "epoch_count": 2,
+    "cap_usd": "200",
+    "price_list": {
+      "offer": "AmazonBedrock",
+      "region": "us-east-1",
+      "published": "2026-11-11",
+      "read_on": "2026-11-16"
+    }
+  },
+  "files": {
+    "training": {
+      "name": "finqa_fit.jsonl",
+      "split": "fit",
+      "records": 4884,
+      "bytes": 10715093,
+      "sha256": "7fbc364faa8e1098a5f6078e7ee898f25c0fa845b7de4d74228bb27625fccc19",
+      "repeated_lines": 52
+    },
+    "validation": {
+      "name": "finqa_dev.jsonl",
+      "split": "dev",
+      "records": 499,
+      "bytes": 1106662,
+      "sha256": "1108c8ed40ec2af1d89e97feeba6bc63c40cc239c06021031bc13d79c9e7f38e",
+      "repeated_lines": 2
+    }
+  },
+  "estimate": {
+    "epoch_count": 2,
+    "token_ratio": "0.9851",
+    "ratio_measured": true,
+    "ratio_source": "the largest of the 4 ratios measured in nova_baseline_report.json",
+    "margin_percent": "10",
+    "qwen_tokens_one_pass_over_fit": 3254181,
+    "training_tokens_one_epoch": 3205694,
+    "training_tokens": {
+      "amazon.nova-pro-v1:0": 6411388,
+      "amazon.nova-lite-v1:0": 6411388
+    },
+    "training_usd": {
+      "amazon.nova-pro-v1:0": "51.291104",
+      "amazon.nova-lite-v1:0": "12.822776"
+    },
+    "training_total_usd": "64.11388",
+    "training_with_margin_usd": "70.525268",
+    "training_total_by_epochs_usd": {
+      "1": "32.05694",
+      "2": "64.11388",
+      "3": "96.17082",
+      "4": "128.22776",
+      "5": "160.2847"
+    },
+    "evaluation_to_come": {
+      "runs_per_model": {
+        "dev": 1,
+        "test": 2
+      },
+      "test_examples": 2898,
+      "reply_tokens_assumed": 192,
+      "input_tokens_per_model": 3941130,
+      "output_tokens_per_model": 1208640
+    },
+    "evaluation_to_come_usd": {
+      "amazon.nova-pro-v1:0": "7.020552",
+      "amazon.nova-lite-v1:0": "0.5265414"
+    },
+    "evaluation_to_come_total_usd": "7.5470934",
+    "storage_months": 1,
+    "storage_usd": {
+      "amazon.nova-pro-v1:0": "1.95",
+      "amazon.nova-lite-v1:0": "1.95"
+    },
+    "storage_total_usd": "3.9",
+    "spent_usd": "0.48679914",
+    "spent_ledger_records": 6,
+    "unpriced_ledger_records": 0,
+    "total_usd": "82.45916054",
+    "cap_usd": "200"
+  },
+  "checks": [
+    {
+      "id": "X1",
+      "name": "Same records",
+      "passed": true,
+      "detail": "one line per record, in order: fit 4,884, dev 499"
+    },
+    {
+      "id": "X2",
+      "name": "No test rows",
+      "passed": true,
+      "detail": "none of 5,383 exported ids is among the 2,898 test ids"
+    },
+    {
+      "id": "X3",
+      "name": "Format",
+      "passed": true,
+      "detail": "bedrock-conversation-2024: system, one user turn, one assistant turn; UTF-8, line breaks only"
+    },
+    {
+      "id": "X4",
+      "name": "Reserved words",
+      "passed": true,
+      "detail": "none of the 9 reserved words, in any case, in any text"
+    },
+    {
+      "id": "X5",
+      "name": "Limits",
+      "passed": true,
+      "detail": "4,884 training and 499 validation records; the longest record is about 2,018 of 32,000 tokens"
+    },
+    {
+      "id": "X6",
+      "name": "Same question",
+      "passed": true,
+      "detail": "prompt d63742a62b76..., split manifest d34fb22e37b7..., as in the token budget report"
+    },
+    {
+      "id": "X7",
+      "name": "Reproducible",
+      "passed": true,
+      "detail": "rendering again gives the same bytes: training 7fbc364faa8e..., validation 1108c8ed40ec..."
+    },
+    {
+      "id": "G1",
+      "name": "Ratio measured",
+      "passed": true,
+      "detail": "Nova counts 0.9851 tokens per Qwen token: the largest of the 4 ratios measured in nova_baseline_report.json"
+    },
+    {
+      "id": "G2",
+      "name": "Within the cap",
+      "passed": true,
+      "detail": "the Path B estimate is $82.46 of $200.00"
+    }
+  ],
+  "staged": {
+    "training": {
+      "s3_uri": "s3://qlora-sagemaker-123456789012/data/bedrock/c2d67fe65c7f/finqa_fit.jsonl",
+      "bytes": 10715093,
+      "sha256": "7fbc364faa8e1098a5f6078e7ee898f25c0fa845b7de4d74228bb27625fccc19"
+    },
+    "validation": {
+      "s3_uri": "s3://qlora-sagemaker-123456789012/data/bedrock/c2d67fe65c7f/finqa_dev.jsonl",
+      "bytes": 1106662,
+      "sha256": "1108c8ed40ec2af1d89e97feeba6bc63c40cc239c06021031bc13d79c9e7f38e"
+    }
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.finqa_split",
+  "manifest": {
+    "file": "finqa_split_manifest.json",
+    "content_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "settings": {
+      "group_by": "company",
+      "seed": 20261115,
+      "train_fraction": 0.65,
+      "dev_size": 500,
+      "quick_dev_size": 200,
+      "rule": "sha256-order-fill-v1"
+    },
+    "dataset": {
+      "repo_id": "bevaya/FinQA",
+      "revision": "3d6a736bc67e06bc15fbf3618d88204a57c5b25e"
+    }
+  },
+  "columns": {
+    "fit": {
+      "size": {
+        "examples": 4884,
+        "share_of_all_examples_percent": 58.98,
+        "groups": 79,
+        "largest_group": 389,
+        "companies": 79,
+        "reports": 477,
+        "pages": 1617,
+        "from_the_official_train_file": 3721,
+        "from_the_official_validation_file": 525,
+        "from_the_official_test_file": 638
+      },
+      "program_length": {
+        "1": 2899,
+        "2": 1583,
+        "3": 263,
+        "4": 63,
+        "5": 72,
+        "6": 4
+      },
+      "operations": {
+        "divide": 3400,
+        "subtract": 2104,
+        "add": 1246,
+        "multiply": 451,
+        "greater": 100,
+        "table_average": 99,
+        "table_max": 38,
+        "table_sum": 31,
+        "table_min": 20,
+        "exp": 1
+      },
+      "operation_share_percent": {
+        "divide": 45.4,
+        "subtract": 28.1,
+        "add": 16.6,
+        "multiply": 6.0,
+        "greater": 1.3,
+        "table_average": 1.3,
+        "table_max": 0.5,
+        "table_sum": 0.4,
+        "table_min": 0.3,
+        "exp": 0.0
+      },
+      "argument_kinds": {
+        "integer": 7636,
+        "decimal": 3156,
+        "reference": 2613,
+        "constant": 990,
+        "percent": 209,
+        "none": 188,
+        "row_name": 188
+      },
+      "other": {
+        "yes_or_no_examples": 100,
+        "examples_with_a_table_operation": 181,
+        "examples_with_table_evidence_only": 3094,
+        "examples_with_text_evidence_only": 1116,
+        "examples_with_both": 674,
+        "examples_with_an_empty_answer_field": 48
+      }
+    },
+    "dev": {
+      "size": {
+        "examples": 499,
+        "share_of_all_examples_percent": 6.03,
+        "groups": 15,
+        "largest_group": 149,
+        "companies": 15,
+        "reports": 63,
+        "pages": 161,
+        "from_the_official_train_file": 403,
+        "from_the_official_validation_file": 47,
+        "from_the_official_test_file": 49
+      },
+      "program_length": {
+        "1": 286,
+        "2": 160,
+        "3": 35,
+        "4": 8,
+        "5": 10
+      },
+      "operations": {
+        "divide": 341,
+        "subtract": 233,
+        "add": 133,
+        "multiply": 63,
+        "greater": 13,
+        "table_average": 6,
+        "table_max": 2,
+        "table_sum": 2
+      },
+      "operation_share_percent": {
+        "divide": 43.0,
+        "subtract": 29.4,
+        "add": 16.8,
+        "multiply": 7.9,
+        "greater": 1.6,
+        "table_average": 0.8,
+        "table_max": 0.3,
+        "table_sum": 0.3
+      },
+      "argument_kinds": {
+        "integer": 634,
+        "decimal": 485,
+        "reference": 294,
+        "constant": 127,
+        "percent": 26,
+        "none": 10,
+        "row_name": 10
+      },
+      "other": {
+        "yes_or_no_examples": 13,
+        "examples_with_a_table_operation": 10,
+        "examples_with_table_evidence_only": 293,
+        "examples_with_text_evidence_only": 120,
+        "examples_with_both": 86,
+        "examples_with_an_empty_answer_field": 4
+      }
+    },
+    "quick_dev": {
+      "size": {
+        "examples": 200,
+        "share_of_all_examples_percent": 2.42,
+        "groups": 12,
+        "largest_group": 70,
+        "companies": 12,
+        "reports": 54,
+        "pages": 120,
+        "from_the_official_train_file": 163,
+        "from_the_official_validation_file": 19,
+        "from_the_official_test_file": 18
+      },
+      "program_length": {
+        "1": 116,
+        "2": 62,
+        "3": 17,
+        "4": 2,
+        "5": 3
+      },
+      "operations": {
+        "divide": 144,
+        "subtract": 90,
+        "add": 47,
+        "multiply": 26,
+        "greater": 5,
+        "table_average": 1,
+        "table_sum": 1
+      },
+      "operation_share_percent": {
+        "divide": 45.9,
+        "subtract": 28.7,
+        "add": 15.0,
+        "multiply": 8.3,
+        "greater": 1.6,
+        "table_average": 0.3,
+        "table_sum": 0.3
+      },
+      "argument_kinds": {
+        "integer": 258,
+        "decimal": 188,
+        "reference": 114,
+        "constant": 57,
+        "percent": 7,
+        "none": 2,
+        "row_name": 2
+      },
+      "other": {
+        "yes_or_no_examples": 5,
+        "examples_with_a_table_operation": 2,
+        "examples_with_table_evidence_only": 112,
+        "examples_with_text_evidence_only": 53,
+        "examples_with_both": 35,
+        "examples_with_an_empty_answer_field": 2
+      }
+    },
+    "train": {
+      "size": {
+        "examples": 5383,
+        "share_of_all_examples_percent": 65.0,
+        "groups": 94,
+        "largest_group": 389,
+        "companies": 94,
+        "reports": 540,
+        "pages": 1778,
+        "from_the_official_train_file": 4124,
+        "from_the_official_validation_file": 572,
+        "from_the_official_test_file": 687
+      },
+      "program_length": {
+        "1": 3185,
+        "2": 1743,
+        "3": 298,
+        "4": 71,
+        "5": 82,
+        "6": 4
+      },
+      "operations": {
+        "divide": 3741,
+        "subtract": 2337,
+        "add": 1379,
+        "multiply": 514,
+        "greater": 113,
+        "table_average": 105,
+        "table_max": 40,
+        "table_sum": 33,
+        "table_min": 20,
+        "exp": 1
+      },
+      "operation_share_percent": {
+        "divide": 45.2,
+        "subtract": 28.2,
+        "add": 16.6,
+        "multiply": 6.2,
+        "greater": 1.4,
+        "table_average": 1.3,
+        "table_max": 0.5,
+        "table_sum": 0.4,
+        "table_min": 0.2,
+        "exp": 0.0
+      },
+      "argument_kinds": {
+        "integer": 8270,
+        "decimal": 3641,
+        "reference": 2907,
+        "constant": 1117,
+        "percent": 235,
+        "none": 198,
+        "row_name": 198
+      },
+      "other": {
+        "yes_or_no_examples": 113,
+        "examples_with_a_table_operation": 191,
+        "examples_with_table_evidence_only": 3387,
+        "examples_with_text_evidence_only": 1236,
+        "examples_with_both": 760,
+        "examples_with_an_empty_answer_field": 52
+      }
+    },
+    "test": {
+      "size": {
+        "examples": 2898,
+        "share_of_all_examples_percent": 35.0,
+        "groups": 43,
+        "largest_group": 472,
+        "companies": 43,
+        "reports": 259,
+        "pages": 1011,
+        "from_the_official_train_file": 2127,
+        "from_the_official_validation_file": 311,
+        "from_the_official_test_file": 460
+      },
+      "program_length": {
+        "1": 1709,
+        "2": 966,
+        "3": 131,
+        "4": 47,
+        "5": 43,
+        "6": 2
+      },
+      "operations": {
+        "divide": 2160,
+        "subtract": 1339,
+        "add": 573,
+        "multiply": 245,
+        "greater": 41,
+        "table_max": 26,
+        "table_average": 24,
+        "table_sum": 17,
+        "table_min": 16,
+        "exp": 8
+      },
+      "operation_share_percent": {
+        "divide": 48.6,
+        "subtract": 30.1,
+        "add": 12.9,
+        "multiply": 5.5,
+        "greater": 0.9,
+        "table_max": 0.6,
+        "table_average": 0.5,
+        "table_sum": 0.4,
+        "table_min": 0.4,
+        "exp": 0.2
+      },
+      "argument_kinds": {
+        "integer": 3847,
+        "decimal": 2601,
+        "reference": 1558,
+        "constant": 592,
+        "percent": 136,
+        "row_name": 83,
+        "none": 81
+      },
+      "other": {
+        "yes_or_no_examples": 41,
+        "examples_with_a_table_operation": 81,
+        "examples_with_table_evidence_only": 1784,
+        "examples_with_text_evidence_only": 703,
+        "examples_with_both": 411,
+        "examples_with_an_empty_answer_field": 22
+      }
+    }
+  },
+  "leakage": {
+    "min_digits": 4,
+    "test_against_train": {
+      "examples": 2898,
+      "company_also_on_the_seen_side": 0,
+      "report_also_on_the_seen_side": 0,
+      "page_also_on_the_seen_side": 0,
+      "question_wording_also_on_the_seen_side": 1,
+      "examples_with_a_number_to_check": 1861,
+      "sharing_a_number_with_the_same_company": 0,
+      "sharing_a_number_with_any_company": 58
+    },
+    "dev_against_fit": {
+      "examples": 499,
+      "company_also_on_the_seen_side": 0,
+      "report_also_on_the_seen_side": 0,
+      "page_also_on_the_seen_side": 0,
+      "question_wording_also_on_the_seen_side": 0,
+      "examples_with_a_number_to_check": 287,
+      "sharing_a_number_with_the_same_company": 0,
+      "sharing_a_number_with_any_company": 7
+    }
+  },
+  "checks": [
+    {
+      "id": "P1",
+      "name": "Complete",
+      "passed": true,
+      "detail": "8,281 examples, each assigned once"
+    },
+    {
+      "id": "P2",
+      "name": "Same data",
+      "passed": true,
+      "detail": "bevaya/FinQA at 3d6a736bc67e..."
+    },
+    {
+      "id": "P3",
+      "name": "Ratio",
+      "passed": true,
+      "detail": "train 5,383 (65.00%), test 2,898 (35.00%)"
+    },
+    {
+      "id": "P4",
+      "name": "Groups whole",
+      "passed": true,
+      "detail": "137 groups by company, none divided"
+    },
+    {
+      "id": "P5",
+      "name": "Dev size",
+      "passed": true,
+      "detail": "dev has 499 examples"
+    },
+    {
+      "id": "P6",
+      "name": "Quick-dev",
+      "passed": true,
+      "detail": "200 ids, all in dev"
+    },
+    {
+      "id": "P7",
+      "name": "Pages and duplicates whole",
+      "passed": true,
+      "detail": "no page or duplicate pair is divided"
+    },
+    {
+      "id": "P8",
+      "name": "Hash",
+      "passed": true,
+      "detail": "d34fb22e37b7..."
+    },
+    {
+      "id": "P9",
+      "name": "Reproducible",
+      "passed": true,
+      "detail": "rebuilding gives the same manifest"
+    },
+    {
+      "id": "P10",
+      "name": "Test locked",
+      "passed": true,
+      "detail": "unlocked: the unlock record test_unlock.json names this manifest"
+    }
+  ]
+}

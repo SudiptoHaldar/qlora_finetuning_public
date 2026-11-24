@@ -1,0 +1,14 @@
+# Limits of the reply parser and the program parser (req_002 v2.01).
+#
+# These are safety limits, checked before any other work on a model's reply. They sit far
+# above anything a correct reply needs: the longest correct reply is 145 characters and the
+# longest gold program has 6 steps. A reply over a limit is an error, never something to cut.
+#
+# The operations, the constants, and what they mean are not configuration. They are a fixed
+# table in qlora_finetuning/dsl/language.py, because changing one changes what "correct"
+# means; a test compares that table with config/data.yaml and with the system text.
+version: 1
+verified_on: "2026-11-15"
+
+max_reply_chars: 4000   # a longer reply is the error reply_too_long
+max_steps: 32           # a program with more steps is the error too_many_steps

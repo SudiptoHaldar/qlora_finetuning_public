@@ -1,0 +1,64 @@
+# Path A in AWS (req_003 v3.03): how the training pipeline and the evaluation runner run as
+# SageMaker training jobs. Read by scripts/sagemaker_job.py. Account names (profile, bucket,
+# role, quota) are in aws.yaml; prices are in pricing.yaml. Nothing here is a secret.
+#
+# A job is billed by the second while it runs. `launch` and `stop` are run by the owner.
+version: 1
+verified_on: "2026-11-19"
+
+# AWS's own PyTorch training container (the newest on 2026-11-19: PyTorch 2.10, Python 3.13).
+# No AWS image carries the pinned torch 2.14.1, so a job installs requirements-train.txt
+# over it and checks the installed versions before it does anything else.
+image: "763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-training:2.10.0-gpu-py313-cu130-ubuntu22.04-sagemaker"
+
+instance_type: ml.g5.xlarge        # one A10G, 24 GB (the owner's decision, Q9)
+instance_count: 1
+volume_gb: 60                      # the model, the libraries, and the checkpoints
+
+# S3 keys under the bucket of aws.yaml.
+workspace_prefix: sagemaker/workspaces   # one folder per chain of jobs: runs, checkpoints, ledger lines
+code_prefix: sagemaker/code              # the archive of a commit
+bundle_prefix: data/bundles              # the data bundle: fit and dev only
+output_prefix: sagemaker/output          # what SageMaker itself uploads when a job ends
+
+name_prefix: qlora                 # a job is called <prefix>-<task>-<commit>-a<attempt>
+bundle_dir: artifacts/bundle       # git-ignored: where `sagemaker_job bundle` writes
+# The test bundle (req_005 v5.01): the test examples and nothing else, written by
+# `sagemaker_job bundle --split test` after the unlock, for the two test evaluation jobs.
+test_bundle_dir: artifacts/bundle_test
+record_file: reports/local_qlora/sagemaker_jobs.json   # committed: every job launched
+
+# What a job may run, and for how long at most (`launch --max-runtime` sets it for one job). The maximum runtime is what caps a job's
+# cost: the plan prints it times the price. `arm` is the arm recorded for the job's
+# billable seconds; an evaluate job takes its arm from the predictor.
+tasks:
+  smoke:
+    max_runtime_seconds: 3600
+    phase: other
+    arm: none
+  train:
+    max_runtime_seconds: 43200
+    phase: train
+    arm: A1
+  evaluate:
+    max_runtime_seconds: 14400
+    phase: eval
+  score:                           # the untuned model and every checkpoint of a run (v3.04)
+    max_runtime_seconds: 21600
+    phase: eval
+    arm: A1
+
+# The plan's estimate (req_003 v3.04) is computed from what the last pulled job measured.
+# A job's limit is proposed as the estimate times the margin, and never under the minimum.
+estimate:
+  runtime_margin: "1.5"
+  minimum_runtime_seconds: 7200
+
+smoke:
+  evaluate_examples: 24            # quick-dev examples scored with the smoke adapter, and without
+
+budget:
+  path_a_cap_usd: 100              # of the $300 overall; Path B has 200 (frontier.yaml)
+
+tags:
+  project: qlora-finetuning

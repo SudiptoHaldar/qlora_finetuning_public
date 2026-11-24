@@ -1,0 +1,14 @@
+Context:
+- zebrafish revenue rose in the year .
+- see the quokka note for details .
+
+Table:
+|  | 2015 | 2014 |
+|---|---|---|
+| xylophone sales | 920 | 95 |
+| total | 1000 | 900 |
+
+Question: what was the change in xylophone sales for ACME/2015/page_10.pdf-1?
+=====
+PROGRAM: subtract(920, 95), divide(#0, 95)
+ANSWER: 8.68421

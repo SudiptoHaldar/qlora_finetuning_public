@@ -1,0 +1,1904 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.finqa_report",
+  "source": {
+    "repo_id": "bevaya/FinQA",
+    "former_repo_id": "rootsautomation/FinQA",
+    "revision": "3d6a736bc67e06bc15fbf3618d88204a57c5b25e",
+    "files": [
+      {
+        "official_split": "train",
+        "path": "data/train-00000-of-00001.parquet",
+        "sha256": "55dc8ef7405e8edb86743c14120f50280aed3fcb41505270160e0b77819ee339",
+        "bytes": 30089143,
+        "rows": 6251
+      },
+      {
+        "official_split": "validation",
+        "path": "data/validation-00000-of-00001.parquet",
+        "sha256": "b21e85e33138739d6bd51c63144a5eaf30026d89e161092999f7c22daa76a1ea",
+        "bytes": 4196010,
+        "rows": 883
+      },
+      {
+        "official_split": "test",
+        "path": "data/test-00000-of-00001.parquet",
+        "sha256": "4f5edc88f1e8bf34a005d2bd39bf1a0e7419eed72998ea2fdd31fa1a15f85bb0",
+        "bytes": 5415145,
+        "rows": 1147
+      }
+    ]
+  },
+  "column_types": {
+    "train": {
+      "id": "string",
+      "filename": "string",
+      "pre_text": "list[string]",
+      "post_text": "list[string]",
+      "table": "list[list[string]]",
+      "table_ori": "list[list[string]]",
+      "question": "string",
+      "answer": "string",
+      "exe_ans": "string",
+      "explanation": "string",
+      "ann_table_rows": "list[int32]",
+      "ann_text_rows": "list[int32]",
+      "steps": "struct{op: list[string], arg1: list[string], arg2: list[string], res: list[string]}",
+      "program": "string",
+      "program_re": "string",
+      "gold_inds": "string"
+    },
+    "validation": {
+      "id": "string",
+      "filename": "string",
+      "pre_text": "list[string]",
+      "post_text": "list[string]",
+      "table": "list[list[string]]",
+      "table_ori": "list[list[string]]",
+      "question": "string",
+      "answer": "string",
+      "exe_ans": "string",
+      "explanation": "string",
+      "ann_table_rows": "list[int32]",
+      "ann_text_rows": "list[int32]",
+      "steps": "struct{op: list[string], arg1: list[string], arg2: list[string], res: list[string]}",
+      "program": "string",
+      "program_re": "string",
+      "gold_inds": "string"
+    },
+    "test": {
+      "id": "string",
+      "filename": "string",
+      "pre_text": "list[string]",
+      "post_text": "list[string]",
+      "table": "list[list[string]]",
+      "table_ori": "list[list[string]]",
+      "question": "string",
+      "answer": "string",
+      "exe_ans": "string",
+      "explanation": "string",
+      "ann_table_rows": "list[int32]",
+      "ann_text_rows": "list[int32]",
+      "steps": "struct{op: list[string], arg1: list[string], arg2: list[string], res: list[string]}",
+      "program": "string",
+      "program_re": "string",
+      "gold_inds": "string"
+    }
+  },
+  "total": {
+    "examples": 8281,
+    "columns": {
+      "id": {
+        "null": 0,
+        "empty": 0
+      },
+      "filename": {
+        "null": 0,
+        "empty": 0
+      },
+      "pre_text": {
+        "null": 0,
+        "empty": 0
+      },
+      "post_text": {
+        "null": 0,
+        "empty": 0
+      },
+      "table": {
+        "null": 0,
+        "empty": 0
+      },
+      "table_ori": {
+        "null": 0,
+        "empty": 0
+      },
+      "question": {
+        "null": 0,
+        "empty": 0
+      },
+      "answer": {
+        "null": 0,
+        "empty": 74
+      },
+      "exe_ans": {
+        "null": 0,
+        "empty": 0
+      },
+      "explanation": {
+        "null": 0,
+        "empty": 6988
+      },
+      "ann_table_rows": {
+        "null": 0,
+        "empty": 2527
+      },
+      "ann_text_rows": {
+        "null": 0,
+        "empty": 5391
+      },
+      "steps": {
+        "null": 0,
+        "empty": 0
+      },
+      "program": {
+        "null": 0,
+        "empty": 0
+      },
+      "program_re": {
+        "null": 0,
+        "empty": 0
+      },
+      "gold_inds": {
+        "null": 0,
+        "empty": 0
+      }
+    },
+    "identity": {
+      "unique_ids": 8281,
+      "repeated_ids": 0,
+      "ids_not_matching_the_pattern": 0,
+      "companies": 137,
+      "reports": 799,
+      "pages": 2789,
+      "first_year": 1999,
+      "last_year": 2019,
+      "examples_per_company": {
+        "min": 2,
+        "median": 36,
+        "max": 472
+      },
+      "examples_per_report": {
+        "min": 1,
+        "median": 7,
+        "max": 95
+      },
+      "examples_per_page": {
+        "min": 1,
+        "median": 3,
+        "max": 6
+      }
+    },
+    "duplicates": {
+      "groups_with_the_same_page_and_question": 73,
+      "examples_in_those_groups": 146,
+      "groups_also_sharing_program_and_result": 64,
+      "examples_sharing_question_wording_with_another": 311
+    },
+    "text": {
+      "passages_before_the_table": {
+        "min": 1,
+        "median": 9,
+        "max": 450
+      },
+      "passages_after_the_table": {
+        "min": 1,
+        "median": 10,
+        "max": 489
+      },
+      "examples_with_a_non_ascii_question": 0,
+      "examples_with_a_non_ascii_passage": 0,
+      "examples_with_a_non_ascii_table_cell": 0
+    },
+    "tables": {
+      "rows": {
+        "min": 1,
+        "median": 6,
+        "max": 20
+      },
+      "columns": {
+        "min": 2,
+        "median": 4,
+        "max": 14
+      },
+      "ragged_tables": 0,
+      "tables_with_an_empty_cell": 3289,
+      "tables_with_a_pipe_character": 0,
+      "tables_equal_to_table_ori": 0
+    },
+    "evidence": {
+      "gold_inds_not_a_json_object": 0,
+      "entries_per_example": {
+        "1": 3834,
+        "2": 3530,
+        "3": 617,
+        "4": 211,
+        "5": 46,
+        "6": 26,
+        "7": 9,
+        "8": 2,
+        "9": 6
+      },
+      "table_entries": 9901,
+      "text_entries": 4206,
+      "malformed_keys": 1,
+      "keys_out_of_range": 0,
+      "examples_with_table_evidence_only": 5171,
+      "examples_with_text_evidence_only": 1939,
+      "examples_with_both": 1171,
+      "examples_where_ann_rows_disagree_with_gold_inds": 1302,
+      "examples_with_empty_ann_rows_but_gold_inds_entries": 631
+    },
+    "programs": {
+      "steps_in_total": 12732,
+      "programs_that_do_not_split": 0,
+      "operations": {
+        "divide": 5901,
+        "subtract": 3676,
+        "add": 1952,
+        "multiply": 759,
+        "greater": 154,
+        "table_average": 129,
+        "table_max": 66,
+        "table_sum": 50,
+        "table_min": 36,
+        "exp": 9
+      },
+      "steps_per_program": {
+        "1": 4894,
+        "2": 2709,
+        "3": 429,
+        "4": 118,
+        "5": 125,
+        "6": 6
+      },
+      "arguments_per_step": {
+        "2": 12732
+      },
+      "argument_kinds": {
+        "integer": 12117,
+        "decimal": 6242,
+        "reference": 4465,
+        "constant": 1709,
+        "percent": 371,
+        "row_name": 281,
+        "none": 279
+      },
+      "constants": {
+        "const_100": 693,
+        "const_2": 212,
+        "const_3": 184,
+        "const_1000": 170,
+        "const_1000000": 139,
+        "const_1": 125,
+        "const_4": 48,
+        "const_5": 40,
+        "const_m1": 21,
+        "const_7": 16,
+        "const_8": 15,
+        "const_6": 14,
+        "const_10": 13,
+        "const_9": 13,
+        "const_100000": 4,
+        "const_10000": 1,
+        "const_1000000000": 1
+      },
+      "table_operation_steps": 281,
+      "examples_with_a_table_operation": 272,
+      "table_row_names_found_in_the_table": 281,
+      "table_row_names_not_in_the_table": 0,
+      "table_second_argument": {
+        "none": 279,
+        "integer": 2
+      },
+      "examples_with_greater": 154,
+      "examples_where_greater_is_not_the_last_step": 0
+    },
+    "answers": {
+      "exe_ans_numeric": 8127,
+      "exe_ans_yes": 93,
+      "exe_ans_no": 61,
+      "exe_ans_neither": 0,
+      "exe_ans_in_scientific_notation": 223,
+      "answer_empty": 74,
+      "answer_contains_percent_sign": 4652,
+      "answer_contains_dollar_sign": 98,
+      "answer_is_a_plain_number": 3262,
+      "answer_is_yes_or_no": 152,
+      "answer_in_another_form": 44,
+      "yes_or_no_answer_without_greater": 2,
+      "greater_examples_whose_answer_differs_from_exe_ans": 8
+    }
+  },
+  "by_split": {
+    "train": {
+      "examples": 6251,
+      "columns": {
+        "id": {
+          "null": 0,
+          "empty": 0
+        },
+        "filename": {
+          "null": 0,
+          "empty": 0
+        },
+        "pre_text": {
+          "null": 0,
+          "empty": 0
+        },
+        "post_text": {
+          "null": 0,
+          "empty": 0
+        },
+        "table": {
+          "null": 0,
+          "empty": 0
+        },
+        "table_ori": {
+          "null": 0,
+          "empty": 0
+        },
+        "question": {
+          "null": 0,
+          "empty": 0
+        },
+        "answer": {
+          "null": 0,
+          "empty": 48
+        },
+        "exe_ans": {
+          "null": 0,
+          "empty": 0
+        },
+        "explanation": {
+          "null": 0,
+          "empty": 5276
+        },
+        "ann_table_rows": {
+          "null": 0,
+          "empty": 1914
+        },
+        "ann_text_rows": {
+          "null": 0,
+          "empty": 4078
+        },
+        "steps": {
+          "null": 0,
+          "empty": 0
+        },
+        "program": {
+          "null": 0,
+          "empty": 0
+        },
+        "program_re": {
+          "null": 0,
+          "empty": 0
+        },
+        "gold_inds": {
+          "null": 0,
+          "empty": 0
+        }
+      },
+      "identity": {
+        "unique_ids": 6251,
+        "repeated_ids": 0,
+        "ids_not_matching_the_pattern": 0,
+        "companies": 135,
+        "reports": 741,
+        "pages": 2110,
+        "first_year": 1999,
+        "last_year": 2019,
+        "examples_per_company": {
+          "min": 2,
+          "median": 28,
+          "max": 363
+        },
+        "examples_per_report": {
+          "min": 1,
+          "median": 6,
+          "max": 78
+        },
+        "examples_per_page": {
+          "min": 1,
+          "median": 3,
+          "max": 6
+        }
+      },
+      "duplicates": {
+        "groups_with_the_same_page_and_question": 57,
+        "examples_in_those_groups": 114,
+        "groups_also_sharing_program_and_result": 48,
+        "examples_sharing_question_wording_with_another": 229
+      },
+      "text": {
+        "passages_before_the_table": {
+          "min": 1,
+          "median": 9,
+          "max": 450
+        },
+        "passages_after_the_table": {
+          "min": 1,
+          "median": 10,
+          "max": 489
+        },
+        "examples_with_a_non_ascii_question": 0,
+        "examples_with_a_non_ascii_passage": 0,
+        "examples_with_a_non_ascii_table_cell": 0
+      },
+      "tables": {
+        "rows": {
+          "min": 1,
+          "median": 6,
+          "max": 20
+        },
+        "columns": {
+          "min": 2,
+          "median": 4,
+          "max": 11
+        },
+        "ragged_tables": 0,
+        "tables_with_an_empty_cell": 2512,
+        "tables_with_a_pipe_character": 0,
+        "tables_equal_to_table_ori": 0
+      },
+      "evidence": {
+        "gold_inds_not_a_json_object": 0,
+        "entries_per_example": {
+          "1": 2850,
+          "2": 2720,
+          "3": 453,
+          "4": 155,
+          "5": 39,
+          "6": 22,
+          "7": 6,
+          "9": 6
+        },
+        "table_entries": 7512,
+        "text_entries": 3179,
+        "malformed_keys": 1,
+        "keys_out_of_range": 0,
+        "examples_with_table_evidence_only": 3923,
+        "examples_with_text_evidence_only": 1458,
+        "examples_with_both": 870,
+        "examples_where_ann_rows_disagree_with_gold_inds": 985,
+        "examples_with_empty_ann_rows_but_gold_inds_entries": 482
+      },
+      "programs": {
+        "steps_in_total": 9598,
+        "programs_that_do_not_split": 0,
+        "operations": {
+          "divide": 4445,
+          "subtract": 2739,
+          "add": 1512,
+          "multiply": 567,
+          "greater": 124,
+          "table_average": 95,
+          "table_max": 48,
+          "table_sum": 36,
+          "table_min": 27,
+          "exp": 5
+        },
+        "steps_per_program": {
+          "1": 3717,
+          "2": 2013,
+          "3": 331,
+          "4": 94,
+          "5": 90,
+          "6": 6
+        },
+        "arguments_per_step": {
+          "2": 9598
+        },
+        "argument_kinds": {
+          "integer": 9254,
+          "decimal": 4661,
+          "reference": 3354,
+          "constant": 1230,
+          "percent": 287,
+          "row_name": 206,
+          "none": 204
+        },
+        "constants": {
+          "const_100": 466,
+          "const_2": 161,
+          "const_3": 136,
+          "const_1000": 134,
+          "const_1000000": 105,
+          "const_1": 89,
+          "const_4": 38,
+          "const_5": 27,
+          "const_m1": 17,
+          "const_6": 13,
+          "const_8": 12,
+          "const_9": 11,
+          "const_10": 9,
+          "const_7": 6,
+          "const_100000": 4,
+          "const_10000": 1,
+          "const_1000000000": 1
+        },
+        "table_operation_steps": 206,
+        "examples_with_a_table_operation": 198,
+        "table_row_names_found_in_the_table": 206,
+        "table_row_names_not_in_the_table": 0,
+        "table_second_argument": {
+          "none": 204,
+          "integer": 2
+        },
+        "examples_with_greater": 124,
+        "examples_where_greater_is_not_the_last_step": 0
+      },
+      "answers": {
+        "exe_ans_numeric": 6127,
+        "exe_ans_yes": 77,
+        "exe_ans_no": 47,
+        "exe_ans_neither": 0,
+        "exe_ans_in_scientific_notation": 161,
+        "answer_empty": 48,
+        "answer_contains_percent_sign": 3508,
+        "answer_contains_dollar_sign": 76,
+        "answer_is_a_plain_number": 2464,
+        "answer_is_yes_or_no": 120,
+        "answer_in_another_form": 36,
+        "yes_or_no_answer_without_greater": 0,
+        "greater_examples_whose_answer_differs_from_exe_ans": 8
+      }
+    },
+    "validation": {
+      "examples": 883,
+      "columns": {
+        "id": {
+          "null": 0,
+          "empty": 0
+        },
+        "filename": {
+          "null": 0,
+          "empty": 0
+        },
+        "pre_text": {
+          "null": 0,
+          "empty": 0
+        },
+        "post_text": {
+          "null": 0,
+          "empty": 0
+        },
+        "table": {
+          "null": 0,
+          "empty": 0
+        },
+        "table_ori": {
+          "null": 0,
+          "empty": 0
+        },
+        "question": {
+          "null": 0,
+          "empty": 0
+        },
+        "answer": {
+          "null": 0,
+          "empty": 12
+        },
+        "exe_ans": {
+          "null": 0,
+          "empty": 0
+        },
+        "explanation": {
+          "null": 0,
+          "empty": 742
+        },
+        "ann_table_rows": {
+          "null": 0,
+          "empty": 255
+        },
+        "ann_text_rows": {
+          "null": 0,
+          "empty": 569
+        },
+        "steps": {
+          "null": 0,
+          "empty": 0
+        },
+        "program": {
+          "null": 0,
+          "empty": 0
+        },
+        "program_re": {
+          "null": 0,
+          "empty": 0
+        },
+        "gold_inds": {
+          "null": 0,
+          "empty": 0
+        }
+      },
+      "identity": {
+        "unique_ids": 883,
+        "repeated_ids": 0,
+        "ids_not_matching_the_pattern": 0,
+        "companies": 97,
+        "reports": 224,
+        "pages": 299,
+        "first_year": 2001,
+        "last_year": 2019,
+        "examples_per_company": {
+          "min": 1,
+          "median": 4,
+          "max": 59
+        },
+        "examples_per_report": {
+          "min": 1,
+          "median": 4,
+          "max": 12
+        },
+        "examples_per_page": {
+          "min": 1,
+          "median": 3,
+          "max": 5
+        }
+      },
+      "duplicates": {
+        "groups_with_the_same_page_and_question": 7,
+        "examples_in_those_groups": 14,
+        "groups_also_sharing_program_and_result": 7,
+        "examples_sharing_question_wording_with_another": 18
+      },
+      "text": {
+        "passages_before_the_table": {
+          "min": 1,
+          "median": 8,
+          "max": 84
+        },
+        "passages_after_the_table": {
+          "min": 1,
+          "median": 11,
+          "max": 84
+        },
+        "examples_with_a_non_ascii_question": 0,
+        "examples_with_a_non_ascii_passage": 0,
+        "examples_with_a_non_ascii_table_cell": 0
+      },
+      "tables": {
+        "rows": {
+          "min": 2,
+          "median": 6,
+          "max": 18
+        },
+        "columns": {
+          "min": 2,
+          "median": 4,
+          "max": 9
+        },
+        "ragged_tables": 0,
+        "tables_with_an_empty_cell": 326,
+        "tables_with_a_pipe_character": 0,
+        "tables_equal_to_table_ori": 0
+      },
+      "evidence": {
+        "gold_inds_not_a_json_object": 0,
+        "entries_per_example": {
+          "1": 416,
+          "2": 356,
+          "3": 80,
+          "4": 22,
+          "5": 2,
+          "6": 3,
+          "7": 3,
+          "8": 1
+        },
+        "table_entries": 1071,
+        "text_entries": 442,
+        "malformed_keys": 0,
+        "keys_out_of_range": 0,
+        "examples_with_table_evidence_only": 542,
+        "examples_with_text_evidence_only": 198,
+        "examples_with_both": 143,
+        "examples_where_ann_rows_disagree_with_gold_inds": 132,
+        "examples_with_empty_ann_rows_but_gold_inds_entries": 65
+      },
+      "programs": {
+        "steps_in_total": 1362,
+        "programs_that_do_not_split": 0,
+        "operations": {
+          "divide": 636,
+          "subtract": 416,
+          "add": 180,
+          "multiply": 83,
+          "table_average": 19,
+          "greater": 10,
+          "table_max": 8,
+          "table_min": 5,
+          "table_sum": 4,
+          "exp": 1
+        },
+        "steps_per_program": {
+          "1": 523,
+          "2": 287,
+          "3": 43,
+          "4": 14,
+          "5": 16
+        },
+        "arguments_per_step": {
+          "2": 1362
+        },
+        "argument_kinds": {
+          "integer": 1244,
+          "decimal": 654,
+          "reference": 483,
+          "constant": 234,
+          "percent": 37,
+          "none": 36,
+          "row_name": 36
+        },
+        "constants": {
+          "const_100": 109,
+          "const_2": 24,
+          "const_3": 23,
+          "const_1000": 22,
+          "const_1": 16,
+          "const_1000000": 12,
+          "const_5": 9,
+          "const_7": 6,
+          "const_4": 4,
+          "const_8": 3,
+          "const_m1": 3,
+          "const_10": 2,
+          "const_9": 1
+        },
+        "table_operation_steps": 36,
+        "examples_with_a_table_operation": 35,
+        "table_row_names_found_in_the_table": 36,
+        "table_row_names_not_in_the_table": 0,
+        "table_second_argument": {
+          "none": 36
+        },
+        "examples_with_greater": 10,
+        "examples_where_greater_is_not_the_last_step": 0
+      },
+      "answers": {
+        "exe_ans_numeric": 873,
+        "exe_ans_yes": 3,
+        "exe_ans_no": 7,
+        "exe_ans_neither": 0,
+        "exe_ans_in_scientific_notation": 24,
+        "answer_empty": 12,
+        "answer_contains_percent_sign": 492,
+        "answer_contains_dollar_sign": 10,
+        "answer_is_a_plain_number": 356,
+        "answer_is_yes_or_no": 10,
+        "answer_in_another_form": 3,
+        "yes_or_no_answer_without_greater": 0,
+        "greater_examples_whose_answer_differs_from_exe_ans": 0
+      }
+    },
+    "test": {
+      "examples": 1147,
+      "columns": {
+        "id": {
+          "null": 0,
+          "empty": 0
+        },
+        "filename": {
+          "null": 0,
+          "empty": 0
+        },
+        "pre_text": {
+          "null": 0,
+          "empty": 0
+        },
+        "post_text": {
+          "null": 0,
+          "empty": 0
+        },
+        "table": {
+          "null": 0,
+          "empty": 0
+        },
+        "table_ori": {
+          "null": 0,
+          "empty": 0
+        },
+        "question": {
+          "null": 0,
+          "empty": 0
+        },
+        "answer": {
+          "null": 0,
+          "empty": 14
+        },
+        "exe_ans": {
+          "null": 0,
+          "empty": 0
+        },
+        "explanation": {
+          "null": 0,
+          "empty": 970
+        },
+        "ann_table_rows": {
+          "null": 0,
+          "empty": 358
+        },
+        "ann_text_rows": {
+          "null": 0,
+          "empty": 744
+        },
+        "steps": {
+          "null": 0,
+          "empty": 0
+        },
+        "program": {
+          "null": 0,
+          "empty": 0
+        },
+        "program_re": {
+          "null": 0,
+          "empty": 0
+        },
+        "gold_inds": {
+          "null": 0,
+          "empty": 0
+        }
+      },
+      "identity": {
+        "unique_ids": 1147,
+        "repeated_ids": 0,
+        "ids_not_matching_the_pattern": 0,
+        "companies": 100,
+        "reports": 278,
+        "pages": 380,
+        "first_year": 1999,
+        "last_year": 2019,
+        "examples_per_company": {
+          "min": 1,
+          "median": 7,
+          "max": 65
+        },
+        "examples_per_report": {
+          "min": 1,
+          "median": 4,
+          "max": 22
+        },
+        "examples_per_page": {
+          "min": 1,
+          "median": 3,
+          "max": 6
+        }
+      },
+      "duplicates": {
+        "groups_with_the_same_page_and_question": 9,
+        "examples_in_those_groups": 18,
+        "groups_also_sharing_program_and_result": 9,
+        "examples_sharing_question_wording_with_another": 18
+      },
+      "text": {
+        "passages_before_the_table": {
+          "min": 1,
+          "median": 10,
+          "max": 120
+        },
+        "passages_after_the_table": {
+          "min": 1,
+          "median": 9,
+          "max": 260
+        },
+        "examples_with_a_non_ascii_question": 0,
+        "examples_with_a_non_ascii_passage": 0,
+        "examples_with_a_non_ascii_table_cell": 0
+      },
+      "tables": {
+        "rows": {
+          "min": 1,
+          "median": 6,
+          "max": 18
+        },
+        "columns": {
+          "min": 2,
+          "median": 4,
+          "max": 14
+        },
+        "ragged_tables": 0,
+        "tables_with_an_empty_cell": 451,
+        "tables_with_a_pipe_character": 0,
+        "tables_equal_to_table_ori": 0
+      },
+      "evidence": {
+        "gold_inds_not_a_json_object": 0,
+        "entries_per_example": {
+          "1": 568,
+          "2": 454,
+          "3": 84,
+          "4": 34,
+          "5": 5,
+          "6": 1,
+          "8": 1
+        },
+        "table_entries": 1318,
+        "text_entries": 585,
+        "malformed_keys": 0,
+        "keys_out_of_range": 0,
+        "examples_with_table_evidence_only": 706,
+        "examples_with_text_evidence_only": 283,
+        "examples_with_both": 158,
+        "examples_where_ann_rows_disagree_with_gold_inds": 185,
+        "examples_with_empty_ann_rows_but_gold_inds_entries": 84
+      },
+      "programs": {
+        "steps_in_total": 1772,
+        "programs_that_do_not_split": 0,
+        "operations": {
+          "divide": 820,
+          "subtract": 521,
+          "add": 260,
+          "multiply": 109,
+          "greater": 20,
+          "table_average": 15,
+          "table_max": 10,
+          "table_sum": 10,
+          "table_min": 4,
+          "exp": 3
+        },
+        "steps_per_program": {
+          "1": 654,
+          "2": 409,
+          "3": 55,
+          "4": 10,
+          "5": 19
+        },
+        "arguments_per_step": {
+          "2": 1772
+        },
+        "argument_kinds": {
+          "integer": 1619,
+          "decimal": 927,
+          "reference": 628,
+          "constant": 245,
+          "percent": 47,
+          "none": 39,
+          "row_name": 39
+        },
+        "constants": {
+          "const_100": 118,
+          "const_2": 27,
+          "const_3": 25,
+          "const_1000000": 22,
+          "const_1": 20,
+          "const_1000": 14,
+          "const_4": 6,
+          "const_5": 4,
+          "const_7": 4,
+          "const_10": 2,
+          "const_6": 1,
+          "const_9": 1,
+          "const_m1": 1
+        },
+        "table_operation_steps": 39,
+        "examples_with_a_table_operation": 39,
+        "table_row_names_found_in_the_table": 39,
+        "table_row_names_not_in_the_table": 0,
+        "table_second_argument": {
+          "none": 39
+        },
+        "examples_with_greater": 20,
+        "examples_where_greater_is_not_the_last_step": 0
+      },
+      "answers": {
+        "exe_ans_numeric": 1127,
+        "exe_ans_yes": 13,
+        "exe_ans_no": 7,
+        "exe_ans_neither": 0,
+        "exe_ans_in_scientific_notation": 38,
+        "answer_empty": 14,
+        "answer_contains_percent_sign": 652,
+        "answer_contains_dollar_sign": 12,
+        "answer_is_a_plain_number": 442,
+        "answer_is_yes_or_no": 22,
+        "answer_in_another_form": 5,
+        "yes_or_no_answer_without_greater": 2,
+        "greater_examples_whose_answer_differs_from_exe_ans": 0
+      }
+    }
+  },
+  "spanning_official_splits": {
+    "company": {
+      "groups": 137,
+      "in_more_than_one_official_split": 117
+    },
+    "report": {
+      "groups": 799,
+      "in_more_than_one_official_split": 355
+    },
+    "page": {
+      "groups": 2789,
+      "in_more_than_one_official_split": 0
+    }
+  },
+  "flagged": {
+    "id_repeated": [],
+    "id_pattern_mismatch": [],
+    "duplicate_page_and_question": [
+      "TSCO/2017/page_68.pdf-3",
+      "DISCA/2013/page_60.pdf-1",
+      "DVN/2004/page_50.pdf-2",
+      "REGN/2010/page_72.pdf-3",
+      "AON/2018/page_84.pdf-2",
+      "HFC/2017/page_103.pdf-3",
+      "AON/2018/page_84.pdf-1",
+      "GPN/2014/page_71.pdf-4",
+      "GPN/2009/page_69.pdf-2",
+      "GPN/2010/page_41.pdf-2",
+      "GPN/2008/page_99.pdf-2",
+      "PNC/2009/page_31.pdf-3",
+      "HFC/2011/page_92.pdf-6",
+      "DISCA/2016/page_11.pdf-1",
+      "AWK/2017/page_128.pdf-3",
+      "SLB/2009/page_46.pdf-4",
+      "ETR/2004/page_163.pdf-3",
+      "DVN/2015/page_92.pdf-3",
+      "AAPL/2013/page_41.pdf-2",
+      "DISCA/2017/page_41.pdf-4",
+      "MKTX/2004/page_24.pdf-2",
+      "AMT/2006/page_61.pdf-3",
+      "ETR/2017/page_325.pdf-4",
+      "DVN/2014/page_112.pdf-2",
+      "RCL/2005/page_40.pdf-4",
+      "ETR/2008/page_343.pdf-4",
+      "SLB/2009/page_46.pdf-3",
+      "GS/2016/page_186.pdf-1",
+      "PNC/2009/page_62.pdf-2",
+      "AAL/2014/page_219.pdf-3",
+      "DISCA/2013/page_60.pdf-2",
+      "AMAT/2014/page_37.pdf-4",
+      "HFC/2011/page_92.pdf-2",
+      "MRO/2009/page_32.pdf-4",
+      "DVN/2004/page_50.pdf-3",
+      "ETR/2004/page_163.pdf-2",
+      "AAPL/2013/page_41.pdf-3",
+      "JPM/2013/page_104.pdf-3",
+      "HFC/2017/page_103.pdf-5",
+      "GPN/2016/page_83.pdf-3",
+      "RCL/2017/page_38.pdf-2",
+      "GPN/2015/page_83.pdf-2",
+      "PNC/2014/page_84.pdf-3",
+      "GPN/2015/page_82.pdf-2",
+      "IPG/2013/page_35.pdf-3",
+      "GPN/2015/page_82.pdf-4",
+      "AMAT/2017/page_33.pdf-4",
+      "LMT/2013/page_44.pdf-4",
+      "EW/2016/page_92.pdf-3",
+      "MRO/2014/page_22.pdf-2",
+      "CDW/2014/page_93.pdf-3",
+      "AWK/2015/page_110.pdf-3",
+      "AMT/2006/page_61.pdf-2",
+      "AAPL/2013/page_78.pdf-4",
+      "CCI/2004/page_32.pdf-2",
+      "GPN/2008/page_99.pdf-3",
+      "C/2018/page_255.pdf-3",
+      "AWK/2017/page_128.pdf-2",
+      "GPN/2010/page_41.pdf-4",
+      "JPM/2012/page_148.pdf-1",
+      "JPM/2012/page_148.pdf-3",
+      "ETR/2004/page_216.pdf-2",
+      "RCL/2010/page_81.pdf-3",
+      "PNC/2009/page_62.pdf-3",
+      "PNC/2009/page_31.pdf-6",
+      "GPN/2014/page_71.pdf-3",
+      "DVN/2015/page_92.pdf-2",
+      "VTR/2003/page_39.pdf-2",
+      "TSCO/2017/page_68.pdf-2",
+      "GPN/2008/page_95.pdf-4",
+      "GPN/2007/page_39.pdf-3",
+      "PNC/2014/page_84.pdf-4",
+      "SLB/2006/page_45.pdf-4",
+      "CDW/2014/page_93.pdf-2",
+      "REGN/2010/page_72.pdf-2",
+      "VTR/2003/page_39.pdf-3",
+      "AMAT/2017/page_33.pdf-3",
+      "GPN/2007/page_39.pdf-4",
+      "IPG/2013/page_35.pdf-2",
+      "GS/2016/page_186.pdf-3",
+      "AAPL/2013/page_78.pdf-2",
+      "AWK/2015/page_110.pdf-2",
+      "MKTX/2004/page_24.pdf-3",
+      "GPN/2009/page_69.pdf-3",
+      "RCL/2005/page_40.pdf-2",
+      "ETR/2004/page_216.pdf-3",
+      "PNC/2012/page_96.pdf-3",
+      "SLB/2006/page_45.pdf-2",
+      "DISCA/2017/page_41.pdf-3",
+      "AMT/2012/page_111.pdf-2",
+      "AMAT/2014/page_37.pdf-3",
+      "PNC/2012/page_96.pdf-4",
+      "LMT/2013/page_44.pdf-1",
+      "EW/2016/page_92.pdf-4",
+      "JPM/2013/page_104.pdf-4",
+      "AAL/2014/page_219.pdf-2",
+      "ETR/2017/page_325.pdf-3",
+      "GPN/2016/page_83.pdf-2",
+      "DISCA/2016/page_11.pdf-2",
+      "C/2018/page_255.pdf-2",
+      "DVN/2014/page_112.pdf-3",
+      "MRO/2014/page_22.pdf-3",
+      "CCI/2004/page_32.pdf-3",
+      "MRO/2009/page_32.pdf-2",
+      "AMAT/2015/page_31.pdf-2",
+      "ETR/2008/page_343.pdf-2",
+      "AMT/2012/page_111.pdf-3",
+      "AMAT/2015/page_31.pdf-4",
+      "GPN/2015/page_83.pdf-4",
+      "GPN/2008/page_95.pdf-2",
+      "RCL/2017/page_38.pdf-3",
+      "RCL/2010/page_81.pdf-2",
+      "UNP/2006/page_33.pdf-2",
+      "UNP/2006/page_33.pdf-3",
+      "DVN/2007/page_58.pdf-2",
+      "SLB/2012/page_44.pdf-3",
+      "LMT/2015/page_56.pdf-4",
+      "DVN/2007/page_58.pdf-3",
+      "GPN/2009/page_70.pdf-3",
+      "GPN/2009/page_70.pdf-4",
+      "MRO/2011/page_73.pdf-4",
+      "BLL/2007/page_47.pdf-4",
+      "BLL/2007/page_47.pdf-3",
+      "MRO/2011/page_73.pdf-2",
+      "AWK/2013/page_132.pdf-2",
+      "LMT/2015/page_56.pdf-2",
+      "AWK/2013/page_132.pdf-3",
+      "SLB/2012/page_44.pdf-2",
+      "GPN/2008/page_78.pdf-2",
+      "MRO/2003/page_84.pdf-3",
+      "SLG/2001/page_48.pdf-3",
+      "IPG/2006/page_77.pdf-4",
+      "GPN/2008/page_78.pdf-4",
+      "SLG/2001/page_48.pdf-2",
+      "DVN/2018/page_35.pdf-2",
+      "MRO/2008/page_45.pdf-3",
+      "DVN/2018/page_35.pdf-3",
+      "PNC/2012/page_174.pdf-4",
+      "IPG/2006/page_77.pdf-3",
+      "PNC/2012/page_174.pdf-2",
+      "MRO/2003/page_84.pdf-2",
+      "WRK/2018/page_107.pdf-3",
+      "MRO/2013/page_39.pdf-3",
+      "MRO/2008/page_45.pdf-2",
+      "WRK/2018/page_107.pdf-2",
+      "MRO/2013/page_39.pdf-2"
+    ],
+    "answer_empty": [
+      "ABMD/2012/page_75.pdf-1",
+      "PNC/2012/page_110.pdf-3",
+      "DISCA/2013/page_45.pdf-3",
+      "C/2015/page_314.pdf-2",
+      "RE/2013/page_40.pdf-2",
+      "AWK/2014/page_132.pdf-2",
+      "PNC/2011/page_183.pdf-6",
+      "ADBE/2012/page_87.pdf-2",
+      "SNA/2007/page_80.pdf-4",
+      "VTR/2006/page_48.pdf-3",
+      "SPGI/2017/page_81.pdf-1",
+      "CME/2012/page_100.pdf-2",
+      "BLL/2010/page_33.pdf-1",
+      "AMT/2005/page_83.pdf-2",
+      "VTR/2003/page_39.pdf-1",
+      "FITB/2013/page_84.pdf-4",
+      "ANET/2017/page_156.pdf-1",
+      "BLK/2012/page_32.pdf-2",
+      "RSG/2018/page_139.pdf-2",
+      "JPM/2005/page_70.pdf-3",
+      "D/2002/page_39.pdf-1",
+      "C/2010/page_306.pdf-3",
+      "BKNG/2017/page_35.pdf-2",
+      "RCL/2016/page_37.pdf-1",
+      "C/2008/page_207.pdf-4",
+      "SLB/2009/page_65.pdf-3",
+      "GPN/2015/page_83.pdf-2",
+      "CE/2014/page_32.pdf-2",
+      "UNP/2008/page_92.pdf-1",
+      "AMT/2005/page_77.pdf-2",
+      "SLB/2006/page_82.pdf-2",
+      "TMUS/2016/page_32.pdf-2",
+      "JPM/2008/page_41.pdf-4",
+      "LLY/2018/page_99.pdf-2",
+      "JKHY/2008/page_30.pdf-2",
+      "ETR/2008/page_27.pdf-3",
+      "ABMD/2015/page_53.pdf-1",
+      "GIS/2008/page_83.pdf-3",
+      "AWK/2017/page_136.pdf-1",
+      "SLB/2010/page_90.pdf-2",
+      "KMI/2010/page_164.pdf-4",
+      "RE/2006/page_39.pdf-4",
+      "GPN/2015/page_83.pdf-4",
+      "AWK/2017/page_154.pdf-3",
+      "SNPS/2009/page_39.pdf-1",
+      "MSI/2007/page_102.pdf-2",
+      "JPM/2009/page_132.pdf-4",
+      "IP/2006/page_84.pdf-3",
+      "PPG/2011/page_70.pdf-1",
+      "C/2017/page_328.pdf-4",
+      "C/2017/page_328.pdf-3",
+      "AWK/2013/page_132.pdf-4",
+      "AES/2003/page_52.pdf-1",
+      "CME/2010/page_42.pdf-1",
+      "JPM/2013/page_209.pdf-3",
+      "KHC/2016/page_23.pdf-2",
+      "AON/2010/page_115.pdf-3",
+      "AES/2017/page_175.pdf-2",
+      "VTR/2007/page_47.pdf-2",
+      "SLB/2012/page_44.pdf-4",
+      "MAS/2017/page_27.pdf-2",
+      "AES/2002/page_128.pdf-2",
+      "AAL/2010/page_72.pdf-1",
+      "AWK/2018/page_146.pdf-4",
+      "RSG/2015/page_98.pdf-2",
+      "PNC/2012/page_100.pdf-3",
+      "JPM/2010/page_120.pdf-2",
+      "CE/2016/page_19.pdf-4",
+      "HIG/2011/page_53.pdf-4",
+      "DG/2007/page_67.pdf-2",
+      "ETR/2016/page_23.pdf-4",
+      "RSG/2018/page_135.pdf-2",
+      "DRE/2007/page_56.pdf-2",
+      "AWK/2017/page_148.pdf-4"
+    ],
+    "answer_other_form": [
+      "SNA/2012/page_93.pdf-2",
+      "AAL/2018/page_13.pdf-3",
+      "GPN/2018/page_85.pdf-1",
+      "UNP/2014/page_31.pdf-2",
+      "IPG/2013/page_22.pdf-3",
+      "JPM/2013/page_158.pdf-1",
+      "RCL/2006/page_37.pdf-4",
+      "JPM/2008/page_194.pdf-1",
+      "AAPL/2013/page_78.pdf-4",
+      "CCI/2004/page_32.pdf-2",
+      "CDW/2017/page_73.pdf-2",
+      "C/2008/page_147.pdf-1",
+      "AAPL/2013/page_78.pdf-2",
+      "JPM/2012/page_110.pdf-3",
+      "BKR/2018/page_105.pdf-2",
+      "IPG/2018/page_100.pdf-2",
+      "MSI/2009/page_69.pdf-4",
+      "JPM/2014/page_127.pdf-3",
+      "IPG/2016/page_46.pdf-4",
+      "K/2013/page_27.pdf-1",
+      "AMAT/2017/page_31.pdf-1",
+      "CCI/2004/page_32.pdf-3",
+      "AMAT/2015/page_31.pdf-2",
+      "AMAT/2016/page_30.pdf-1",
+      "AMAT/2015/page_31.pdf-4",
+      "IP/2012/page_57.pdf-3",
+      "AAP/2011/page_16.pdf-4",
+      "BDX/2017/page_28.pdf-1",
+      "TFX/2006/page_50.pdf-1",
+      "TFX/2018/page_74.pdf-4",
+      "TFX/2014/page_74.pdf-3",
+      "AAP/2012/page_61.pdf-4",
+      "EMN/2007/page_111.pdf-1",
+      "KIM/2014/page_59.pdf-2",
+      "VLO/2011/page_127.pdf-2",
+      "KIM/2014/page_131.pdf-4",
+      "CB/2010/page_200.pdf-4",
+      "ETR/2002/page_24.pdf-2",
+      "AAP/2012/page_12.pdf-3",
+      "AON/2015/page_96.pdf-1",
+      "CB/2008/page_229.pdf-4",
+      "DRE/2008/page_46.pdf-4",
+      "GPN/2013/page_87.pdf-4",
+      "ANSS/2016/page_47.pdf-2"
+    ],
+    "evidence_unparsed": [],
+    "evidence_empty": [],
+    "evidence_malformed_key": [
+      "RE/2010/page_120.pdf-2"
+    ],
+    "evidence_key_out_of_range": [],
+    "program_unparsed": [],
+    "operation_unknown": [],
+    "constant_unknown": [],
+    "argument_other_kind": [],
+    "argument_count_unexpected": [],
+    "percent_literal_argument": [
+      "AAL/2018/page_13.pdf-2",
+      "MAS/2017/page_37.pdf-1",
+      "HII/2011/page_100.pdf-3",
+      "MSI/2008/page_71.pdf-2",
+      "AAL/2015/page_131.pdf-1",
+      "PPG/2008/page_19.pdf-1",
+      "DISCA/2013/page_45.pdf-3",
+      "HWM/2016/page_53.pdf-1",
+      "AON/2018/page_84.pdf-2",
+      "APD/2019/page_39.pdf-2",
+      "AAL/2018/page_13.pdf-1",
+      "STT/2007/page_65.pdf-2",
+      "MSI/2009/page_69.pdf-2",
+      "MSI/2009/page_67.pdf-1",
+      "STT/2008/page_73.pdf-1",
+      "MRO/2003/page_65.pdf-1",
+      "CB/2008/page_144.pdf-3",
+      "ECL/2017/page_85.pdf-1",
+      "RSG/2013/page_16.pdf-2",
+      "AON/2018/page_84.pdf-1",
+      "HII/2018/page_113.pdf-1",
+      "MAA/2018/page_88.pdf-1",
+      "FIS/2006/page_88.pdf-2",
+      "MSI/2008/page_71.pdf-3",
+      "PNC/2007/page_93.pdf-2",
+      "BLK/2016/page_75.pdf-1",
+      "MRO/2006/page_61.pdf-2",
+      "UNP/2013/page_78.pdf-2",
+      "TROW/2009/page_24.pdf-2",
+      "GPN/2008/page_92.pdf-1",
+      "HWM/2015/page_94.pdf-1",
+      "RSG/2017/page_14.pdf-2",
+      "AAL/2018/page_13.pdf-3",
+      "UNP/2011/page_35.pdf-2",
+      "EOG/2016/page_78.pdf-2",
+      "AES/2001/page_45.pdf-1",
+      "AON/2014/page_45.pdf-4",
+      "AON/2010/page_55.pdf-1",
+      "ETR/2016/page_424.pdf-2",
+      "MSI/2009/page_69.pdf-1",
+      "CME/2017/page_57.pdf-3",
+      "JPM/2013/page_158.pdf-3",
+      "EL/2013/page_117.pdf-2",
+      "MO/2016/page_10.pdf-1",
+      "FIS/2010/page_93.pdf-2",
+      "AAL/2015/page_18.pdf-2",
+      "AMT/2005/page_56.pdf-1",
+      "TROW/2008/page_23.pdf-1",
+      "KIM/2006/page_67.pdf-2",
+      "FITB/2008/page_69.pdf-1",
+      "GS/2013/page_195.pdf-1",
+      "KMI/2010/page_164.pdf-1",
+      "SLG/2012/page_87.pdf-2",
+      "UNP/2014/page_31.pdf-1",
+      "STT/2001/page_41.pdf-1",
+      "IPG/2015/page_79.pdf-2",
+      "AAPL/2004/page_44.pdf-1",
+      "ETR/2004/page_261.pdf-2",
+      "JPM/2012/page_109.pdf-2",
+      "APD/2019/page_39.pdf-1",
+      "AON/2011/page_61.pdf-2",
+      "HWM/2016/page_53.pdf-2",
+      "UNP/2014/page_31.pdf-2",
+      "CDNS/2012/page_41.pdf-2",
+      "ETFC/2011/page_40.pdf-2",
+      "UPS/2009/page_84.pdf-1",
+      "AAL/2017/page_10.pdf-1",
+      "UNP/2009/page_31.pdf-1",
+      "PPG/2016/page_52.pdf-1",
+      "AAL/2014/page_18.pdf-1",
+      "UNP/2014/page_32.pdf-2",
+      "CDNS/2006/page_42.pdf-4",
+      "MAA/2017/page_89.pdf-3",
+      "PPG/2005/page_24.pdf-2",
+      "AES/2002/page_60.pdf-3",
+      "MSI/2007/page_68.pdf-1",
+      "APD/2013/page_81.pdf-2",
+      "AES/2002/page_60.pdf-1",
+      "AES/2000/page_111.pdf-1",
+      "CME/2010/page_104.pdf-1",
+      "CME/2010/page_27.pdf-1",
+      "LMT/2007/page_39.pdf-1",
+      "CE/2014/page_90.pdf-1",
+      "MSI/2009/page_69.pdf-3",
+      "RSG/2015/page_18.pdf-1",
+      "TMUS/2017/page_52.pdf-2",
+      "CDNS/2012/page_41.pdf-1",
+      "AWK/2015/page_81.pdf-4",
+      "ETR/2008/page_272.pdf-1",
+      "STT/2007/page_65.pdf-3",
+      "AAL/2017/page_10.pdf-4",
+      "MAS/2017/page_37.pdf-4",
+      "AAL/2015/page_18.pdf-4",
+      "JPM/2003/page_44.pdf-1",
+      "ECL/2017/page_85.pdf-2",
+      "AWK/2018/page_103.pdf-3",
+      "AMT/2005/page_56.pdf-3",
+      "GS/2013/page_195.pdf-2",
+      "HWM/2015/page_89.pdf-1",
+      "C/2008/page_100.pdf-2",
+      "UNP/2011/page_80.pdf-2",
+      "RE/2015/page_131.pdf-2",
+      "SYY/2006/page_26.pdf-1",
+      "SLG/2010/page_81.pdf-3",
+      "TMUS/2017/page_52.pdf-1",
+      "ETR/2008/page_382.pdf-1",
+      "UNP/2012/page_79.pdf-2",
+      "PPG/2008/page_19.pdf-2",
+      "CCI/2004/page_32.pdf-2",
+      "GRMN/2008/page_98.pdf-2",
+      "PNC/2014/page_161.pdf-1",
+      "ADBE/2018/page_88.pdf-1",
+      "JPM/2003/page_28.pdf-1",
+      "MSI/2009/page_67.pdf-3",
+      "EMR/2018/page_28.pdf-1",
+      "AMT/2004/page_46.pdf-1",
+      "AWK/2015/page_81.pdf-1",
+      "C/2009/page_38.pdf-1",
+      "L/2007/page_213.pdf-3",
+      "STT/2007/page_65.pdf-4",
+      "SLG/2012/page_87.pdf-1",
+      "UNP/2009/page_25.pdf-2",
+      "AWK/2018/page_103.pdf-1",
+      "GPN/2008/page_99.pdf-1",
+      "FTV/2017/page_17.pdf-2",
+      "SLG/2009/page_84.pdf-2",
+      "HUM/2005/page_18.pdf-1",
+      "AES/2018/page_168.pdf-2",
+      "AES/2001/page_51.pdf-2",
+      "AES/2002/page_117.pdf-3",
+      "MRO/2013/page_49.pdf-4",
+      "AON/2007/page_180.pdf-2",
+      "SYY/2014/page_16.pdf-1",
+      "CME/2017/page_57.pdf-4",
+      "JPM/2013/page_132.pdf-4",
+      "AES/2001/page_51.pdf-1",
+      "UNP/2014/page_30.pdf-1",
+      "V/2012/page_123.pdf-2",
+      "ETR/2011/page_398.pdf-2",
+      "MSI/2008/page_73.pdf-4",
+      "STT/2008/page_73.pdf-2",
+      "EMR/2018/page_28.pdf-3",
+      "MO/2014/page_11.pdf-1",
+      "TROW/2009/page_24.pdf-1",
+      "HWM/2015/page_89.pdf-2",
+      "UNP/2011/page_80.pdf-1",
+      "MAA/2017/page_18.pdf-2",
+      "UAA/2016/page_81.pdf-3",
+      "AES/2002/page_60.pdf-2",
+      "HUM/2008/page_18.pdf-2",
+      "BKR/2018/page_105.pdf-2",
+      "MSI/2007/page_68.pdf-3",
+      "FTV/2017/page_17.pdf-1",
+      "MO/2016/page_10.pdf-2",
+      "UNP/2014/page_32.pdf-1",
+      "GPN/2018/page_85.pdf-2",
+      "HII/2018/page_113.pdf-2",
+      "UNP/2012/page_24.pdf-1",
+      "JPM/2018/page_150.pdf-4",
+      "JPM/2003/page_44.pdf-2",
+      "MRO/2015/page_22.pdf-2",
+      "JPM/2017/page_83.pdf-3",
+      "AES/2001/page_45.pdf-2",
+      "ADI/2009/page_49.pdf-2",
+      "MAA/2015/page_57.pdf-3",
+      "UPS/2009/page_84.pdf-2",
+      "UNP/2009/page_34.pdf-1",
+      "UNP/2012/page_24.pdf-2",
+      "HIG/2004/page_81.pdf-2",
+      "ADI/2011/page_64.pdf-2",
+      "AMT/2014/page_120.pdf-1",
+      "MA/2009/page_120.pdf-3",
+      "JPM/2012/page_109.pdf-3",
+      "SLG/2009/page_84.pdf-1",
+      "PPG/2012/page_47.pdf-1",
+      "AES/2002/page_60.pdf-4",
+      "IQV/2016/page_65.pdf-1",
+      "BLL/2007/page_75.pdf-3",
+      "KMI/2010/page_164.pdf-4",
+      "AMT/2004/page_46.pdf-2",
+      "AES/2003/page_112.pdf-2",
+      "AAL/2014/page_18.pdf-3",
+      "UNP/2012/page_31.pdf-1",
+      "AWK/2018/page_152.pdf-1",
+      "CDNS/2006/page_42.pdf-2",
+      "APD/2013/page_81.pdf-1",
+      "GPN/2009/page_85.pdf-4",
+      "RSG/2016/page_17.pdf-2",
+      "PKG/2001/page_78.pdf-3",
+      "MSI/2007/page_68.pdf-4",
+      "CCI/2004/page_32.pdf-3",
+      "HWM/2016/page_52.pdf-1",
+      "SYY/2014/page_16.pdf-2",
+      "MRO/2018/page_96.pdf-2",
+      "SYY/2006/page_26.pdf-2",
+      "JPM/2017/page_119.pdf-2",
+      "PPG/2006/page_22.pdf-1",
+      "AAL/2015/page_18.pdf-1",
+      "MO/2017/page_10.pdf-1",
+      "ADBE/2018/page_88.pdf-2",
+      "L/2007/page_213.pdf-2",
+      "JPM/2016/page_87.pdf-2",
+      "PNC/2014/page_161.pdf-2",
+      "MRO/2004/page_57.pdf-1",
+      "MRO/2018/page_96.pdf-1",
+      "RSG/2018/page_13.pdf-2",
+      "UNP/2008/page_26.pdf-1",
+      "BLK/2009/page_98.pdf-3",
+      "MO/2016/page_10.pdf-3",
+      "EMN/2016/page_104.pdf-4",
+      "NCLH/2018/page_69.pdf-1",
+      "NCLH/2016/page_84.pdf-4",
+      "IP/2013/page_61.pdf-4",
+      "MO/2016/page_10.pdf-4",
+      "SYY/2019/page_9.pdf-2",
+      "GIS/2012/page_64.pdf-1",
+      "FBHS/2017/page_23.pdf-1",
+      "PPG/2011/page_70.pdf-2",
+      "ETR/2011/page_324.pdf-4",
+      "PM/2015/page_85.pdf-3",
+      "APD/2018/page_59.pdf-1",
+      "MSI/2009/page_65.pdf-1",
+      "RE/2015/page_33.pdf-3",
+      "APD/2013/page_32.pdf-2",
+      "AON/2009/page_48.pdf-3",
+      "ETR/2008/page_321.pdf-1",
+      "PM/2017/page_38.pdf-2",
+      "MAS/2018/page_35.pdf-1",
+      "HII/2014/page_69.pdf-3",
+      "NWS/2016/page_61.pdf-1",
+      "ADI/2011/page_50.pdf-2",
+      "UNP/2014/page_25.pdf-2",
+      "DISCA/2012/page_39.pdf-3",
+      "AON/2014/page_47.pdf-2",
+      "AON/2014/page_47.pdf-4",
+      "MAS/2018/page_35.pdf-2",
+      "BKR/2017/page_103.pdf-2",
+      "SYY/2019/page_9.pdf-1",
+      "AES/2001/page_44.pdf-4",
+      "BLK/2013/page_124.pdf-3",
+      "BLK/2013/page_124.pdf-4",
+      "ADI/2011/page_50.pdf-3",
+      "AES/2010/page_227.pdf-4",
+      "UNP/2007/page_25.pdf-1",
+      "UPS/2007/page_98.pdf-2",
+      "GS/2018/page_78.pdf-3",
+      "ECL/2017/page_94.pdf-1",
+      "CME/2017/page_89.pdf-3",
+      "GS/2018/page_69.pdf-3",
+      "ECL/2017/page_94.pdf-2",
+      "STT/2011/page_69.pdf-2",
+      "GS/2018/page_69.pdf-1",
+      "MRO/2017/page_96.pdf-2",
+      "UNP/2011/page_33.pdf-1",
+      "GS/2018/page_78.pdf-2",
+      "AAPL/2006/page_100.pdf-1",
+      "APD/2016/page_40.pdf-1",
+      "ABMD/2005/page_29.pdf-1",
+      "MS/2013/page_132.pdf-2",
+      "MSI/2007/page_70.pdf-3",
+      "CME/2017/page_89.pdf-1",
+      "CME/2017/page_89.pdf-2",
+      "FBHS/2017/page_22.pdf-2",
+      "ETR/2017/page_143.pdf-3",
+      "AAPL/2006/page_100.pdf-2",
+      "AES/2001/page_85.pdf-2",
+      "UNP/2011/page_33.pdf-2",
+      "MRO/2017/page_96.pdf-4",
+      "AAL/2013/page_18.pdf-4",
+      "ADI/2011/page_61.pdf-1",
+      "ETR/2008/page_298.pdf-1",
+      "MSI/2007/page_70.pdf-2",
+      "CME/2010/page_69.pdf-3",
+      "LMT/2014/page_50.pdf-3",
+      "MSI/2008/page_69.pdf-1",
+      "BLK/2015/page_124.pdf-4"
+    ],
+    "row_name_not_in_table": [],
+    "table_second_argument_not_none": [
+      "HOLX/2005/page_27.pdf-1",
+      "HOLX/2005/page_27.pdf-2"
+    ],
+    "longest_programs": [
+      "VNO/2010/page_88.pdf-2",
+      "RE/2017/page_41.pdf-1",
+      "JPM/2018/page_73.pdf-4",
+      "BKR/2018/page_51.pdf-2",
+      "ETR/2009/page_141.pdf-1",
+      "ADI/2010/page_82.pdf-3"
+    ],
+    "result_scientific_notation": [
+      "V/2008/page_163.pdf-2",
+      "SWKS/2008/page_105.pdf-2",
+      "VNO/2003/page_102.pdf-1",
+      "RE/2017/page_145.pdf-1",
+      "AMT/2010/page_111.pdf-2",
+      "VNO/2011/page_187.pdf-1",
+      "AMT/2002/page_74.pdf-2",
+      "RCL/2009/page_90.pdf-1",
+      "ETR/2008/page_130.pdf-3",
+      "ETR/2016/page_144.pdf-3",
+      "AMT/2015/page_50.pdf-3",
+      "PPG/2012/page_47.pdf-2",
+      "AES/2001/page_78.pdf-2",
+      "VTR/2006/page_48.pdf-3",
+      "MSI/2005/page_43.pdf-2",
+      "ETR/2008/page_130.pdf-2",
+      "SLG/2017/page_114.pdf-6",
+      "AAPL/2007/page_117.pdf-1",
+      "PNC/2012/page_46.pdf-3",
+      "NCLH/2017/page_57.pdf-1",
+      "LMT/2016/page_32.pdf-1",
+      "AES/2003/page_156.pdf-1",
+      "HFC/2011/page_88.pdf-4",
+      "IPG/2009/page_93.pdf-2",
+      "MSI/2005/page_43.pdf-3",
+      "HFC/2018/page_43.pdf-4",
+      "IPG/2017/page_40.pdf-2",
+      "RE/2015/page_131.pdf-1",
+      "AES/2003/page_93.pdf-3",
+      "C/2009/page_162.pdf-2",
+      "JPM/2009/page_183.pdf-1",
+      "CDNS/2018/page_32.pdf-4",
+      "MRO/2009/page_137.pdf-2",
+      "CDW/2013/page_103.pdf-3",
+      "SLG/2012/page_87.pdf-2",
+      "PPG/2011/page_28.pdf-2",
+      "PPG/2011/page_46.pdf-2",
+      "JPM/2018/page_149.pdf-4",
+      "PKG/2006/page_68.pdf-1",
+      "RCL/2014/page_80.pdf-3",
+      "OKE/2007/page_56.pdf-1",
+      "AMAT/2012/page_35.pdf-2",
+      "PPG/2006/page_21.pdf-1",
+      "AMT/2004/page_91.pdf-3",
+      "UNP/2009/page_61.pdf-1",
+      "ETR/2008/page_438.pdf-1",
+      "VTR/2006/page_48.pdf-2",
+      "ABMD/2015/page_93.pdf-2",
+      "EOG/2017/page_102.pdf-1",
+      "WRK/2019/page_136.pdf-1",
+      "IPG/2013/page_22.pdf-3",
+      "AMT/2007/page_114.pdf-4",
+      "CE/2014/page_90.pdf-1",
+      "ETR/2008/page_438.pdf-2",
+      "UNP/2012/page_29.pdf-2",
+      "GPN/2007/page_97.pdf-1",
+      "EOG/2018/page_99.pdf-2",
+      "HOLX/2005/page_27.pdf-1",
+      "UNP/2011/page_41.pdf-1",
+      "RCL/2013/page_18.pdf-1",
+      "MSI/2007/page_42.pdf-3",
+      "VNO/2012/page_190.pdf-1",
+      "REGN/2010/page_64.pdf-2",
+      "UNP/2012/page_20.pdf-2",
+      "MRO/2008/page_99.pdf-1",
+      "VNO/2011/page_85.pdf-1",
+      "WRK/2019/page_136.pdf-2",
+      "VNO/2003/page_102.pdf-2",
+      "SLB/2009/page_57.pdf-2",
+      "TFX/2015/page_42.pdf-1",
+      "SWKS/2011/page_112.pdf-3",
+      "CME/2010/page_71.pdf-3",
+      "GIS/2006/page_35.pdf-2",
+      "IPG/2014/page_95.pdf-1",
+      "AAPL/2006/page_103.pdf-1",
+      "CDW/2013/page_33.pdf-1",
+      "PPG/2008/page_19.pdf-2",
+      "SLB/2009/page_57.pdf-1",
+      "AWK/2017/page_143.pdf-3",
+      "PKG/2005/page_73.pdf-2",
+      "EOG/2017/page_103.pdf-2",
+      "ETR/2008/page_435.pdf-1",
+      "DISCA/2009/page_149.pdf-1",
+      "GPN/2013/page_98.pdf-2",
+      "HII/2012/page_127.pdf-2",
+      "MSI/2007/page_42.pdf-2",
+      "PNC/2012/page_222.pdf-2",
+      "FITB/2013/page_84.pdf-3",
+      "JKHY/2019/page_17.pdf-3",
+      "HII/2011/page_52.pdf-1",
+      "CDW/2015/page_35.pdf-2",
+      "AMT/2007/page_32.pdf-4",
+      "SNA/2013/page_59.pdf-3",
+      "CME/2010/page_113.pdf-2",
+      "AES/2003/page_168.pdf-1",
+      "MRO/2008/page_99.pdf-3",
+      "CE/2010/page_134.pdf-3",
+      "AMT/2014/page_157.pdf-1",
+      "C/2008/page_147.pdf-1",
+      "SLG/2011/page_58.pdf-2",
+      "SLG/2009/page_84.pdf-2",
+      "HOLX/2004/page_59.pdf-1",
+      "ABMD/2003/page_22.pdf-2",
+      "HUM/2005/page_18.pdf-1",
+      "CDW/2013/page_33.pdf-2",
+      "HII/2014/page_133.pdf-4",
+      "KMI/2010/page_2.pdf-1",
+      "AWK/2012/page_12.pdf-2",
+      "IPG/2015/page_24.pdf-3",
+      "HII/2012/page_47.pdf-1",
+      "GPN/2017/page_72.pdf-1",
+      "VNO/2008/page_183.pdf-1",
+      "AES/2003/page_55.pdf-3",
+      "HUM/2008/page_18.pdf-2",
+      "DG/2009/page_87.pdf-2",
+      "LKQ/2016/page_48.pdf-1",
+      "HII/2013/page_127.pdf-3",
+      "HII/2014/page_133.pdf-2",
+      "HII/2013/page_127.pdf-1",
+      "IPG/2009/page_93.pdf-1",
+      "AMT/2015/page_50.pdf-4",
+      "JPM/2008/page_213.pdf-2",
+      "JKHY/2019/page_17.pdf-1",
+      "RSG/2008/page_43.pdf-1",
+      "SLG/2009/page_84.pdf-1",
+      "UNP/2009/page_68.pdf-2",
+      "BLL/2007/page_75.pdf-3",
+      "AES/2003/page_112.pdf-2",
+      "AMT/2003/page_85.pdf-2",
+      "WELL/2016/page_61.pdf-3",
+      "UNP/2014/page_24.pdf-1",
+      "BLL/2006/page_108.pdf-2",
+      "PPG/2006/page_21.pdf-2",
+      "AMT/2010/page_115.pdf-1",
+      "HII/2018/page_124.pdf-1",
+      "AMT/2003/page_85.pdf-3",
+      "V/2008/page_163.pdf-1",
+      "ABMD/2012/page_75.pdf-2",
+      "AWK/2013/page_12.pdf-2",
+      "RE/2015/page_148.pdf-2",
+      "AMAT/2016/page_30.pdf-1",
+      "AMT/2006/page_31.pdf-1",
+      "AMT/2014/page_157.pdf-3",
+      "VNO/2008/page_183.pdf-2",
+      "ETR/2011/page_492.pdf-1",
+      "ETR/2008/page_435.pdf-2",
+      "VTR/2006/page_48.pdf-1",
+      "UNP/2014/page_21.pdf-1",
+      "V/2019/page_49.pdf-1",
+      "GPN/2016/page_29.pdf-2",
+      "IPG/2013/page_22.pdf-1",
+      "HII/2015/page_124.pdf-2",
+      "VLO/2014/page_23.pdf-2",
+      "ANSS/2016/page_82.pdf-3",
+      "VLO/2015/page_24.pdf-3",
+      "ABMD/2009/page_85.pdf-4",
+      "KIM/2010/page_94.pdf-4",
+      "ABMD/2003/page_22.pdf-3",
+      "ABMD/2003/page_22.pdf-4",
+      "VLO/2014/page_23.pdf-3",
+      "AAP/2013/page_68.pdf-4",
+      "AMT/2005/page_105.pdf-2",
+      "AMT/2010/page_34.pdf-2",
+      "ABMD/2009/page_88.pdf-1",
+      "ILMN/2007/page_78.pdf-4",
+      "MRO/2006/page_33.pdf-1",
+      "CB/2010/page_200.pdf-3",
+      "STZ/2006/page_68.pdf-2",
+      "DRE/2009/page_72.pdf-1",
+      "AMT/2008/page_32.pdf-2",
+      "UNP/2011/page_21.pdf-2",
+      "UNP/2011/page_21.pdf-1",
+      "HII/2017/page_124.pdf-4",
+      "UNP/2009/page_65.pdf-2",
+      "ETR/2015/page_131.pdf-2",
+      "ABMD/2004/page_26.pdf-1",
+      "VTR/2007/page_47.pdf-2",
+      "MA/2008/page_126.pdf-2",
+      "AES/2017/page_157.pdf-3",
+      "RE/2017/page_159.pdf-1",
+      "VTR/2007/page_47.pdf-1",
+      "BLL/2007/page_35.pdf-2",
+      "ABMD/2009/page_88.pdf-3",
+      "TFX/2015/page_70.pdf-3",
+      "VLO/2018/page_25.pdf-3",
+      "MKTX/2004/page_99.pdf-3",
+      "FBHS/2017/page_83.pdf-1",
+      "STT/2009/page_127.pdf-4",
+      "ILMN/2008/page_82.pdf-1",
+      "CME/2010/page_123.pdf-2",
+      "AES/2010/page_227.pdf-4",
+      "MKTX/2004/page_99.pdf-1",
+      "MRO/2004/page_46.pdf-3",
+      "SLG/2011/page_91.pdf-1",
+      "PKG/2013/page_88.pdf-2",
+      "ETR/2017/page_143.pdf-1",
+      "AMT/2007/page_29.pdf-2",
+      "IPG/2006/page_77.pdf-2",
+      "AMT/2008/page_94.pdf-2",
+      "JPM/2008/page_117.pdf-1",
+      "HOLX/2006/page_71.pdf-1",
+      "AMT/2016/page_49.pdf-2",
+      "AMT/2012/page_50.pdf-2",
+      "HOLX/2003/page_52.pdf-1",
+      "SNA/2018/page_31.pdf-3",
+      "SNA/2018/page_31.pdf-2",
+      "ETR/2017/page_143.pdf-3",
+      "JPM/2018/page_90.pdf-3",
+      "AMT/2016/page_49.pdf-4",
+      "AES/2001/page_85.pdf-2",
+      "ANET/2015/page_156.pdf-1",
+      "JPM/2008/page_117.pdf-2",
+      "UNP/2009/page_42.pdf-1",
+      "JPM/2018/page_90.pdf-2",
+      "AMT/2012/page_50.pdf-4",
+      "FIS/2016/page_31.pdf-4",
+      "CME/2010/page_69.pdf-3",
+      "C/2018/page_176.pdf-2",
+      "ILMN/2008/page_82.pdf-2",
+      "ADI/2019/page_29.pdf-1",
+      "TFX/2017/page_78.pdf-3",
+      "UNP/2010/page_21.pdf-3",
+      "UNP/2010/page_21.pdf-4"
+    ],
+    "result_not_numeric_or_yes_no": [],
+    "yes_no_answer_without_greater": [
+      "PPG/2018/page_85.pdf-1",
+      "ANET/2015/page_156.pdf-1"
+    ],
+    "greater_answer_disagrees": [
+      "ABMD/2012/page_75.pdf-1",
+      "JPM/2018/page_149.pdf-6",
+      "ANET/2017/page_157.pdf-2",
+      "JPM/2008/page_41.pdf-4",
+      "JKHY/2008/page_30.pdf-2",
+      "PKG/2004/page_21.pdf-1",
+      "UNP/2014/page_14.pdf-1",
+      "ABMD/2015/page_53.pdf-1"
+    ],
+    "greater_not_last_step": []
+  },
+  "max_ids_listed": 20,
+  "checks": [
+    {
+      "id": "S1",
+      "name": "Rows per file",
+      "passed": true,
+      "detail": "8,281 examples in total"
+    },
+    {
+      "id": "S2",
+      "name": "Columns",
+      "passed": true,
+      "detail": "16 columns with the expected types"
+    },
+    {
+      "id": "S3",
+      "name": "No null values",
+      "passed": true,
+      "detail": "none"
+    },
+    {
+      "id": "S4",
+      "name": "Unique ids",
+      "passed": true,
+      "detail": "8,281 unique ids"
+    },
+    {
+      "id": "S5",
+      "name": "Id format",
+      "passed": true,
+      "detail": "every id matches the pattern and extends its filename"
+    },
+    {
+      "id": "S6",
+      "name": "Program form",
+      "passed": true,
+      "detail": "12,732 steps, 2 arguments each"
+    },
+    {
+      "id": "S7",
+      "name": "Operations",
+      "passed": true,
+      "detail": "10 operations, as expected"
+    },
+    {
+      "id": "S8",
+      "name": "Constants",
+      "passed": true,
+      "detail": "17 constants, as expected"
+    },
+    {
+      "id": "S9",
+      "name": "Argument kinds",
+      "passed": true,
+      "detail": "7 kinds, as expected"
+    },
+    {
+      "id": "S10",
+      "name": "Program length",
+      "passed": true,
+      "detail": "longest program has 6 steps"
+    }
+  ]
+}

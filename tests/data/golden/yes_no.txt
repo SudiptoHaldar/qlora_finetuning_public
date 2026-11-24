@@ -1,0 +1,13 @@
+Context:
+- the marmalade segment grew .
+
+Table:
+|  | 2015 | 2014 |
+|---|---|---|
+| xylophone sales | 920 | 95 |
+| total | 1000 | 900 |
+
+Question: what was the change in xylophone sales for CRUX/2017/page_8.pdf-1?
+=====
+PROGRAM: divide(6.9%, const_100), greater(#0, 95)
+ANSWER: no

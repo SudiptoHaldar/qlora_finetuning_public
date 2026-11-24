@@ -1,0 +1,13 @@
+Context:
+(none)
+
+Table:
+|  | 2015 | 2014 |
+|---|---|---|
+| xylophone sales | 920 | 95 |
+| total | 1000 | 900 |
+
+Question: what was the change in xylophone sales for ACME/2015/page_10.pdf-2?
+=====
+PROGRAM: subtract(920, 95)
+ANSWER: 825

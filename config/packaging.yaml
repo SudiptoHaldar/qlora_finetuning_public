@@ -1,0 +1,100 @@
+# The two packages that can be published (req_006 v6.02): arm A1's adapter, and a copy of
+# the base model with that adapter merged into its weights. Read by
+# qlora_finetuning/packaging/ and by scripts/hf_package.py. Nothing here is uploaded by any
+# code of this version. Relative paths are resolved from the repository root.
+version: 1
+verified_on: "2026-11-24"
+
+release_dir: artifacts/release     # git-ignored: the two folders, and the cards' code runs
+report_dir: reports/packaging      # committed: the package record and the two cards
+
+# What the cards name. Decided by the owner on 2026-11-24.
+code_repository: https://github.com/SudiptoHaldar/qlora_finetuning_public
+author: sudiptoHaldar              # the Hugging Face account; never an email address
+license: apache-2.0                # of both packages; the base model's licence
+
+adapter:
+  folder: adapter
+  repo_id: sudiptoHaldar/qwen3-4b-finqa-program-qlora
+merged:
+  folder: merged
+  repo_id: sudiptoHaldar/qwen3-4b-finqa-program-merged
+  compute_dtype: float32           # the type the sum of base and adapter is formed in
+  max_shard_size: 4GB              # no weight file larger than the base model's
+
+# The tokenizer files of the base model, copied byte for byte at the pinned commit.
+tokenizer_files: [tokenizer.json, tokenizer_config.json, vocab.json, merges.txt]
+
+# The committed records a card quotes. A card is not built unless each passed its checks.
+records:
+  six_arm: reports/comparison/six_arm_test_runs.json
+  statistics: reports/comparison/comparison_statistics.json
+  cost: reports/comparison/cost_model.json
+
+verification:
+  split: dev
+  # How many examples fewer right than the adapter (run R1) the merged copy may have, in
+  # 4-bit or at full precision, before it is withheld. null: selection.noise_examples of
+  # config/training.yaml, the project's measure of two runs that are not told apart.
+  allowance_examples: null
+  card_code_timeout_seconds: 1200  # one run of a card's code: a model load and one reply
+
+# Licences, read again at their source before a card is built (spec D30, D31). An entry
+# says what the source said on the day it was read. `confirmed_on` is the day the owner
+# confirmed the entry; a card is not built while one is null or older than max_age_days.
+licences:
+  max_age_days: 30
+  entries:
+    - name: Qwen3-4B
+      role: the base model
+      identifier: apache-2.0
+      source: https://huggingface.co/Qwen/Qwen3-4B
+      found: >-
+        The model card shows "License: apache-2.0" and the repository's LICENSE file is the
+        Apache License, Version 2.0, with "Copyright 2024 Alibaba Cloud".
+      read_on: "2026-11-24"
+      confirmed_on: "2026-11-24"
+    - name: FinQA
+      role: the questions, programs, and answers
+      identifier: mit
+      source: https://github.com/czyssrs/FinQA
+      found: >-
+        The repository's LICENSE file is the MIT License, "Copyright (c) 2021 Zhiyu Chen".
+        The Hugging Face copy this project pins, bevaya/FinQA, declares "License: mit"; it
+        is a re-upload by a third party, so that tag is the uploader's statement.
+      read_on: "2026-11-24"
+      confirmed_on: "2026-11-24"
+    - name: FinTabNet
+      role: the report tables that FinQA's examples are built on
+      identifier: cdla-permissive-1.0
+      source: https://huggingface.co/datasets/bsmock/FinTabNet.c
+      found: >-
+        Not re-read at its own source: IBM's Data Asset eXchange page for FinTabNet now
+        says the exchange is deprecated and states no licence. The card of the derived
+        dataset bsmock/FinTabNet.c says "the license of the original FinTabNet dataset is
+        CDLA-Permissive" and links the Community Data License Agreement - Permissive,
+        Version 1.0 (cdla.dev/permissive-1-0). One source, and not IBM's.
+      read_on: "2026-11-24"
+      confirmed_on: "2026-11-24"
+
+# What no text file of a package may hold (spec D28). The tokenizer files are not scanned:
+# they hold arbitrary strings and are checked byte for byte against the base model's.
+forbidden:
+  - name: an AWS account number
+    pattern: '(?<![0-9A-Za-z])\d{12}(?![0-9A-Za-z])'
+  - name: an AWS resource name
+    pattern: '(?i)arn:aws'
+  - name: an S3 path
+    pattern: '(?i)s3://'
+  - name: the project's bucket
+    pattern: '(?i)qlora-sagemaker'
+  - name: a SageMaker job name
+    pattern: 'qlora-(train|evaluate|score|smoke)-[0-9a-f]{6,}'
+  - name: an AWS access key
+    pattern: '(?<![0-9A-Z])A[KS]IA[0-9A-Z]{16}(?![0-9A-Z])'
+  - name: a Hugging Face token
+    pattern: '(?<![0-9A-Za-z])hf_[0-9A-Za-z]{20,}'
+  - name: an email address
+    pattern: '[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}'
+  - name: a path on someone's machine
+    pattern: '(?i)([A-Z]:[\\/]+Users[\\/]|/home/[a-z]|/Users/[A-Za-z])'

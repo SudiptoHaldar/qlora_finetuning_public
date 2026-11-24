@@ -1,0 +1,38 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python virtualenvs
+venv/
+.venv/
+
+# Python bytecode & build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Project outputs: dataset snapshots, runs, adapters, predictions
+artifacts/
+
+# Editors & IDEs
+.idea/
+.vscode/
+*.swp
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# In a public copy of this repository: what the last export wrote (req_006 v6.04)
+.public_export_manifest.json

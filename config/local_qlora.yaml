@@ -1,0 +1,36 @@
+# Path A, the Qwen backend (req_003 v3.01): how the model is loaded and how it generates.
+# Everything here can change a reply, so all of it goes into a run's settings.
+#
+# The model and its commit are NOT here: they are tokenizer.model_id and tokenizer.revision
+# in token_budget.yaml, one pin for the tokenizer that counts and the model that answers.
+# The reply limit is max_new_tokens in the same file.
+version: 1
+verified_on: "2026-11-18"
+
+predictor_name: qwen3-4b           # the predictor's name in a run; part of the resume check
+
+# 4-bit loading with bitsandbytes (plan 4.6). The same values as the env_check smoke.
+quantization:
+  type: nf4                        # nf4 | fp4
+  double_quant: true
+  compute_dtype: bfloat16          # bfloat16 | float16 (a GPU below compute capability 8.0)
+
+inference:
+  # Prompts generated together, padded on the left. A reply can depend on its batch (a near
+  # tie between two tokens can fall the other way), so a run is resumed only under the same
+  # value. Lower it after an out-of-memory error, and start a new run.
+  #
+  # 8 since 2026-11-19 (the owner's decision, req_003 v3.03 spec, section 8): Path A is
+  # billed by the second in the cloud, so the batch size sets its cost per question, and both
+  # Qwen arms must use the same value. Measured: 3.2 times the speed of 1; 16 of 40 untuned
+  # and 2 or 3 of 24 tuned replies differ from the ones generated one at a time. The local A0
+  # baseline of v3.01 was run at 1 and stays a development figure.
+  batch_size: 8
+  # Greedy decoding. This file describes nothing else: the loader refuses sampling or more
+  # than one beam. The model's own generation_config.json samples (temperature 0.6); the
+  # backend unsets those values.
+  do_sample: false
+  num_beams: 1
+  # Generation stops at one of these, or at the reply limit, and nowhere else: no stop
+  # string, no cut after the ANSWER line.
+  end_tokens: ["<|im_end|>", "<|endoftext|>"]

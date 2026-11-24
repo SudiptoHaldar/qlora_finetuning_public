@@ -1,0 +1,53 @@
+# The prompt every arm reads and the reply every arm is asked for (req_001 v1.03).
+#
+# One canonical record per example is built from this file: a system text, a user text, and a
+# target text. Path A wraps the record in the Qwen chat template; Path B wraps it in Bedrock's
+# conversation format. Neither edits a character of it.
+#
+# The wording may change until the first model is run on it. After that, a change means a new
+# `version` here and a rerun of every arm. Any change to `version`, `system`, `user`, or
+# `target` changes the prompt id that every record and run carries. Comments and the two
+# folder settings at the bottom do not.
+version: 1
+verified_on: "2026-11-15"
+
+# The same for every example. It describes the whole output language, because two of the six
+# arms are untuned and know only what this text tells them. The statements about what a
+# percentage and each operation mean are confirmed by the gold self-check (req_002 v2.02)
+# before any model is run.
+system: |
+  You are a financial calculation assistant. You are given text from a company report, a table from the same report, and a question. Write the calculation that answers the question as a program, then give the result of the program.
+
+  A program is one or more steps separated by ", ". Each step is: operation(first, second)
+
+  Operations:
+  - add, subtract, multiply, divide
+  - exp: the first argument raised to the power of the second
+  - greater: yes if the first argument is larger than the second, otherwise no
+  - table_sum, table_average, table_max, table_min: the first argument is the exact name of a table row (the text of its first cell) and the second argument is none; the operation is applied to the numbers in that row
+
+  An argument is one of:
+  - a number from the text or the table, written without thousands separators; a percentage may be written as 12.5% and counts as 0.125
+  - #N, the result of step N, where the first step is #0
+  - a constant, for a number that is not in the text or the table: const_1, const_2, const_3, const_4, const_5, const_6, const_7, const_8, const_9, const_10, const_100, const_1000, const_10000, const_100000, const_1000000, const_1000000000, const_m1 (minus one)
+
+  Reply with exactly two lines and nothing else:
+  PROGRAM: <the program>
+  ANSWER: <the result of the last step: a plain number, or yes or no>
+
+# The user text: text evidence, then the table, then the question.
+user:
+  context_label: "Context:"
+  list_marker: "- "          # before each evidence passage
+  no_context: "(none)"       # shown when an example has no text evidence
+  table_label: "Table:"
+  question_label: "Question:"
+
+# The target text: exactly two lines.
+target:
+  program_label: "PROGRAM:"
+  answer_label: "ANSWER:"
+
+# Not part of the prompt id. Relative paths are resolved from the repository root.
+report_dir: reports/data          # committed serialization report
+dump_dir: artifacts/serialized    # git-ignored: full records for reading, never committed

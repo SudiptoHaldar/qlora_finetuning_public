@@ -1,0 +1,18 @@
+# Run registry and cost ledger (req_000 v0.04): where records go and which values are allowed.
+# Relative paths are resolved from the repository root.
+version: 1
+
+runs_dir: artifacts/runs              # git-ignored: one folder per run (manifest, config copies)
+ledger_file: ledger/ledger.jsonl      # committed: what each run consumed
+runs_index_file: ledger/runs.jsonl    # committed: one line when a run starts, one when it ends
+
+# Set by the SageMaker launcher so a cloud job, which has no git, can record its commit.
+git_commit_env: QLORA_GIT_COMMIT
+
+allowed:
+  kinds: [train, eval, export, smoke, other]
+  paths: [A, B, none]
+  arms: [A0, A1, B0-Pro, B1-Pro, B0-Lite, B1-Lite, none]
+  places: [local, sagemaker, bedrock]
+  scopes: [dev, measured]             # measured = its numbers go into the report
+  phases: [train, eval, deploy, storage, other]

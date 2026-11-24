@@ -1,0 +1,47 @@
+# When a result counts as right (req_002 v2.02), and the evaluation runner's settings
+# (req_002 v2.03).
+#
+# Two numbers match when they differ by at most the larger of `absolute` and
+# `relative` times the gold value. Both parts are needed: FinQA's gold results are rounded to
+# five decimal places and to about six significant digits, so a relative rule alone fails on
+# small results and an absolute rule alone fails on large ones.
+#
+# These values were fixed before any model was scored. Changing one afterwards means
+# rescoring every arm (possible, because every prediction keeps its unrounded value) and
+# rebuilding the gold flags: python -m scripts.finqa_gold_check
+version: 2
+verified_on: "2026-11-16"
+
+# Execution accuracy: the executed program's value against the gold result. The relative
+# part is the Gemini guide's 0.5% (the owner's decision, 2026-11-16), so a program that works
+# from a number the text gives rounded is not marked wrong for it. The absolute part is the
+# dataset's own precision, five decimal places, and decides for results near zero. Every
+# gold program of fit and dev matches its gold result under this rule.
+execution:
+  absolute: 0.00001
+  relative: 0.005     # 0.5%
+
+# Answer accuracy: the number on the ANSWER line against the gold result. The answer line is
+# the model's own arithmetic and rounding (Gemini guide: within 0.5%).
+answer:
+  absolute: 0.00001
+  relative: 0.005     # 0.5%
+
+# A second execution-accuracy figure, shown beside the headline in every run summary: the
+# same absolute part with this relative part. It is the dataset's own precision, the rule
+# the spec first proposed. It is a diagnostic: it shows how much of an arm's score rests on
+# the wider 0.5% allowance. Changing it changes no score and no flag.
+diagnostic:
+  execution_relative: 0.00001   # 0.001%
+
+# A wrong result that equals the gold one times or divided by one of these is labelled
+# "scale" for error analysis. A label never makes a result right.
+scale_factors: [100, 1000, 1000000]
+
+# Relative paths are resolved from the repository root.
+flags_file: splits/finqa_gold_flags.json   # committed: examples whose gold does not reproduce
+report_dir: reports/data                   # committed gold self-check report
+results_file: ledger/evaluations.jsonl     # committed: one line of counts per complete run
+
+runner:
+  progress_every: 50    # a log line after every so many examples

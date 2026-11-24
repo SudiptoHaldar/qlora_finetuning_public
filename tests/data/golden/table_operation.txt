@@ -1,0 +1,13 @@
+Context:
+(none)
+
+Table:
+|  | 2015 | 2014 |
+|---|---|---|
+| xylophone sales | 920 | 95 |
+| total | 1000 | 900 |
+
+Question: what was the change in xylophone sales for BOLT/2016/page_3.pdf-1?
+=====
+PROGRAM: table_max(xylophone sales, none), multiply(#0, const_1000000)
+ANSWER: 920000000

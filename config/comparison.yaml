@@ -1,0 +1,61 @@
+# The comparison (req_005 v5.01): the six arms that answer the test split, and where the
+# records of the freeze, the unlock, and the test runs live. Read by
+# scripts/comparison_freeze.py, scripts/comparison_runs.py, and the gate that every test
+# run passes (qlora_finetuning/comparison/gate.py). Relative paths are resolved from the
+# repository root.
+version: 1
+verified_on: "2026-11-22"
+
+# The freeze record: each arm's predictor name, model id, and settings, and the hashes of
+# the shared files below. Written before the unlock and never after it. It and the list of
+# voided runs are read by the gate inside a SageMaker job, and a job's code holds config/
+# and splits/ but not reports/, so both live under splits/.
+freeze_file: splits/config_freeze.json
+voids_file: splits/test_run_voids.json
+
+# Committed: the freeze record for reading (Markdown) and the six-arm record of the test runs.
+report_dir: reports/comparison
+
+# Config files that decide a prompt, a reply's reading, or a score for every arm. After the
+# freeze none of them may change by a byte. The gold flags are frozen with them.
+shared_configs: [prompt, split, data, token_budget, dsl, evaluation]
+
+# The predictor that gives each example its own gold reply. It is not an arm: it may run on
+# the test split after the unlock, as a check of the runner.
+gold_predictor: gold
+
+# The six arms, in the order they are reported. `predictor` is the name in scripts.evaluate.
+# `where` is the only place the arm may answer a test question: a Qwen arm inside a
+# SageMaker job, a Nova arm against Bedrock. `model` is the model's name in frontier.yaml.
+arms:
+  A0:
+    path: A
+    predictor: qwen3-4b
+    where: sagemaker
+  A1:
+    path: A
+    predictor: qwen3-4b-tuned
+    where: sagemaker
+    tuned: true
+  B0-Lite:
+    path: B
+    predictor: nova-lite
+    where: bedrock
+    model: nova-lite
+  B1-Lite:
+    path: B
+    predictor: nova-lite-tuned
+    where: bedrock
+    model: nova-lite
+    tuned: true
+  B0-Pro:
+    path: B
+    predictor: nova-pro
+    where: bedrock
+    model: nova-pro
+  B1-Pro:
+    path: B
+    predictor: nova-pro-tuned
+    where: bedrock
+    model: nova-pro
+    tuned: true

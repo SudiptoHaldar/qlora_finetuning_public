@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.nova_tune",
+  "attempts": [
+    {
+      "model": "nova-lite",
+      "attempt": 1,
+      "arm": "B1-Lite",
+      "base_model_id": "amazon.nova-lite-v1:0",
+      "customization_model_id": "amazon.nova-lite-v1:0:300k",
+      "job_name": "qlora-finqa-nova-lite-c2d67fe65c7f-a1",
+      "custom_model_name": "qlora-finqa-nova-lite-c2d67fe65c7f-a1",
+      "deployment_name": "qlora-finqa-nova-lite-c2d67fe65c7f-a1",
+      "client_request_token": "qlora-a43faddfa1b9e6ca944b25ce6967311d83d026dd377b13f2",
+      "hyperparameters": {
+        "epochCount": "2",
+        "learningRate": "0.00001",
+        "learningRateWarmupSteps": "10"
+      },
+      "export_id": "c2d67fe65c7f",
+      "training_s3_uri": "s3://qlora-sagemaker-123456789012/data/bedrock/c2d67fe65c7f/finqa_fit.jsonl",
+      "validation_s3_uri": "s3://qlora-sagemaker-123456789012/data/bedrock/c2d67fe65c7f/finqa_dev.jsonl",
+      "output_s3_uri": "s3://qlora-sagemaker-123456789012/bedrock/c2d67fe65c7f/nova-lite-a1/",
+      "estimated_training_tokens": 6411388,
+      "estimated_usd": "12.822776",
+      "run_id": "20261119T021002Z-train-qlora-finqa-nova-lite-c2d67fe65c7f-a1-ca6d",
+      "job_arn": "arn:aws:bedrock:us-east-1:123456789012:model-customization-job/amazon.nova-lite-v1:0:300k/9u5awtwqxk7j",
+      "job_status": "Completed",
+      "failed_in": null,
+      "failure_message": null,
+      "created_at": "2026-11-19T02:10:06Z",
+      "ended_at": "2026-11-19T04:29:30Z",
+      "model_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model/amazon.nova-lite-v1:0:300k/gmwz1fhs0vbt",
+      "training_loss": 0.058907344937324524,
+      "validation_loss": 0.10350069403648376,
+      "metrics": {
+        "training": {
+          "steps": 152,
+          "first": 0.43944647908210754,
+          "last": 0.058907344937324524,
+          "lowest": 0.04255962371826172,
+          "lowest_step": 145
+        },
+        "validation": {
+          "steps": 2,
+          "first": 0.10831356793642044,
+          "last": 0.10350069403648376,
+          "lowest": 0.10350069403648376,
+          "lowest_step": 152
+        }
+      },
+      "deployment_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/308jz60uh4a5",
+      "deployment_status": "Active",
+      "deployment_failure": null,
+      "billed_usd": "14.6",
+      "deployment_deleted": false,
+      "model_deleted": false,
+      "notes": []
+    },
+    {
+      "model": "nova-pro",
+      "attempt": 1,
+      "arm": "B1-Pro",
+      "base_model_id": "amazon.nova-pro-v1:0",
+      "customization_model_id": "amazon.nova-pro-v1:0:300k",
+      "job_name": "qlora-finqa-nova-pro-c2d67fe65c7f-a1",
+      "custom_model_name": "qlora-finqa-nova-pro-c2d67fe65c7f-a1",
+      "deployment_name": "qlora-finqa-nova-pro-c2d67fe65c7f-a1",
+      "client_request_token": "qlora-b231b57ca282d9903169237c1061bc2669896dd500cebdc2",
+      "hyperparameters": {
+        "epochCount": "2",
+        "learningRate": "0.00001",
+        "learningRateWarmupSteps": "10"
+      },
+      "export_id": "c2d67fe65c7f",
+      "training_s3_uri": "s3://qlora-sagemaker-123456789012/data/bedrock/c2d67fe65c7f/finqa_fit.jsonl",
+      "validation_s3_uri": "s3://qlora-sagemaker-123456789012/data/bedrock/c2d67fe65c7f/finqa_dev.jsonl",
+      "output_s3_uri": "s3://qlora-sagemaker-123456789012/bedrock/c2d67fe65c7f/nova-pro-a1/",
+      "estimated_training_tokens": 6411388,
+      "estimated_usd": "51.291104",
+      "run_id": "20261121T095540Z-train-qlora-finqa-nova-pro-c2d67fe65c7f-a1-752d",
+      "job_arn": "arn:aws:bedrock:us-east-1:123456789012:model-customization-job/amazon.nova-pro-v1:0:300k/ibzwgwgvqxue",
+      "job_status": "Completed",
+      "failed_in": null,
+      "failure_message": null,
+      "created_at": "2026-11-21T09:55:42Z",
+      "ended_at": "2026-11-22T04:35:35Z",
+      "model_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model/amazon.nova-pro-v1:0:300k/z86zmzl5wkz8",
+      "training_loss": 0.041119836270809174,
+      "validation_loss": 0.08214065432548523,
+      "metrics": {
+        "training": {
+          "steps": 304,
+          "first": 0.3580359220504761,
+          "last": 0.041119836270809174,
+          "lowest": 0.02035403810441494,
+          "lowest_step": 290
+        },
+        "validation": {
+          "steps": 2,
+          "first": 0.07943597435951233,
+          "last": 0.08214065432548523,
+          "lowest": 0.07943597435951233,
+          "lowest_step": 152
+        }
+      },
+      "deployment_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/62v0vii1ge23",
+      "deployment_status": "Active",
+      "deployment_failure": null,
+      "billed_usd": "58.75",
+      "deployment_deleted": false,
+      "model_deleted": false,
+      "notes": []
+    }
+  ]
+}

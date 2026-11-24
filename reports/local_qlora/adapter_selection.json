@@ -1,0 +1,214 @@
+{
+  "schema": 1,
+  "training_run": "20261120T182710Z-train-qwen3-4b-fit-4557",
+  "chain": [
+    "20261120T182710Z-train-qwen3-4b-fit-4557"
+  ],
+  "split": "dev",
+  "key": {
+    "model_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "manifest_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "settings_sha256": "d6fc909788da92356bdb2649169c938b0201bf8c6dccf9771d9ac9a88ea6b7cc"
+  },
+  "selected": {
+    "step": 500,
+    "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-500",
+    "adapter_sha256": "a8c9561b4fc6e560a53d5104c0118e5d088fcfbb579b57b8bfb24714c559902b",
+    "eval_run_id": "20261121T073743Z-eval-qwen3-4b-tuned-dev-fd5b",
+    "examples": 499,
+    "execution_accuracy_tight": 358,
+    "peak_vram_allocated_gib": 4.586,
+    "format_validity": 499,
+    "execution_accuracy": 358,
+    "answer_accuracy": 338,
+    "program_match": 333,
+    "dev_loss": 0.132073
+  },
+  "untuned": {
+    "step": null,
+    "adapter": null,
+    "adapter_sha256": null,
+    "eval_run_id": "20261121T070030Z-eval-qwen3-4b-dev-2416",
+    "examples": 499,
+    "execution_accuracy_tight": 6,
+    "peak_vram_allocated_gib": 4.009,
+    "format_validity": 457,
+    "execution_accuracy": 6,
+    "answer_accuracy": 60,
+    "program_match": 2
+  },
+  "checkpoints": [
+    {
+      "step": 100,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-100",
+      "adapter_sha256": "e6a02a19ef5da3deb51244a8915f2c9e98a154b55484ca255621d207c0d78c81",
+      "eval_run_id": "20261121T071054Z-eval-qwen3-4b-tuned-dev-1bf0",
+      "examples": 499,
+      "execution_accuracy_tight": 321,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 321,
+      "answer_accuracy": 287,
+      "program_match": 291,
+      "dev_loss": 0.164298
+    },
+    {
+      "step": 200,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-200",
+      "adapter_sha256": "cedacbf02f9ffe5fe73057e760cc9bfdb2bf52779a7d0cfbde55a9b8d0dbe3ec",
+      "eval_run_id": "20261121T071743Z-eval-qwen3-4b-tuned-dev-a173",
+      "examples": 499,
+      "execution_accuracy_tight": 321,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 498,
+      "execution_accuracy": 322,
+      "answer_accuracy": 290,
+      "program_match": 299,
+      "dev_loss": 0.153122
+    },
+    {
+      "step": 300,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-300",
+      "adapter_sha256": "02443b78d812809cda8d7c37f5207a347923e3d521ab93bafb71552ca678bb03",
+      "eval_run_id": "20261121T072435Z-eval-qwen3-4b-tuned-dev-5c2d",
+      "examples": 499,
+      "execution_accuracy_tight": 337,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 338,
+      "answer_accuracy": 317,
+      "program_match": 308,
+      "dev_loss": 0.14144
+    },
+    {
+      "step": 400,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-400",
+      "adapter_sha256": "61eb0926ffd439c9839e9998b40407ff20c41b3fef73d66b6856419bcfb5fb79",
+      "eval_run_id": "20261121T073119Z-eval-qwen3-4b-tuned-dev-2711",
+      "examples": 499,
+      "execution_accuracy_tight": 349,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 350,
+      "answer_accuracy": 321,
+      "program_match": 320,
+      "dev_loss": 0.139736
+    },
+    {
+      "step": 500,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-500",
+      "adapter_sha256": "a8c9561b4fc6e560a53d5104c0118e5d088fcfbb579b57b8bfb24714c559902b",
+      "eval_run_id": "20261121T073743Z-eval-qwen3-4b-tuned-dev-fd5b",
+      "examples": 499,
+      "execution_accuracy_tight": 358,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 358,
+      "answer_accuracy": 338,
+      "program_match": 333,
+      "dev_loss": 0.132073
+    },
+    {
+      "step": 600,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-600",
+      "adapter_sha256": "cf4a7687bdaccb6c04cec6d34516c139fa7a4ab6fcbeced33f016087ce218b10",
+      "eval_run_id": "20261121T074423Z-eval-qwen3-4b-tuned-dev-78d8",
+      "examples": 499,
+      "execution_accuracy_tight": 355,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 356,
+      "answer_accuracy": 341,
+      "program_match": 328,
+      "dev_loss": 0.128595
+    },
+    {
+      "step": 700,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-700",
+      "adapter_sha256": "56db06cae1b76ed5d2b13e0b810e92a73717329f430da3df527b9dd5a6837ece",
+      "eval_run_id": "20261121T075115Z-eval-qwen3-4b-tuned-dev-86e9",
+      "examples": 499,
+      "execution_accuracy_tight": 355,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 356,
+      "answer_accuracy": 340,
+      "program_match": 326,
+      "dev_loss": 0.132953
+    },
+    {
+      "step": 800,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-800",
+      "adapter_sha256": "dedb23b4c24bbae556a8c7332ef507092b5e07174e10769b68705b887130f1d1",
+      "eval_run_id": "20261121T075759Z-eval-qwen3-4b-tuned-dev-a994",
+      "examples": 499,
+      "execution_accuracy_tight": 357,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 358,
+      "answer_accuracy": 343,
+      "program_match": 329,
+      "dev_loss": 0.135165
+    },
+    {
+      "step": 900,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-900",
+      "adapter_sha256": "9be1c90ec34a6a5b45e3b02c754000555400abbe41371655642bec1bc0280280",
+      "eval_run_id": "20261121T080439Z-eval-qwen3-4b-tuned-dev-d886",
+      "examples": 499,
+      "execution_accuracy_tight": 356,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 356,
+      "answer_accuracy": 342,
+      "program_match": 327,
+      "dev_loss": 0.135145
+    },
+    {
+      "step": 918,
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-918",
+      "adapter_sha256": "ed28c7c204f53899bf6d9c74147bece9b3797ce8d030966d9c3ecf34f2ef8c19",
+      "eval_run_id": "20261121T081121Z-eval-qwen3-4b-tuned-dev-19c3",
+      "examples": 499,
+      "execution_accuracy_tight": 356,
+      "peak_vram_allocated_gib": 4.586,
+      "format_validity": 499,
+      "execution_accuracy": 356,
+      "answer_accuracy": 342,
+      "program_match": 329,
+      "dev_loss": 0.134771
+    }
+  ],
+  "thresholds": {
+    "min_execution_accuracy_percent": 40.0,
+    "min_format_validity_percent": 98.0
+  },
+  "selected_execution_accuracy_percent": "71.74",
+  "selected_format_validity_percent": "100.00",
+  "verdict": "met",
+  "notes": {
+    "selected_is_last_checkpoint": false,
+    "lowest_dev_loss_step": 600,
+    "execution_gain_points_over_untuned": "70.54"
+  },
+  "training_peak_vram_allocated_gib": 5.988,
+  "worst_batch_peak_vram_allocated_gib": 10.996,
+  "jobs": [
+    {
+      "name": "qlora-train-958bed10-a1",
+      "task": "train",
+      "instance_type": "ml.g5.xlarge",
+      "billable_seconds": 15037,
+      "cost_usd": "5.88"
+    },
+    {
+      "name": "qlora-score-63b89247-a1",
+      "task": "score",
+      "instance_type": "ml.g5.xlarge",
+      "billable_seconds": 4965,
+      "cost_usd": "1.94"
+    }
+  ]
+}

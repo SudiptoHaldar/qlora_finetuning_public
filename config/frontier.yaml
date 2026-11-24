@@ -1,0 +1,101 @@
+# Path B: what is sent to Amazon Bedrock (req_004 v4.01), the training files, the cost
+# estimate, and the budget gate (v4.02), the fine-tuning jobs (v4.03), and the dev
+# evaluation of the tuned models (v4.04).
+#
+# Every value under `models` and `inference` that can change a reply is part of a run's
+# settings: a run made under other values cannot be resumed, and its numbers are another
+# experiment. Relative paths are resolved from the repository root.
+version: 4
+verified_on: "2026-11-22"
+
+# The plain in-region model ids (the owner's decision, 2026-11-16): every call stays in
+# us-east-1, which is also the only region where a tuned model can be served. `model_id`
+# answers questions; `customization_model_id` (it ends in ":300k") is only for starting a
+# fine-tuning job. A test ties those to the list in config/aws.yaml that aws_check reads.
+# `requests_per_minute` (optional) paces the calls to a model, tuned or untuned. This
+# account allows untuned Nova Pro 25 a minute and a tuned Nova Pro deployment 20; runs at
+# those rates stopped on throttling, so Nova Pro is held to 18 (the owner's decision,
+# 2026-11-22). Nova Lite is allowed 200 and is not paced. Pacing changes no reply and is
+# not part of a run's settings.
+models:
+  nova-pro:
+    model_id: "amazon.nova-pro-v1:0"
+    untuned_arm: B0-Pro
+    customization_model_id: "amazon.nova-pro-v1:0:300k"
+    tuned_arm: B1-Pro
+    requests_per_minute: 18
+  nova-lite:
+    model_id: "amazon.nova-lite-v1:0"
+    untuned_arm: B0-Lite
+    customization_model_id: "amazon.nova-lite-v1:0:300k"
+    tuned_arm: B1-Lite
+
+# Greedy decoding, as on Path A. top_k 1 leaves only the most likely token. AWS documents
+# 0.00001 as the lowest temperature and recommends 0 for greedy decoding; if Bedrock refuses
+# 0, write 0.00001 here: with top_k 1 the reply is the same (v4.01 spec D5).
+# Nothing else is sent: no top_p, no stop sequence, no cache point, no reasoning setting, no
+# service tier (so the standard tier).
+inference:
+  temperature: 0
+  top_k: 1
+
+# The bedrock-runtime client. Retrying is botocore's own: max_attempts counts the first try.
+client:
+  retry_mode: adaptive             # paces calls after a throttle; Nova Pro allows 25 a minute
+  max_attempts: 12
+  connect_timeout: 10
+  read_timeout: 120
+
+report_dir: reports/frontier      # committed: baseline report, training gate record
+
+# Fine-tuning. The epoch count is what the budget gate prices and what v4.03 launches with
+# (the owner's decision, 2026-11-16: 2, Bedrock's default for both models; allowed 1 to 5).
+# The other two hyperparameters are Bedrock's defaults for both models (the owner's decision,
+# 2026-11-16). All three are sent explicitly, so a default AWS changes later changes nothing.
+# The learning rate is text so that it reaches Bedrock exactly as written.
+customization:
+  epoch_count: 2
+  learning_rate: "0.00001"
+  learning_rate_warmup_steps: 10
+  # A later model is launched only after the earlier one's job has completed and the amount
+  # AWS billed for it has been entered (the owner's decision, 2026-11-16; check T9).
+  launch_order: [nova-lite, nova-pro]
+  name_prefix: qlora-finqa        # jobs, tuned models, deployments
+  output_prefix: bedrock/         # job outputs; the Bedrock role may write here
+  poll_seconds: 60                # how often `status --wait` looks again
+  tags:
+    project: qlora-finetuning
+
+# The training files (v4.02): fit as the training file, dev as the validation file, one
+# pair for both models. The three limits are AWS's for Nova Pro and Nova Lite, read
+# 2026-11-16; they are service facts, not settings to tune.
+export:
+  schema_version: bedrock-conversation-2024
+  dir: artifacts/bedrock          # git-ignored: the files hold dataset text
+  s3_prefix: data/bedrock/        # under data/, which the Bedrock role may read
+  min_records: 8
+  max_records: 20000              # training plus validation
+  max_sample_tokens: 32000
+
+# The cap for all of Path B, out of the $300 for both paths (the owner's decision,
+# 2026-11-16). The gate compares the Path B estimate with it.
+budget:
+  path_b_cap_usd: 200
+
+estimate:
+  assumed_token_ratio: 1.5        # Nova tokens per Qwen token, shown when none was measured;
+                                  # the gate never passes on it
+  margin_percent: 10              # added to the training estimate before the comparison
+  storage_months: 1               # how long the two tuned models are kept, for the estimate
+
+# The dev evaluation of the tuned models (v4.04). Each tuned run is paired with the untuned
+# run of the same model and split. The verdict comes from `verdict_split` only: a tuned
+# model has met its threshold when its execution accuracy is at least
+# `min_execution_gain_points` above its own baseline's and its format validity is at least
+# `min_format_validity_percent` (the owner's decision, 2026-11-18). A miss makes v4.05
+# eligible for that model; it starts nothing.
+tuned_evaluation:
+  splits: [quick_dev, dev]
+  verdict_split: dev
+  min_execution_gain_points: 10
+  min_format_validity_percent: 98

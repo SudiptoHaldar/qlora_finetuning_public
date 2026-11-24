@@ -1,0 +1,315 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.nova_baseline",
+  "inputs": {
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "split_content_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "settings": {
+      "api": "converse",
+      "reasoning": "not sent",
+      "service_tier": "default",
+      "stop_sequences": [],
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": null
+    },
+    "price_list": {
+      "offer": "AmazonBedrock",
+      "region": "us-east-1",
+      "published": "2026-11-11",
+      "read_on": "2026-11-16"
+    }
+  },
+  "runs": [
+    {
+      "model": "nova-pro",
+      "model_id": "amazon.nova-pro-v1:0",
+      "arm": "B0-Pro",
+      "split": "quick_dev",
+      "run_id": "20261116T214132Z-eval-nova-pro-quick-dev-156c",
+      "git_commit": "cf7a3c95d3dc0e1d449c5b83567bcfb0678f6c56",
+      "result": true,
+      "examples": 200,
+      "format_validity": {
+        "count": 199,
+        "rate": 0.995
+      },
+      "execution_accuracy": {
+        "count": 75,
+        "rate": 0.375
+      },
+      "answer_accuracy": {
+        "count": 103,
+        "rate": 0.515
+      },
+      "program_match": {
+        "count": 64,
+        "rate": 0.32
+      },
+      "execution_accuracy_tight": {
+        "count": 75,
+        "rate": 0.375
+      },
+      "error_codes": {
+        "nested_call": 59,
+        "row_not_found": 7,
+        "unknown_constant": 5,
+        "bad_reference": 4,
+        "syntax": 4,
+        "unknown_operation": 1
+      },
+      "deviations": {
+        "answer_missing": 1
+      },
+      "mismatches": {
+        "scale": 24,
+        "other": 17,
+        "sign": 4
+      },
+      "stop_reasons": {
+        "end": 198,
+        "length": 2
+      },
+      "input_tokens": 126540,
+      "output_tokens": 9305,
+      "qwen_prompt_tokens": 128495,
+      "nova_to_qwen_input_ratio": "0.9848",
+      "cost_usd": "0.131008",
+      "cost_per_1000_questions_usd": "0.655040",
+      "latency_seconds": {
+        "mean": 1.967722,
+        "median": 1.651612,
+        "p95": 3.97929,
+        "max": 9.725685,
+        "total": 393.544485
+      },
+      "in_configured_set": true
+    },
+    {
+      "model": "nova-lite",
+      "model_id": "amazon.nova-lite-v1:0",
+      "arm": "B0-Lite",
+      "split": "quick_dev",
+      "run_id": "20261116T201734Z-eval-nova-lite-quick-dev-700e",
+      "git_commit": "cf7a3c95d3dc0e1d449c5b83567bcfb0678f6c56",
+      "result": true,
+      "examples": 200,
+      "format_validity": {
+        "count": 192,
+        "rate": 0.96
+      },
+      "execution_accuracy": {
+        "count": 47,
+        "rate": 0.235
+      },
+      "answer_accuracy": {
+        "count": 75,
+        "rate": 0.375
+      },
+      "program_match": {
+        "count": 37,
+        "rate": 0.185
+      },
+      "execution_accuracy_tight": {
+        "count": 47,
+        "rate": 0.235
+      },
+      "error_codes": {
+        "nested_call": 49,
+        "bad_reference": 19,
+        "row_not_found": 9,
+        "wrong_arity": 9,
+        "bad_argument": 4,
+        "syntax": 2,
+        "unknown_constant": 2,
+        "row_not_numeric": 1
+      },
+      "deviations": {
+        "text_after": 8
+      },
+      "mismatches": {
+        "other": 37,
+        "scale": 21
+      },
+      "stop_reasons": {
+        "end": 200
+      },
+      "input_tokens": 126540,
+      "output_tokens": 9311,
+      "qwen_prompt_tokens": 128495,
+      "nova_to_qwen_input_ratio": "0.9848",
+      "cost_usd": "0.009827",
+      "cost_per_1000_questions_usd": "0.049135",
+      "latency_seconds": {
+        "mean": 0.538715,
+        "median": 0.517614,
+        "p95": 0.769978,
+        "max": 1.349469,
+        "total": 107.74291
+      },
+      "in_configured_set": true
+    },
+    {
+      "model": "nova-pro",
+      "model_id": "amazon.nova-pro-v1:0",
+      "arm": "B0-Pro",
+      "split": "dev",
+      "run_id": "20261116T203032Z-eval-nova-pro-dev-d704",
+      "git_commit": "cf7a3c95d3dc0e1d449c5b83567bcfb0678f6c56",
+      "result": true,
+      "examples": 499,
+      "format_validity": {
+        "count": 497,
+        "rate": 0.9959919839679359
+      },
+      "execution_accuracy": {
+        "count": 190,
+        "rate": 0.3807615230460922
+      },
+      "answer_accuracy": {
+        "count": 259,
+        "rate": 0.5190380761523046
+      },
+      "program_match": {
+        "count": 163,
+        "rate": 0.32665330661322645
+      },
+      "execution_accuracy_tight": {
+        "count": 190,
+        "rate": 0.3807615230460922
+      },
+      "error_codes": {
+        "nested_call": 132,
+        "row_not_found": 22,
+        "unknown_constant": 14,
+        "syntax": 11,
+        "bad_reference": 7,
+        "unknown_operation": 5,
+        "bad_argument": 1
+      },
+      "deviations": {
+        "answer_missing": 2
+      },
+      "mismatches": {
+        "scale": 56,
+        "other": 54,
+        "sign": 7
+      },
+      "stop_reasons": {
+        "end": 496,
+        "length": 3
+      },
+      "input_tokens": 313156,
+      "output_tokens": 22149,
+      "qwen_prompt_tokens": 317882,
+      "nova_to_qwen_input_ratio": "0.9851",
+      "cost_usd": "0.321402",
+      "cost_per_1000_questions_usd": "0.644091",
+      "latency_seconds": {
+        "mean": 2.279597,
+        "median": 2.286871,
+        "p95": 4.034937,
+        "max": 4.829294,
+        "total": 1137.519054
+      },
+      "in_configured_set": true
+    },
+    {
+      "model": "nova-lite",
+      "model_id": "amazon.nova-lite-v1:0",
+      "arm": "B0-Lite",
+      "split": "dev",
+      "run_id": "20261116T202551Z-eval-nova-lite-dev-d37e",
+      "git_commit": "cf7a3c95d3dc0e1d449c5b83567bcfb0678f6c56",
+      "result": true,
+      "examples": 499,
+      "format_validity": {
+        "count": 466,
+        "rate": 0.9338677354709419
+      },
+      "execution_accuracy": {
+        "count": 123,
+        "rate": 0.24649298597194388
+      },
+      "answer_accuracy": {
+        "count": 189,
+        "rate": 0.3787575150300601
+      },
+      "program_match": {
+        "count": 93,
+        "rate": 0.18637274549098196
+      },
+      "execution_accuracy_tight": {
+        "count": 123,
+        "rate": 0.24649298597194388
+      },
+      "error_codes": {
+        "nested_call": 104,
+        "bad_reference": 61,
+        "row_not_found": 21,
+        "wrong_arity": 20,
+        "bad_argument": 13,
+        "syntax": 6,
+        "unknown_operation": 5,
+        "unknown_constant": 4,
+        "row_not_numeric": 3,
+        "empty_program": 1
+      },
+      "deviations": {
+        "text_after": 32,
+        "answer_missing": 3,
+        "text_between": 1
+      },
+      "mismatches": {
+        "other": 83,
+        "scale": 52,
+        "sign": 3
+      },
+      "stop_reasons": {
+        "end": 497,
+        "length": 2
+      },
+      "input_tokens": 313156,
+      "output_tokens": 23118,
+      "qwen_prompt_tokens": 317882,
+      "nova_to_qwen_input_ratio": "0.9851",
+      "cost_usd": "0.024338",
+      "cost_per_1000_questions_usd": "0.048773",
+      "latency_seconds": {
+        "mean": 0.550726,
+        "median": 0.514263,
+        "p95": 0.875586,
+        "max": 1.266497,
+        "total": 274.81246
+      },
+      "in_configured_set": true
+    }
+  ],
+  "checks": [
+    {
+      "id": "B1",
+      "name": "4 results",
+      "passed": true,
+      "detail": "one result per model (nova-pro, nova-lite) and split (quick_dev, dev)"
+    },
+    {
+      "id": "B2",
+      "name": "Same question",
+      "passed": true,
+      "detail": "prompt d63742a62b76..., split manifest d34fb22e37b7..., reply limit 192, one set of settings"
+    },
+    {
+      "id": "B3",
+      "name": "Usage from AWS",
+      "passed": true,
+      "detail": "every prediction and ledger record has Bedrock's token counts"
+    },
+    {
+      "id": "B4",
+      "name": "As configured",
+      "passed": true,
+      "detail": "model ids and decoding values are those of config/frontier.yaml"
+    }
+  ],
+  "passed": true
+}

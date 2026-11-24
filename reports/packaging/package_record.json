@@ -1,0 +1,424 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.hf_package cards",
+  "passed": true,
+  "checks": [
+    {
+      "id": "P1",
+      "name": "Records in place",
+      "passed": true,
+      "detail": "the six-arm record passed C1 to C8, the cost record K1 to K8, the comparison's record R1 to R8; none is provisional"
+    },
+    {
+      "id": "P2",
+      "name": "The source is arm A1",
+      "passed": true,
+      "detail": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-500, weights a8c9561b4fc6..., as the selection record says"
+    },
+    {
+      "id": "P3",
+      "name": "Identity",
+      "passed": true,
+      "detail": "the adapter's model commit, prompt, and split are today's"
+    },
+    {
+      "id": "P4",
+      "name": "Package contents",
+      "passed": true,
+      "detail": "each package holds the files it should and no other; the adapter files are the selected checkpoint's bytes"
+    },
+    {
+      "id": "P5",
+      "name": "Nothing private",
+      "passed": true,
+      "detail": "no text file of either package matches a forbidden pattern; the sample is the demo's"
+    },
+    {
+      "id": "P6",
+      "name": "Tokenizer",
+      "passed": true,
+      "detail": "the tokenizer files are the base model's and give the pinned fingerprint"
+    },
+    {
+      "id": "P7",
+      "name": "Licences",
+      "passed": true,
+      "detail": "3 entries, each confirmed by the owner within 30 days"
+    },
+    {
+      "id": "P8",
+      "name": "The adapter package answers",
+      "passed": true,
+      "detail": "R2 gives the same reply as R1 on all 499 examples; R1 has 358 right, the recorded run 358; the adapter card's code ran to the sample's expected result"
+    },
+    {
+      "id": "P9",
+      "name": "The merged copy answers",
+      "passed": true,
+      "detail": "R3 has 361 right against R1's 358; R4 has 357 right against R1's 358; the merged card's code ran both ways to the expected result"
+    },
+    {
+      "id": "P10",
+      "name": "The cards",
+      "passed": true,
+      "detail": "each card is its template filled from today's records; the copy in the package and the committed copy are the same"
+    }
+  ],
+  "adapter": {
+    "status": "ready",
+    "repository": "sudiptoHaldar/qwen3-4b-finqa-program-qlora",
+    "source": {
+      "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-500",
+      "weights_sha256": "a8c9561b4fc6e560a53d5104c0118e5d088fcfbb579b57b8bfb24714c559902b",
+      "selected_step": 500
+    },
+    "files": [
+      {
+        "name": "adapter_config.json",
+        "bytes": 1169,
+        "sha256": "eb45c6b4aefcf52bb2eeb8db944385e1f09898c1b47d667ade924af7fc8c37c2"
+      },
+      {
+        "name": "adapter_model.safetensors",
+        "bytes": 66127776,
+        "sha256": "a8c9561b4fc6e560a53d5104c0118e5d088fcfbb579b57b8bfb24714c559902b"
+      },
+      {
+        "name": "finqa_split_manifest.json",
+        "bytes": 303891,
+        "sha256": "a031241256656f7e94830afdfa34576a735c457396b048b7526ece7869c2edac"
+      },
+      {
+        "name": "LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "name": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "name": "prompt.json",
+        "bytes": 2449,
+        "sha256": "e8ed49e7d7b26911525c9ee7c2eb36bba04a78351d4fe0225fe3702365395df6"
+      },
+      {
+        "name": "README.md",
+        "bytes": 15750,
+        "sha256": "66f3c0ce3a2aacaaaf70f7e545d58cb29eca91943d101eba2a309128c9f9773c"
+      },
+      {
+        "name": "sample_input.json",
+        "bytes": 503,
+        "sha256": "5b02531733ce51fd2816f0ed4cb6b5ff814d6f2080870ec10d12279369eef92e"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+      },
+      {
+        "name": "training_metadata.json",
+        "bytes": 2086,
+        "sha256": "8bb28dde8d3653aa942bca4c616521eff4ca2007c259c2c5b3ab30d235195810"
+      },
+      {
+        "name": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  },
+  "merged": {
+    "status": "ready",
+    "repository": "sudiptoHaldar/qwen3-4b-finqa-program-merged",
+    "withheld_because": [],
+    "weights_sha256": "4807abab3147e14beb77ecdc8ad14a1ec126d7f3fe2e3499930dea8be7be78cc",
+    "merge": {
+      "method": "W + (alpha / r) * B @ A, added to the full-precision base weights",
+      "compute_dtype": "float32",
+      "saved_dtype": "bfloat16",
+      "adapted_tensors": 252,
+      "parameters": 4022468096,
+      "checked_tensor": "model.layers.0.mlp.down_proj.weight"
+    },
+    "files": [
+      {
+        "name": "config.json",
+        "bytes": 1664,
+        "sha256": "9ded6bb06e5546765cd26883f3e4267d858cea59e43bcc8b33645f2b6f4c8890"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 163,
+        "sha256": "49e91b76eaa763f95a5d6d18889739d49d47d0eaa6c1c7acff24e430f43a8fa3"
+      },
+      {
+        "name": "LICENSE",
+        "bytes": 11343,
+        "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+      },
+      {
+        "name": "merge_metadata.json",
+        "bytes": 862,
+        "sha256": "1f29cfacd9d7dce92652edc52f5b1dcc5713d3124a99d8ec5a686cb974703335"
+      },
+      {
+        "name": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "name": "model-00001-of-00003.safetensors",
+        "bytes": 3981504152,
+        "sha256": "e4a38c5f0469ef33b2dc5b32390a5179bd94a4f486fab1311cb5855cadbd07f3"
+      },
+      {
+        "name": "model-00002-of-00003.safetensors",
+        "bytes": 3961229912,
+        "sha256": "0125e46938361388087c95be90bf7613d327faf9498da1c2934444f4fde9eac4"
+      },
+      {
+        "name": "model-00003-of-00003.safetensors",
+        "bytes": 102247936,
+        "sha256": "6ec8fe2b20b8823501324713ba379bd65c90e1b960f79fd8822481a570d70b43"
+      },
+      {
+        "name": "model.safetensors.index.json",
+        "bytes": 33261,
+        "sha256": "646973887378a236d3cf81292de5cd631218b940ec0aecf03a16f57890572efc"
+      },
+      {
+        "name": "NOTICE",
+        "bytes": 614,
+        "sha256": "70a18c9a7415730b1757fbfe95da53e59b177383f4681ff83ad680feae6485b8"
+      },
+      {
+        "name": "prompt.json",
+        "bytes": 2449,
+        "sha256": "e8ed49e7d7b26911525c9ee7c2eb36bba04a78351d4fe0225fe3702365395df6"
+      },
+      {
+        "name": "README.md",
+        "bytes": 11804,
+        "sha256": "c22a67e10dfce18132f6371f07ed1177acd0e836471b040dd2e990813705d6b9"
+      },
+      {
+        "name": "sample_input.json",
+        "bytes": 503,
+        "sha256": "5b02531733ce51fd2816f0ed4cb6b5ff814d6f2080870ec10d12279369eef92e"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+      },
+      {
+        "name": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  },
+  "split": "dev",
+  "noise_examples": 10,
+  "allowance_examples": 10,
+  "recorded": {
+    "what": "arm A1 on dev, in the job that scored the checkpoints",
+    "examples": 499,
+    "execution_accuracy": 358
+  },
+  "runs": {
+    "R1": {
+      "run_id": "20261124T091907Z-eval-qwen3-4b-tuned-dev-7666",
+      "predictor": "qwen3-4b-tuned",
+      "examples": 499,
+      "counts": {
+        "format_validity": 499,
+        "execution_accuracy": 358,
+        "answer_accuracy": 337,
+        "program_match": 332
+      },
+      "percent": {
+        "format_validity": "100.00",
+        "execution_accuracy": "71.74",
+        "answer_accuracy": "67.54",
+        "program_match": "66.53"
+      }
+    },
+    "R2": {
+      "run_id": "20261124T092628Z-eval-qwen3-4b-package-dev-6009",
+      "predictor": "qwen3-4b-package",
+      "examples": 499,
+      "counts": {
+        "format_validity": 499,
+        "execution_accuracy": 358,
+        "answer_accuracy": 337,
+        "program_match": 332
+      },
+      "percent": {
+        "format_validity": "100.00",
+        "execution_accuracy": "71.74",
+        "answer_accuracy": "67.54",
+        "program_match": "66.53"
+      }
+    },
+    "R3": {
+      "run_id": "20261124T093421Z-eval-qwen3-4b-merged-dev-5494",
+      "predictor": "qwen3-4b-merged",
+      "examples": 499,
+      "counts": {
+        "format_validity": 499,
+        "execution_accuracy": 361,
+        "answer_accuracy": 335,
+        "program_match": 331
+      },
+      "percent": {
+        "format_validity": "100.00",
+        "execution_accuracy": "72.34",
+        "answer_accuracy": "67.13",
+        "program_match": "66.33"
+      }
+    },
+    "R4": {
+      "run_id": "20261124T094038Z-eval-qwen3-4b-merged-full-dev-9df6",
+      "predictor": "qwen3-4b-merged-full",
+      "examples": 499,
+      "counts": {
+        "format_validity": 499,
+        "execution_accuracy": 357,
+        "answer_accuracy": 336,
+        "program_match": 328
+      },
+      "percent": {
+        "format_validity": "100.00",
+        "execution_accuracy": "71.54",
+        "answer_accuracy": "67.33",
+        "program_match": "65.73"
+      }
+    }
+  },
+  "comparisons": {
+    "R2": {
+      "examples": 499,
+      "replies_that_differ": 0,
+      "differing_ids": [],
+      "right_reference": 358,
+      "right_other": 358,
+      "right_to_wrong": 0,
+      "wrong_to_right": 0
+    },
+    "R3": {
+      "examples": 499,
+      "replies_that_differ": 157,
+      "differing_ids": [
+        "IPG/2009/page_89.pdf-3",
+        "HIG/2012/page_132.pdf-2",
+        "HIG/2008/page_113.pdf-1",
+        "IPG/2013/page_36.pdf-2",
+        "ORLY/2006/page_40.pdf-1",
+        "ADBE/2011/page_101.pdf-3",
+        "IPG/2018/page_52.pdf-1",
+        "HIG/2004/page_125.pdf-1",
+        "HIG/2004/page_125.pdf-2",
+        "MA/2009/page_123.pdf-4"
+      ],
+      "right_reference": 358,
+      "right_other": 361,
+      "right_to_wrong": 6,
+      "wrong_to_right": 9
+    },
+    "R4": {
+      "examples": 499,
+      "replies_that_differ": 199,
+      "differing_ids": [
+        "MA/2010/page_107.pdf-1",
+        "HIG/2012/page_132.pdf-2",
+        "IPG/2007/page_97.pdf-1",
+        "HIG/2008/page_113.pdf-1",
+        "IPG/2013/page_36.pdf-2",
+        "ADBE/2011/page_83.pdf-4",
+        "IPG/2014/page_37.pdf-2",
+        "IPG/2014/page_95.pdf-2",
+        "IPG/2018/page_52.pdf-1",
+        "IPG/2015/page_24.pdf-4"
+      ],
+      "right_reference": 358,
+      "right_other": 357,
+      "right_to_wrong": 15,
+      "wrong_to_right": 14
+    }
+  },
+  "card_code": {
+    "adapter": {
+      "code_sha256": "4951432bd6ab20070faefdc5ff34d88cccabcc0091567d7d262a0658114bcd96",
+      "problems": [],
+      "program_ran": true,
+      "in_the_format": true,
+      "value": 0.1256140350877193
+    },
+    "merged_4bit": {
+      "code_sha256": "5436b7195101de190c23748eef2361590d2d62dade8a6a60cf0877570b1c81b2",
+      "problems": [],
+      "program_ran": true,
+      "in_the_format": true,
+      "value": 0.1256140350877193
+    },
+    "merged_full": {
+      "code_sha256": "5436b7195101de190c23748eef2361590d2d62dade8a6a60cf0877570b1c81b2",
+      "problems": [],
+      "program_ran": true,
+      "in_the_format": true,
+      "value": 0.1256140350877193
+    }
+  },
+  "licences": [
+    {
+      "name": "Qwen3-4B",
+      "role": "the base model",
+      "identifier": "apache-2.0",
+      "source": "https://huggingface.co/Qwen/Qwen3-4B",
+      "found": "The model card shows \"License: apache-2.0\" and the repository's LICENSE file is the Apache License, Version 2.0, with \"Copyright 2024 Alibaba Cloud\".",
+      "read_on": "2026-11-24",
+      "confirmed_on": "2026-11-24"
+    },
+    {
+      "name": "FinQA",
+      "role": "the questions, programs, and answers",
+      "identifier": "mit",
+      "source": "https://github.com/czyssrs/FinQA",
+      "found": "The repository's LICENSE file is the MIT License, \"Copyright (c) 2021 Zhiyu Chen\". The Hugging Face copy this project pins, bevaya/FinQA, declares \"License: mit\"; it is a re-upload by a third party, so that tag is the uploader's statement.",
+      "read_on": "2026-11-24",
+      "confirmed_on": "2026-11-24"
+    },
+    {
+      "name": "FinTabNet",
+      "role": "the report tables that FinQA's examples are built on",
+      "identifier": "cdla-permissive-1.0",
+      "source": "https://huggingface.co/datasets/bsmock/FinTabNet.c",
+      "found": "Not re-read at its own source: IBM's Data Asset eXchange page for FinTabNet now says the exchange is deprecated and states no licence. The card of the derived dataset bsmock/FinTabNet.c says \"the license of the original FinTabNet dataset is CDLA-Permissive\" and links the Community Data License Agreement - Permissive, Version 1.0 (cdla.dev/permissive-1-0). One source, and not IBM's.",
+      "read_on": "2026-11-24",
+      "confirmed_on": "2026-11-24"
+    }
+  ],
+  "records": {
+    "freeze_sha256": "1785a84a3817ca63878462a91178d28e6d35762a3896e2afb5abd62658f64ea4",
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "split_manifest_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "base_model": {
+      "id": "Qwen/Qwen3-4B",
+      "commit": "1cfa9a7208912126459214e8b04321603b3df60c"
+    }
+  }
+}

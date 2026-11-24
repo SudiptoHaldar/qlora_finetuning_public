@@ -1,0 +1,446 @@
+{
+  "arms": {
+    "A0": {
+      "all": {
+        "answer_accuracy": {
+          "count": 320,
+          "percent": "11.04"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 27,
+          "percent": "0.93"
+        },
+        "format_validity": {
+          "count": 2630,
+          "percent": "90.75"
+        },
+        "program_match": {
+          "count": 1,
+          "percent": "0.03"
+        }
+      },
+      "continues": [],
+      "execution_accuracy_tight": 21,
+      "flagged_examples": 0,
+      "git_commit": "1a60194b9e4685164eb9b5d9c653aa8be9367a5d",
+      "input_tokens": 1799543,
+      "jobs": [
+        {
+          "billable_seconds": 4164,
+          "instance_type": "ml.g5.xlarge",
+          "name": "qlora-evaluate-1a60194b-a1"
+        }
+      ],
+      "latency_seconds": {
+        "mean": 1.320627,
+        "median": 1.505567,
+        "p95": 1.591995
+      },
+      "model_id": "Qwen/Qwen3-4B",
+      "output_tokens": 237177,
+      "path": "A",
+      "predictor": "qwen3-4b",
+      "run_id": "20261123T183543Z-eval-qwen3-4b-test-ea44",
+      "stop_reasons": {
+        "end": 2600,
+        "length": 298
+      },
+      "unflagged": {
+        "answer_accuracy": {
+          "count": 320,
+          "percent": "11.04"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 27,
+          "percent": "0.93"
+        },
+        "format_validity": {
+          "count": 2630,
+          "percent": "90.75"
+        },
+        "program_match": {
+          "count": 1,
+          "percent": "0.03"
+        }
+      },
+      "where": "sagemaker"
+    },
+    "A1": {
+      "all": {
+        "answer_accuracy": {
+          "count": 1941,
+          "percent": "66.98"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 2121,
+          "percent": "73.19"
+        },
+        "format_validity": {
+          "count": 2898,
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1972,
+          "percent": "68.05"
+        }
+      },
+      "continues": [],
+      "execution_accuracy_tight": 2104,
+      "flagged_examples": 0,
+      "git_commit": "d604229ce55108b36bedfd389192b479ab066268",
+      "input_tokens": 1799543,
+      "jobs": [
+        {
+          "billable_seconds": 2564,
+          "instance_type": "ml.g5.xlarge",
+          "name": "qlora-evaluate-d604229c-a1"
+        }
+      ],
+      "latency_seconds": {
+        "mean": 0.770935,
+        "median": 0.728337,
+        "p95": 1.056195
+      },
+      "model_id": "Qwen/Qwen3-4B",
+      "output_tokens": 90782,
+      "path": "A",
+      "predictor": "qwen3-4b-tuned",
+      "run_id": "20261123T201754Z-eval-qwen3-4b-tuned-test-074f",
+      "stop_reasons": {
+        "end": 2898
+      },
+      "unflagged": {
+        "answer_accuracy": {
+          "count": 1941,
+          "percent": "66.98"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 2121,
+          "percent": "73.19"
+        },
+        "format_validity": {
+          "count": 2898,
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1972,
+          "percent": "68.05"
+        }
+      },
+      "where": "sagemaker"
+    },
+    "B0-Lite": {
+      "all": {
+        "answer_accuracy": {
+          "count": 830,
+          "percent": "28.64"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 484,
+          "percent": "16.70"
+        },
+        "format_validity": {
+          "count": 2764,
+          "percent": "95.38"
+        },
+        "program_match": {
+          "count": 406,
+          "percent": "14.01"
+        }
+      },
+      "continues": [],
+      "execution_accuracy_tight": 477,
+      "flagged_examples": 0,
+      "git_commit": "cc0f06d77fa511b5add701a4025611c8acdc11ff",
+      "input_tokens": 1773547,
+      "jobs": [],
+      "latency_seconds": {
+        "mean": 0.462782,
+        "median": 0.429649,
+        "p95": 0.716754
+      },
+      "model_id": "amazon.nova-lite-v1:0",
+      "output_tokens": 126528,
+      "path": "B",
+      "predictor": "nova-lite",
+      "run_id": "20261123T072634Z-eval-nova-lite-test-e25a",
+      "stop_reasons": {
+        "end": 2894,
+        "length": 4
+      },
+      "unflagged": {
+        "answer_accuracy": {
+          "count": 830,
+          "percent": "28.64"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 484,
+          "percent": "16.70"
+        },
+        "format_validity": {
+          "count": 2764,
+          "percent": "95.38"
+        },
+        "program_match": {
+          "count": 406,
+          "percent": "14.01"
+        }
+      },
+      "where": "bedrock"
+    },
+    "B0-Pro": {
+      "all": {
+        "answer_accuracy": {
+          "count": 1344,
+          "percent": "46.38"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 1025,
+          "percent": "35.37"
+        },
+        "format_validity": {
+          "count": 2890,
+          "percent": "99.72"
+        },
+        "program_match": {
+          "count": 850,
+          "percent": "29.33"
+        }
+      },
+      "continues": [],
+      "execution_accuracy_tight": 1015,
+      "flagged_examples": 0,
+      "git_commit": "1a60194b9e4685164eb9b5d9c653aa8be9367a5d",
+      "input_tokens": 1773547,
+      "jobs": [],
+      "latency_seconds": {
+        "mean": 0.962292,
+        "median": 0.911757,
+        "p95": 1.596218
+      },
+      "model_id": "amazon.nova-pro-v1:0",
+      "output_tokens": 121823,
+      "path": "B",
+      "predictor": "nova-pro",
+      "run_id": "20261123T172210Z-eval-nova-pro-test-6176",
+      "stop_reasons": {
+        "end": 2889,
+        "length": 9
+      },
+      "unflagged": {
+        "answer_accuracy": {
+          "count": 1344,
+          "percent": "46.38"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 1025,
+          "percent": "35.37"
+        },
+        "format_validity": {
+          "count": 2890,
+          "percent": "99.72"
+        },
+        "program_match": {
+          "count": 850,
+          "percent": "29.33"
+        }
+      },
+      "where": "bedrock"
+    },
+    "B1-Lite": {
+      "all": {
+        "answer_accuracy": {
+          "count": 2037,
+          "percent": "70.29"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 2069,
+          "percent": "71.39"
+        },
+        "format_validity": {
+          "count": 2898,
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1916,
+          "percent": "66.11"
+        }
+      },
+      "continues": [],
+      "execution_accuracy_tight": 2057,
+      "flagged_examples": 0,
+      "git_commit": "1a60194b9e4685164eb9b5d9c653aa8be9367a5d",
+      "input_tokens": 1773547,
+      "jobs": [],
+      "latency_seconds": {
+        "mean": 0.46027,
+        "median": 0.457504,
+        "p95": 0.590873
+      },
+      "model_id": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/308jz60uh4a5",
+      "output_tokens": 87972,
+      "path": "B",
+      "predictor": "nova-lite-tuned",
+      "run_id": "20261123T165542Z-eval-nova-lite-tuned-test-b4bf",
+      "stop_reasons": {
+        "end": 2898
+      },
+      "unflagged": {
+        "answer_accuracy": {
+          "count": 2037,
+          "percent": "70.29"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 2069,
+          "percent": "71.39"
+        },
+        "format_validity": {
+          "count": 2898,
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1916,
+          "percent": "66.11"
+        }
+      },
+      "where": "bedrock"
+    },
+    "B1-Pro": {
+      "all": {
+        "answer_accuracy": {
+          "count": 2139,
+          "percent": "73.81"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 2179,
+          "percent": "75.19"
+        },
+        "format_validity": {
+          "count": 2898,
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1999,
+          "percent": "68.98"
+        }
+      },
+      "continues": [],
+      "execution_accuracy_tight": 2169,
+      "flagged_examples": 0,
+      "git_commit": "1a60194b9e4685164eb9b5d9c653aa8be9367a5d",
+      "input_tokens": 1773547,
+      "jobs": [],
+      "latency_seconds": {
+        "mean": 0.599348,
+        "median": 0.587374,
+        "p95": 0.735733
+      },
+      "model_id": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/62v0vii1ge23",
+      "output_tokens": 90516,
+      "path": "B",
+      "predictor": "nova-pro-tuned",
+      "run_id": "20261123T181752Z-eval-nova-pro-tuned-test-79c0",
+      "stop_reasons": {
+        "end": 2898
+      },
+      "unflagged": {
+        "answer_accuracy": {
+          "count": 2139,
+          "percent": "73.81"
+        },
+        "examples": 2898,
+        "execution_accuracy": {
+          "count": 2179,
+          "percent": "75.19"
+        },
+        "format_validity": {
+          "count": 2898,
+          "percent": "100.00"
+        },
+        "program_match": {
+          "count": 1999,
+          "percent": "68.98"
+        }
+      },
+      "where": "bedrock"
+    }
+  },
+  "checks": [
+    {
+      "detail": "6 arms, each with one complete result",
+      "id": "C1",
+      "name": "Six arms",
+      "passed": true
+    },
+    {
+      "detail": "each run has one prediction for each of the 2,898 test examples",
+      "id": "C2",
+      "name": "Every question",
+      "passed": true
+    },
+    {
+      "detail": "prompt d63742a62b76..., split manifest d34fb22e37b7...; equal input tokens within a model",
+      "id": "C3",
+      "name": "Same questions",
+      "passed": true
+    },
+    {
+      "detail": "every run was made at the frozen configuration",
+      "id": "C4",
+      "name": "Frozen",
+      "passed": true
+    },
+    {
+      "detail": "freeze 8cc1c181b9ca, then unlock e04195249feb, then every run",
+      "id": "C5",
+      "name": "After the unlock",
+      "passed": true
+    },
+    {
+      "detail": "A1 asked the selected adapter; each B1 asked the tuning record's deployment",
+      "id": "C6",
+      "name": "The right models",
+      "passed": true
+    },
+    {
+      "detail": "AWS's token counts for every Nova prediction; billable seconds for every Qwen job",
+      "id": "C7",
+      "name": "Usage recorded",
+      "passed": true
+    },
+    {
+      "detail": "no other test run exists unvoided",
+      "id": "C8",
+      "name": "No stray run",
+      "passed": true
+    }
+  ],
+  "contract": {
+    "manifest_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "max_new_tokens": 192,
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641"
+  },
+  "deviations": [],
+  "freeze_sha256": "1785a84a3817ca63878462a91178d28e6d35762a3896e2afb5abd62658f64ea4",
+  "generated_by": "python -m scripts.comparison_runs record",
+  "passed": true,
+  "schema": 1,
+  "split": "test",
+  "test_examples": 2898,
+  "unlock": {
+    "commit": "e04195249febc38add6fc670f4bb64279c94cb8a",
+    "freeze_commit": "8cc1c181b9ca6c70dbd42e87a6c6a1b595d844ee",
+    "unlocked_on": "2026-11-23"
+  }
+}

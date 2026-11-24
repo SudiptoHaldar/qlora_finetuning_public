@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.finqa_gold_check",
+  "settings": {
+    "manifest_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "execution": {
+      "absolute": 1e-05,
+      "relative": 0.005
+    },
+    "answer": {
+      "absolute": 1e-05,
+      "relative": 0.005
+    }
+  },
+  "splits": {
+    "fit": {
+      "examples": 4884,
+      "gold_programs_that_reproduce_the_gold_answer": 4884,
+      "flagged_examples": 0,
+      "flagged_by_reason": {},
+      "format_validity": 4884,
+      "execution_accuracy": 4884,
+      "answer_accuracy": 4884,
+      "program_match": 4884,
+      "largest_share_of_the_allowance_used": 0.489846,
+      "yes_or_no_examples": 100,
+      "programs_naming_a_repeated_row": 1
+    },
+    "dev": {
+      "examples": 499,
+      "gold_programs_that_reproduce_the_gold_answer": 499,
+      "flagged_examples": 0,
+      "flagged_by_reason": {},
+      "format_validity": 499,
+      "execution_accuracy": 499,
+      "answer_accuracy": 499,
+      "program_match": 499,
+      "largest_share_of_the_allowance_used": 0.493959,
+      "yes_or_no_examples": 13,
+      "programs_naming_a_repeated_row": 0
+    },
+    "quick_dev": {
+      "examples": 200,
+      "gold_programs_that_reproduce_the_gold_answer": 200,
+      "flagged_examples": 0,
+      "flagged_by_reason": {},
+      "format_validity": 200,
+      "execution_accuracy": 200,
+      "answer_accuracy": 200,
+      "program_match": 200,
+      "largest_share_of_the_allowance_used": 0.493959,
+      "yes_or_no_examples": 5,
+      "programs_naming_a_repeated_row": 0
+    },
+    "test": {
+      "examples": 2898,
+      "gold_programs_that_reproduce_the_gold_answer": 2898,
+      "flagged_examples": 0,
+      "flagged_by_reason": {},
+      "format_validity": 2898,
+      "execution_accuracy": 2898,
+      "answer_accuracy": 2898,
+      "program_match": 2898,
+      "largest_share_of_the_allowance_used": 0.454319,
+      "yes_or_no_examples": 41,
+      "programs_naming_a_repeated_row": 2
+    }
+  },
+  "total": {
+    "examples": 8281,
+    "gold_programs_that_reproduce_the_gold_answer": 8281,
+    "flagged_examples": 0,
+    "flagged_by_reason": {},
+    "format_validity": 8281,
+    "execution_accuracy": 8281,
+    "answer_accuracy": 8281,
+    "program_match": 8281,
+    "largest_share_of_the_allowance_used": 0.493959,
+    "yes_or_no_examples": 154,
+    "programs_naming_a_repeated_row": 3
+  },
+  "flagged": [],
+  "checks": [
+    {
+      "id": "K1",
+      "name": "Complete",
+      "passed": true,
+      "detail": "8,281 examples, each checked once"
+    },
+    {
+      "id": "K2",
+      "name": "Gold replies are well formed",
+      "passed": true,
+      "detail": "every gold reply is strict and its program is in canonical form"
+    },
+    {
+      "id": "K3",
+      "name": "Fit and dev reproduce",
+      "passed": true,
+      "detail": "no fit or dev example is flagged"
+    },
+    {
+      "id": "K4",
+      "name": "Self-consistent",
+      "passed": true,
+      "detail": "8,281 unflagged examples score true on all four metrics"
+    },
+    {
+      "id": "K5",
+      "name": "Flags current",
+      "passed": true,
+      "detail": "0 flagged examples, as the flags file lists"
+    },
+    {
+      "id": "K6",
+      "name": "Same data",
+      "passed": true,
+      "detail": "the manifest d34fb22e37b7... describes this data"
+    },
+    {
+      "id": "K7",
+      "name": "Deterministic",
+      "passed": true,
+      "detail": "checking a second time gives the same result"
+    }
+  ]
+}

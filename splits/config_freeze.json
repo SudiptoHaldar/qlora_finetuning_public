@@ -1,0 +1,350 @@
+{
+  "arms": {
+    "A0": {
+      "dev": {
+        "answer_accuracy": 60,
+        "examples": 499,
+        "execution_accuracy": 6,
+        "format_validity": 457,
+        "program_match": 2
+      },
+      "dev_run": "20261121T070030Z-eval-qwen3-4b-dev-2416",
+      "identity": {
+        "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+      },
+      "path": "A",
+      "predictor": {
+        "model_id": "Qwen/Qwen3-4B",
+        "name": "qwen3-4b",
+        "settings": {
+          "adapter": null,
+          "batch_size": 8,
+          "do_sample": false,
+          "enable_thinking": false,
+          "end_tokens": [
+            "<|im_end|>",
+            "<|endoftext|>"
+          ],
+          "num_beams": 1,
+          "quantization": {
+            "compute_dtype": "bfloat16",
+            "double_quant": true,
+            "type": "nf4"
+          },
+          "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+          "stop": "end tokens"
+        }
+      },
+      "where": "sagemaker"
+    },
+    "A1": {
+      "dev": {
+        "answer_accuracy": 338,
+        "examples": 499,
+        "execution_accuracy": 358,
+        "format_validity": 499,
+        "program_match": 333
+      },
+      "dev_run": "20261121T073743Z-eval-qwen3-4b-tuned-dev-fd5b",
+      "identity": {
+        "adapter": "20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-500",
+        "adapter_sha256": "a8c9561b4fc6e560a53d5104c0118e5d088fcfbb579b57b8bfb24714c559902b",
+        "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+        "step": 500,
+        "training_run": "20261120T182710Z-train-qwen3-4b-fit-4557",
+        "verdict": "met"
+      },
+      "path": "A",
+      "predictor": {
+        "model_id": "Qwen/Qwen3-4B",
+        "name": "qwen3-4b-tuned",
+        "settings": {
+          "adapter": "a8c9561b4fc6e560a53d5104c0118e5d088fcfbb579b57b8bfb24714c559902b",
+          "batch_size": 8,
+          "do_sample": false,
+          "enable_thinking": false,
+          "end_tokens": [
+            "<|im_end|>",
+            "<|endoftext|>"
+          ],
+          "num_beams": 1,
+          "quantization": {
+            "compute_dtype": "bfloat16",
+            "double_quant": true,
+            "type": "nf4"
+          },
+          "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+          "stop": "end tokens"
+        }
+      },
+      "where": "sagemaker"
+    },
+    "B0-Lite": {
+      "dev": {
+        "answer_accuracy": 189,
+        "examples": 499,
+        "execution_accuracy": 123,
+        "format_validity": 466,
+        "program_match": 93
+      },
+      "dev_run": "20261116T202551Z-eval-nova-lite-dev-d37e",
+      "identity": {
+        "base_model_id": "amazon.nova-lite-v1:0",
+        "model": "nova-lite"
+      },
+      "path": "B",
+      "predictor": {
+        "model_id": "amazon.nova-lite-v1:0",
+        "name": "nova-lite",
+        "settings": {
+          "api": "converse",
+          "reasoning": "not sent",
+          "service_tier": "default",
+          "stop_sequences": [],
+          "temperature": 0,
+          "top_k": 1,
+          "top_p": null
+        }
+      },
+      "where": "bedrock"
+    },
+    "B0-Pro": {
+      "dev": {
+        "answer_accuracy": 259,
+        "examples": 499,
+        "execution_accuracy": 190,
+        "format_validity": 497,
+        "program_match": 163
+      },
+      "dev_run": "20261116T203032Z-eval-nova-pro-dev-d704",
+      "identity": {
+        "base_model_id": "amazon.nova-pro-v1:0",
+        "model": "nova-pro"
+      },
+      "path": "B",
+      "predictor": {
+        "model_id": "amazon.nova-pro-v1:0",
+        "name": "nova-pro",
+        "settings": {
+          "api": "converse",
+          "reasoning": "not sent",
+          "service_tier": "default",
+          "stop_sequences": [],
+          "temperature": 0,
+          "top_k": 1,
+          "top_p": null
+        }
+      },
+      "where": "bedrock"
+    },
+    "B1-Lite": {
+      "dev": {
+        "answer_accuracy": 324,
+        "examples": 499,
+        "execution_accuracy": 329,
+        "format_validity": 499,
+        "program_match": 298
+      },
+      "dev_run": "20261122T103321Z-eval-nova-lite-tuned-dev-f97f",
+      "identity": {
+        "attempt": 1,
+        "base_model_id": "amazon.nova-lite-v1:0",
+        "deployment_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/308jz60uh4a5",
+        "export_id": "c2d67fe65c7f",
+        "hyperparameters": {
+          "epochCount": "2",
+          "learningRate": "0.00001",
+          "learningRateWarmupSteps": "10"
+        },
+        "job_arn": "arn:aws:bedrock:us-east-1:123456789012:model-customization-job/amazon.nova-lite-v1:0:300k/9u5awtwqxk7j",
+        "model": "nova-lite",
+        "model_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model/amazon.nova-lite-v1:0:300k/gmwz1fhs0vbt"
+      },
+      "path": "B",
+      "predictor": {
+        "model_id": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/308jz60uh4a5",
+        "name": "nova-lite-tuned",
+        "settings": {
+          "api": "converse",
+          "reasoning": "not sent",
+          "service_tier": "default",
+          "stop_sequences": [],
+          "temperature": 0,
+          "top_k": 1,
+          "top_p": null
+        }
+      },
+      "where": "bedrock"
+    },
+    "B1-Pro": {
+      "dev": {
+        "answer_accuracy": 358,
+        "examples": 499,
+        "execution_accuracy": 359,
+        "format_validity": 499,
+        "program_match": 322
+      },
+      "dev_run": "20261122T114511Z-eval-nova-pro-tuned-dev-276f",
+      "identity": {
+        "attempt": 1,
+        "base_model_id": "amazon.nova-pro-v1:0",
+        "deployment_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/62v0vii1ge23",
+        "export_id": "c2d67fe65c7f",
+        "hyperparameters": {
+          "epochCount": "2",
+          "learningRate": "0.00001",
+          "learningRateWarmupSteps": "10"
+        },
+        "job_arn": "arn:aws:bedrock:us-east-1:123456789012:model-customization-job/amazon.nova-pro-v1:0:300k/ibzwgwgvqxue",
+        "model": "nova-pro",
+        "model_arn": "arn:aws:bedrock:us-east-1:123456789012:custom-model/amazon.nova-pro-v1:0:300k/z86zmzl5wkz8"
+      },
+      "path": "B",
+      "predictor": {
+        "model_id": "arn:aws:bedrock:us-east-1:123456789012:custom-model-deployment/62v0vii1ge23",
+        "name": "nova-pro-tuned",
+        "settings": {
+          "api": "converse",
+          "reasoning": "not sent",
+          "service_tier": "default",
+          "stop_sequences": [],
+          "temperature": 0,
+          "top_k": 1,
+          "top_p": null
+        }
+      },
+      "where": "bedrock"
+    }
+  },
+  "checks": [
+    {
+      "detail": "A0: the untuned model; A1: 20261120T182710Z-train-qwen3-4b-fit-4557/checkpoint-500",
+      "id": "F1",
+      "name": "Path A selected",
+      "passed": true
+    },
+    {
+      "detail": "B1-Lite: attempt 1, deployment Active; B1-Pro: attempt 1, deployment Active",
+      "id": "F2",
+      "name": "Path B tuned",
+      "passed": true
+    },
+    {
+      "detail": "6 arms, each with one complete result on dev under today's configuration",
+      "id": "F3",
+      "name": "Six dev results",
+      "passed": true
+    },
+    {
+      "detail": "prompt d63742a62b76..., split manifest d34fb22e37b7..., reply limit 192, 499 examples each",
+      "id": "F4",
+      "name": "One contract",
+      "passed": true
+    },
+    {
+      "detail": "every arm's predictor today has the name, model id, and settings of its dev run",
+      "id": "F5",
+      "name": "Nothing changed since",
+      "passed": true
+    },
+    {
+      "detail": "locked: no unlock record exists; no test run exists",
+      "id": "F6",
+      "name": "Still locked",
+      "passed": true
+    },
+    {
+      "detail": "commit 51ddcea37b6d, working tree clean",
+      "id": "F7",
+      "name": "Committed",
+      "passed": true
+    },
+    {
+      "detail": "the six test passes: about $6.48, at most $9.52",
+      "id": "F8",
+      "name": "Within the caps",
+      "passed": true
+    }
+  ],
+  "contract": {
+    "dev_examples": 499,
+    "manifest_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a",
+    "max_new_tokens": 192,
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641"
+  },
+  "estimate": {
+    "arms": {
+      "A0": {
+        "at_most_usd": "$2.82",
+        "basis": "2,898 replies in a SageMaker job",
+        "seconds": 3949,
+        "usd": "$1.54"
+      },
+      "A1": {
+        "at_most_usd": "$2.82",
+        "basis": "2,898 replies in a SageMaker job",
+        "seconds": 2681,
+        "usd": "$1.05"
+      },
+      "B0-Lite": {
+        "at_most_usd": "$0.14",
+        "basis": "the dev run's tokens, scaled to the test split's size",
+        "input_tokens": 1818690,
+        "output_tokens": 134260,
+        "usd": "$0.14"
+      },
+      "B0-Pro": {
+        "at_most_usd": "$1.87",
+        "basis": "the dev run's tokens, scaled to the test split's size",
+        "input_tokens": 1818690,
+        "output_tokens": 128633,
+        "usd": "$1.87"
+      },
+      "B1-Lite": {
+        "at_most_usd": "$0.13",
+        "basis": "the dev run's tokens, scaled to the test split's size",
+        "input_tokens": 1818690,
+        "output_tokens": 88659,
+        "usd": "$0.13"
+      },
+      "B1-Pro": {
+        "at_most_usd": "$1.75",
+        "basis": "the dev run's tokens, scaled to the test split's size",
+        "input_tokens": 1818690,
+        "output_tokens": 90761,
+        "usd": "$1.75"
+      }
+    },
+    "at_most_usd": "$9.52",
+    "paths": {
+      "A": {
+        "at_most_usd": "$5.63",
+        "cap_usd": "$100.00",
+        "estimate_usd": "$2.59",
+        "spent_usd": "$8.24"
+      },
+      "B": {
+        "at_most_usd": "$3.88",
+        "cap_usd": "$200.00",
+        "estimate_usd": "$3.88",
+        "spent_usd": "$66.84"
+      }
+    },
+    "test_examples": 2898,
+    "total_usd": "$6.48"
+  },
+  "generated_by": "python -m scripts.comparison_freeze freeze",
+  "passed": true,
+  "schema": 1,
+  "shared": {
+    "configs": {
+      "data": "70a8bef95c5ce86f10fe08d70c84c8744b3ea72f9980b089f180a2fbee04257b",
+      "dsl": "7d2495e28ae0e9a745af0ecad27d64d3e313a339a2b2041fb559c9b3067850b8",
+      "evaluation": "683372b736d7acd390070630508f7065a93ce6ef6c174d48d2437bb52fdd004d",
+      "prompt": "1ced0eea04bbfb778a29619d9f0ea832122a7d71d08728a7f75ecbd9be763961",
+      "split": "e9f6f39aa8f783f229a9f0a1031ae480f848f0ba0fc184b0e1d774c637bc8958",
+      "token_budget": "567579fab1823ad71c3ba1aea39d2e9af352d345a559befd16e7b6ed4ef8c857"
+    },
+    "gold_flags_sha256": "f59fc520abb6cefcc041c3136a988b3f3b70b59dc0b93cffac7449ae0796bbfa"
+  }
+}

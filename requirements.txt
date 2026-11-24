@@ -1,0 +1,15 @@
+# Core    # plain PyPI install = CPU-only wheel on Windows; do not add a CUDA index URL
+numpy>=1.26
+pandas>=2.1
+pyarrow==26.0.1    # reads the FinQA Parquet snapshot (req_001 v1.01); same version the training stack resolves
+
+# Configuration
+python-dotenv>=1.0
+PyYAML>=6.0
+
+# AWS (req_000 v0.05: scripts/aws_check.py)
+boto3==1.44.3
+
+# Testing and linting
+pytest>=8.0
+ruff>=0.17

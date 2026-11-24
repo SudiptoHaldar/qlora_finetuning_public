@@ -1,0 +1,98 @@
+# req_006 Packaging Demo — Roadmap
+
+**Spec group**: req_006_packaging_demo  
+**Last updated**: 2026-11-24 — **v6.02 built and verified (✅; M9 reached)**: the adapter package and the merged copy are ready under `artifacts/release/`, checks P1 to P10 pass, the two cards and the package record are in `reports/packaging/`, the README is rewritten. Nothing is uploaded: v6.03 is the owner's. **v6.04, the public repository export, is built (🟡)**: the folder is written and checked, and the owner's commit and push there remain; 4 envisioned versions.  
+
+Version log:
+
+- **2026-11-13** — group created from `reqspecs/0. PLANNING/execution_plan.md` §2; `req_006_01_spec.md` is a placeholder.
+- **2026-11-14** — plan revised before any version was specced: measured Qwen runs move to AWS SageMaker; the hosted path is Amazon Nova Pro and Nova Lite on Bedrock (OpenAI dropped); Q5 and Q6 resolved. Version scopes updated in place.
+- **2026-11-23** — requirements for v6.02 and v6.03 collected in `req_006_spec.md` ("Requirements collected for v6.02 and v6.03"): only arm A1 can be published; the contents of the adapter package; the model card's header, sections, and rules (contamination warning, no dataset text, numbers from records); the upload steps; four questions for the owner. No status changes: both versions still need their spec files. The same day the owner decided three of the questions: a merged copy as well as the adapter, the Nova arms on the card, the split manifest published with the adapter. The repository name is still open.
+- **2026-11-23** — v6.01 spec written: `req_006_01_spec.md` replaces the placeholder. Status 📋 → 📝. Twenty-three decisions locked; five questions for the owner in its section 8 (Nova in the demo, over-length input, recording a demo call, the input's form, a checkpoint that is not on the machine). The PRP waits for those answers.
+- **2026-11-23** — v6.01 PRP generated (`prp_006_demo_cli_v1.md`) and executed the same day; the five decisions taken as recommended, because the owner started the PRP without changing one. Status 📝 → ✅. `python -m qlora_finetuning.demo` answers the invented sample with the selected adapter: the program runs, the executed value is the sample's expected one, and the model's answer agrees. `--untuned` ends without an exception (its program is refused as `nested_call`). The sample did not have to be replaced. One function was added outside `demo/` (`answer_agrees` in the metrics) and one was split (`resolve_tuned_adapter` out of `build_tuned_predictor`). Nothing billed, no AWS call, nothing frozen changed. Implementation summary: `impl_006_20261123_174500.md`. `--show-input` added on request and the version committed the same day (`97700da`).
+- **2026-11-24** — v6.02 spec written: `req_006_02_spec.md`. Status 📋 → 📝. Its dependency v5.03 was completed the same day (M8). Thirty-four decisions locked; eight questions for the owner in its section 8. Found while writing: `artifacts/adapters/<run>/` holds the adapter of step 918, not arm A1 (step 500), so the package is built from the checkpoint folder; the recorded dev score (358 of 499, on an A10G) cannot be reproduced exactly on the owner's GPU, so the package check is "the same 499 replies as the adapter by name on this machine"; the base model's own generation settings sample, so the merged copy ships greedy ones; the AWS account number is in 43 tracked files, two of them frozen records, and the GitHub repository is private. Nothing billed, no AWS call.
+- **2026-11-24** — v6.02: the owner took all eight decisions. Two Hugging Face repositories, `sudiptoHaldar/qwen3-4b-finqa-program-qlora` and `sudiptoHaldar/qwen3-4b-finqa-program-merged`, both to end public. The merged copy is scored in 4-bit and at full precision. The merge and the dev runs are on the owner's machine. A public GitHub repository, `SudiptoHaldar/qlora_finetuning_public`, will be made by export as a version of its own after v6.02 (spec section 8.1: what is left out, the runbook as `docs/runbook.md`, the account number replaced by a placeholder, the freeze checks skipped in the public copy). That version is not in the table below yet. No status change.
+
+- **2026-11-24** — v6.02 PRP generated (`prp_006_model_card_package_v2.md`) and executed the same day. Status 📝 → ✅; **M9 reached**. Both packages are ready and checks P1 to P10 pass. On dev (499): the adapter by name 358 right, the same count as the recorded cloud run; the adapter package from its folder gives the same reply on all 499; the merged copy has 361 right in 4-bit and 357 at full precision, both inside the allowance, so it is not withheld. The code of each card ran in an empty directory to the sample's expected result (three runs). The owner confirmed the three licence entries; FinTabNet's could not be re-read at IBM's page and rests on one other source, which the cards say. README rewritten with two coloured diagrams. Nothing billed, no AWS call, nothing uploaded, nothing frozen changed. Implementation summary: `impl_006_20261124_051500.md`. The owner read the README and both cards and the version was committed the same day.
+
+- **2026-11-24** — v6.04 added: **Public repository export** (`req_006_04_spec.md`, 📝). It is not in the execution plan's first list of versions; it follows from the owner's decision of the same day to publish the code as a second repository made by export. Twenty-two decisions locked, eight of them the owner's from the v6.02 discussion; six questions for the owner in its section 8. The group now has 4 envisioned versions. Recommended order: v6.04 before v6.03.
+
+- **2026-11-24** — v6.04 PRP generated (`prp_006_public_export_v4.md`) and executed the same day. Status 📝 → 🟡: `scripts.public_export` (`plan`, `build`, `check`) is built, the public folder is written from a commit and checked (E1 to E10; the record is `reports/public_export/export_record.md`), and what is left is the owner's: commit in that folder with the noreply address, push, look at it on GitHub, make it public. Five tests carry the marker `private_records` and are skipped in a copy; nothing else fails there. A third replacement was added, for a folder of the owner's machine named in three documents. Nothing billed, no AWS call, no push by the tool, nothing frozen changed. Implementation summary: `impl_006_20261124_083000.md`.
+
+This file is the **single source of truth** for the req_006 version sequence. The group owns
+**the hand-off artifacts: demo CLI, model card, adapter package, and README. It extends `req_003_qlora_local` and `req_005_comparison`; it does NOT re-own training or evaluation**.
+
+## Why this group exists
+
+Both guides list the same deliverables beyond the numbers: a saved adapter with its metadata,
+a demo that takes report context and a question, proposes a program, executes it safely, and
+returns the result, and a README or model card covering data source, evaluation, limitations,
+and licenses.
+
+Standing decisions: the demo reuses the `req_002` executor and the `req_003` backend unchanged;
+the model card cites the FinQA paper, lists Apache 2.0 (Qwen3) and MIT / CDLA-Permissive-1.0
+(FinQA / FinTabNet), states the oracle-evidence setting, and says the adapter is a research
+artifact, not financial advice. Publishing anywhere is a separate, user-triggered step.
+
+**Status legend** (in lifecycle order):
+
+- ⏸ **Conditional** — only starts when a specific trigger fires
+- 📋 **Planned** — next-up; depends on a prior version landing
+- 📝 **Spec ready** — req_006_NN_spec.md written + decisions locked; PRP pending
+- 🛠 **PRP ready** — PRP authored + validated; execution pending
+- 🚧 **In flight** — PRP being executed or impl in progress
+- 🟡 **Operator-gated** — prepared; waiting on a step only the user performs
+- ✅ **Complete** — spec + impl shipped
+- 🗄 **Shelved** — parked indefinitely; revival trigger noted
+
+---
+
+## Quick-reference table (version sequence)
+
+| # | Title | Status | Depends on | Trigger to start |
+|---|---|---|---|---|
+| **v6.01** | **Demo CLI** — `python -m qlora_finetuning.demo`: context, table, and question in; proposed program, safely executed result, and model answer out; loads the selected adapter (pulled from S3) on the local GPU; one bundled sample input | ✅ Complete 2026-11-23 (`97700da`) | v3.04, v2.01 | — |
+| **v6.02** | **Model card, adapter package, README** — Adapter weights, a merged copy, tokenizer details, base model id, prompt template, training metadata; model card; README with setup, reproduction steps, and results | ✅ Complete 2026-11-24 (both packages ready; committed; M9) | v5.03, v6.01 | — |
+| **v6.03** | **Publish adapter** — Push the adapter and model card to the Hugging Face Hub | ⏸ Conditional | v6.02 (v6.04 recommended first) | The user decides to publish |
+| **v6.04** | **Public repository export** — A copy of the repository for a public one on GitHub, without history: built from a commit by one command, with the AWS account number replaced by a placeholder, the runbook as `docs/runbook.md`, a notice that it is a redacted snapshot, and checks that nothing private remains and that the copy's own tests pass | 🟡 Operator-gated (built and checked 2026-11-24; the owner commits in the public folder, pushes, and makes it public) | v6.02 | — |
+
+---
+
+## Detail per version
+
+### v6.01 — Demo CLI  ✅
+
+**Status**: ✅ Complete 2026-11-23 (`req_006_01_spec.md`, `prp_006_demo_cli_v1.md`, `impl_006_20261123_174500.md`); committed  
+**Depends on**: v3.04, v2.01  
+
+**Scope**: `python -m qlora_finetuning.demo`: context, table, and question in; proposed program, safely executed result, and model answer out; loads the selected adapter (pulled from S3) on the local GPU; one bundled sample input.
+
+**Decisions and open questions**: Can be built any time after the adapter exists; it does not wait for the comparison. Locked in the spec: Qwen only, by adapter name (`selected` by default, `--untuned` for contrast); input is a JSON file (question, table, context); the prompt comes from the serializer and the reply goes only to `run_reply`; the model's answer is compared with the executed result by one new function in `evaluation/metrics.py`; no run, no ledger line, no AWS call, no dataset read; the sample input is invented. **As built**: the demo answers the invented sample on the local GPU (executed 0.1256140350877193, the expected value; the model's answer agrees); the spec's section 11 has the details. For v6.02: `sample_input.json` for the card's usage snippet, and `answer(predictor, demo_input)` with `--json` for the clean-load check. **The five questions for the owner, all taken as recommended on 2026-11-23** (spec section 8): 1, does the demo also ask the Nova models (no); 2, an input longer than 2,048 tokens (answer with a warning); 3, is a demo call recorded (no); 4, input as a JSON file only (yes); 5, a selected checkpoint that is not on the machine (stop and name the pull command; the roadmap's "pulled from S3" then means pulled beforehand with `sagemaker_job pull`).
+
+### v6.02 — Model card, adapter package, README  ✅
+
+**Status**: ✅ Complete 2026-11-24 (`req_006_02_spec.md` section 11, `prp_006_model_card_package_v2.md`, `impl_006_20261124_051500.md`); committed  
+**Depends on**: v5.03 (complete 2026-11-24), v6.01 (complete 2026-11-23)  
+
+**Scope**: Adapter weights, a merged copy, tokenizer details, base model id, prompt template, training metadata; model card; README with setup, reproduction steps, and results.
+
+**Decisions and open questions**: Re-check the model and dataset cards for license changes before writing. Reaching it is milestone M9. Requirements collected on 2026-11-23 are in `req_006_spec.md`: the package contents, the card's sections, the contamination warning (the training pool holds official FinQA validation and test examples), and the clean-load check. **Owner's decisions (2026-11-23)**: a merged copy is published as well as the adapter; the Nova arms appear in the card's results table; the split manifest is published with the adapter. The merged copy is not arm A1 (it quantizes different weights), so it is scored on dev before it is published and is never run on test. **As specced (2026-11-24)**: `scripts.hf_package` (`check`, `adapter`, `merge`, `verify`, `cards`, `status`) writes two folders under git-ignored `artifacts/release/` and, committed, `reports/packaging/package_record.json` and `.md` and the two cards; checks P1 to P10. The adapter package is built from the selected checkpoint (step 500), byte for byte, after its hash is checked. Three free dev runs on the owner's machine: R1 the adapter by name, R2 the package from its folder (every reply must equal R1's), R3 the merged copy in 4-bit. The code on each card is executed in an empty directory on the invented sample. Cards are built from templates and records, never edited; both carry the contamination warning. The README is written by hand around the generated results block, with a test that its commands and links exist. Nothing is uploaded, nothing billed, no AWS call. **Waiting for the owner**: (1) the allowed difference between the merged copy's dev score and the adapter's; (2) where the merge runs; (3) the merged copy's own repository or a folder; (4) the AWS account number in committed files and whether the GitHub repository becomes public; (5) the repository names and the Hugging Face account, needed for the cards' code; (6) the merged copy scored in 4-bit only or at full precision too; (7) the dev runs on this machine or in SageMaker; (8) the adapter's licence and the author name shown. **All eight taken on 2026-11-24** (spec section 8). **As built (2026-11-24)**: both packages ready, P1 to P10 pass; R2 equals R1 on all 499 dev replies; the merged copy has 361 right in 4-bit and 357 at full precision against the adapter's 358; three runs of card code gave the sample's expected result; the owner confirmed the licence entries. For v6.03: the two folders under `artifacts/release/`, their hashes in `reports/packaging/package_record.json`, and `hf_package verify` to repeat against the Hub.
+
+### v6.04 — Public repository export  🟡
+
+**Status**: 🟡 Operator-gated: built and checked 2026-11-24 (`req_006_04_spec.md` section 11, `prp_006_public_export_v4.md`, `impl_006_20261124_083000.md`); the owner commits in the public folder, pushes, and makes the repository public
+**Depends on**: v6.02 (complete 2026-11-24)
+
+**Scope**: A copy of the repository for a public one on GitHub, without history: built from a commit by one command, with the AWS account number replaced by a placeholder, the runbook as `docs/runbook.md`, a notice that it is a redacted snapshot, and checks that nothing private remains and that the copy's own tests pass.
+
+**Decisions and open questions**: Added on 2026-11-24, after the owner decided to publish the code as a second repository made by export. The private repository stays the source of truth; the public one is never edited by hand. Recommended before v6.03, so the "Code" link on the two model cards leads somewhere. **Decided by the owner (2026-11-24)**: the copy goes to `C:\projects\AIML_projects\qlora_finetuning_public` and to `SudiptoHaldar/qlora_finetuning_public`, created empty and private; no history; left out are `.claude/`, `track_progress/`, `docs/old_references/`, `administration/` but the runbook, `reqspecs/0. PLANNING/planning_material/` and `execution_plan_reference/`, `tests/test_process_scaffold.py`, and the two instruction files under `.github/`; the runbook becomes `docs/runbook.md`; the account number becomes a placeholder everywhere; the copy is a redacted snapshot that skips the checks of the freeze and says so. **As specced (2026-11-24)**: `scripts.public_export` (`plan`, `build`, `check`) exports a commit with `git archive`, never the working tree; replacements and path rewrites are literal and listed in `config/public_export.yaml`; tests that verify the committed freeze records get the marker `private_records` and are skipped only where the snapshot notice is present; checks E1 to E10, among them that no private string remains and that lint and the suite pass inside the copy; a record under `reports/public_export/`. The tool makes no commit and no push. Of 552 tracked files 526 are kept, 5.5 MB; 37 of them hold the account number. **Waiting for the owner**: (1) the placeholder (recommended `123456789012`, AWS's documentation account, so ARNs stay well formed); (2) whether anything else is replaced (recommended: the private repository's name, and nothing more); (3) the name and email address of the public commit (recommended: the GitHub noreply address, set in that folder only); (4) who commits and pushes (recommended: the owner); (5) a marker on the freeze tests or leaving those files out (recommended: the marker); (6) one new commit per export or one replaced commit (recommended: one new commit). **All six taken on 2026-11-24**: the placeholder is `123456789012`; the private repository's name is replaced by `SudiptoHaldar/qlora_finetuning_public` and nothing else is replaced; the public commit carries the owner's GitHub noreply address, set in that folder only; the owner commits and pushes; the marker; one new commit per export.
+
+### v6.03 — Publish adapter  ⏸
+
+**Status**: ⏸ Conditional  
+**Depends on**: v6.02  
+**Trigger**: The user decides to publish  
+
+**Scope**: Push the adapter and model card to the Hugging Face Hub.
+
+**Decisions and open questions**: 🟡 Operator-gated. Requirements collected on 2026-11-23 are in `req_006_spec.md`: a write token kept in `.env`, upload as private first, the owner reviews the rendered card before making it public, then a clean-load check from the Hub. Two uploads, the adapter and the merged copy (owner's decision, 2026-11-23). Open: the repository names and the account they go under.

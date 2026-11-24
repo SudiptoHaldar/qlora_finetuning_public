@@ -1,0 +1,45 @@
+# Deviations from the plan, as the comparison report prints them (req_005 v5.03).
+# One entry per deviation: the day it was decided or found, what it is in one sentence, and
+# the document that records it. Drafted from the roadmaps' version logs on 2026-11-23; the
+# owner reviews this list before the report is built for good. Add an entry here, never in
+# the report: the report is generated.
+version: 1
+verified_on: "2026-11-23"
+
+deviations:
+  - date: "2026-11-14"
+    what: "The hosted path is Amazon Nova Pro and Nova Lite on Bedrock, in place of an OpenAI model. The comparison has six arms."
+    recorded_in: "reqspecs/0. PLANNING/execution_plan.md"
+  - date: "2026-11-14"
+    what: "Every measured Qwen run is a SageMaker job on one GPU instance, not a run on the owner's machine."
+    recorded_in: "reqspecs/0. PLANNING/execution_plan.md"
+  - date: "2026-11-15"
+    what: "The training length is 2,048 tokens, not the 1,536 of the planning guides, which would have cut two examples."
+    recorded_in: "reqspecs/reqs/req_001_finqa_data/req_001_roadmap.md"
+  - date: "2026-11-21"
+    what: "Path A's second training iteration was not run: the selected checkpoint met its threshold, so that step ended as an error analysis only."
+    recorded_in: "reqspecs/0. PLANNING/execution_plan.md"
+  - date: "2026-11-22"
+    what: "Path B's corrective iteration was not run: both tuned Nova models met their thresholds. Each tuned arm is one training run."
+    recorded_in: "reqspecs/0. PLANNING/execution_plan.md"
+  - date: "2026-11-22"
+    what: "The Nova Pro runs were paced at 18 requests a minute, because this account's request limits are a tenth of the documented defaults."
+    recorded_in: "reqspecs/reqs/req_004_frontier_tuning/req_004_roadmap.md"
+  - date: "2026-11-22"
+    what: "Each arm's dev run was tied to the frozen configuration by scoring it again, not by comparing file hashes: two early runs had recorded other bytes of two config files."
+    recorded_in: "reqspecs/reqs/req_005_comparison/req_005_roadmap.md"
+  - date: "2026-11-23"
+    what: "Both Bedrock training charges were above their estimates, by 14 and 15 percent: Bedrock counted more training tokens than the estimate did."
+    recorded_in: "reqspecs/reqs/req_005_comparison/req_005_02_spec.md"
+  - date: "2026-11-23"
+    what: "Path A's always-on serving cost is computed from the test job's throughput. No endpoint was created to measure it."
+    recorded_in: "reqspecs/reqs/req_005_comparison/req_005_02_spec.md"
+  - date: "2026-11-23"
+    what: "The pairs of arms that are tested were named after the counts of the six test runs were known."
+    recorded_in: "reqspecs/reqs/req_005_comparison/req_005_03_spec.md"
+  - date: "2026-11-23"
+    what: "This report reads test rows on the owner's machine to score and categorize the stored replies; the plan had allowed only the six test runs to load them. No model was asked and nothing was uploaded."
+    recorded_in: "reqspecs/0. PLANNING/execution_plan.md"
+  - date: "2026-11-23"
+    what: "No test run was voided: every arm's result is its first and only run on the test split."
+    recorded_in: "reports/comparison/six_arm_test_runs.md"

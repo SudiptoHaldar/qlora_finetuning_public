@@ -1,0 +1,328 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.finqa_tokens",
+  "inputs": {
+    "tokenizer": "Qwen/Qwen3-4B",
+    "tokenizer_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "tokenizer_fingerprint": "e2d3cbac3923643bb0a5d1f0045aad8728663a6ff2f6df7a4872ee6a4a218fae",
+    "prompt_id": "d63742a62b76d526ecf3d92df4cbad832846d4da7aa1ef13d15401ac28391641",
+    "split_content_hash": "d34fb22e37b78a31ac22287cc8e199ab942d93125f9a80cb0b323862e599a07a"
+  },
+  "limits": {
+    "max_length": 2048,
+    "max_new_tokens": 192
+  },
+  "splits": {
+    "fit": {
+      "records": 4884,
+      "system_text_tokens": 372,
+      "template_tokens": 17,
+      "user_text_tokens": {
+        "min": 51,
+        "p50": 223,
+        "p90": 383,
+        "p98": 539,
+        "p99": 630,
+        "max": 1428
+      },
+      "target_tokens_with_end_token": {
+        "min": 15,
+        "p50": 29,
+        "p90": 42,
+        "p98": 54,
+        "p99": 65,
+        "max": 80
+      },
+      "prompt_tokens": {
+        "min": 440,
+        "p50": 612,
+        "p90": 772,
+        "p98": 928,
+        "p99": 1019,
+        "max": 1817
+      },
+      "full_sequence_tokens": {
+        "min": 467,
+        "p50": 643,
+        "p90": 804,
+        "p98": 962,
+        "p99": 1060,
+        "max": 1862
+      },
+      "full_sequences_longer_than": {
+        "768": 715,
+        "1024": 58,
+        "1280": 5,
+        "1536": 2,
+        "2048": 0
+      },
+      "tokens_in_one_pass": 3254181,
+      "prompt_tokens_in_one_pass": 3103361,
+      "system_text_tokens_in_one_pass": 1816848,
+      "system_text_share_percent": 55.8,
+      "characters_per_token": 2.99,
+      "longest": [
+        {
+          "example_id": "SLG/2009/page_84.pdf-2",
+          "tokens": 1862
+        },
+        {
+          "example_id": "SLG/2009/page_84.pdf-1",
+          "tokens": 1851
+        },
+        {
+          "example_id": "NCLH/2018/page_69.pdf-1",
+          "tokens": 1451
+        },
+        {
+          "example_id": "DISCA/2009/page_149.pdf-1",
+          "tokens": 1447
+        },
+        {
+          "example_id": "MMM/2007/page_16.pdf-1",
+          "tokens": 1370
+        },
+        {
+          "example_id": "JPM/2017/page_83.pdf-1",
+          "tokens": 1265
+        },
+        {
+          "example_id": "JPM/2018/page_90.pdf-1",
+          "tokens": 1254
+        },
+        {
+          "example_id": "DISCA/2017/page_41.pdf-1",
+          "tokens": 1234
+        },
+        {
+          "example_id": "AWK/2012/page_12.pdf-2",
+          "tokens": 1224
+        },
+        {
+          "example_id": "BLL/2010/page_28.pdf-4",
+          "tokens": 1221
+        }
+      ]
+    },
+    "dev": {
+      "records": 499,
+      "system_text_tokens": 372,
+      "template_tokens": 17,
+      "user_text_tokens": {
+        "min": 68,
+        "p50": 247,
+        "p90": 382,
+        "p98": 449,
+        "p99": 476,
+        "max": 497
+      },
+      "target_tokens_with_end_token": {
+        "min": 14,
+        "p50": 29,
+        "p90": 45,
+        "p98": 59,
+        "p99": 66,
+        "max": 70
+      },
+      "prompt_tokens": {
+        "min": 457,
+        "p50": 636,
+        "p90": 771,
+        "p98": 838,
+        "p99": 865,
+        "max": 886
+      },
+      "full_sequence_tokens": {
+        "min": 481,
+        "p50": 667,
+        "p90": 803,
+        "p98": 866,
+        "p99": 891,
+        "max": 916
+      },
+      "full_sequences_longer_than": {
+        "768": 95,
+        "1024": 0,
+        "1280": 0,
+        "1536": 0,
+        "2048": 0
+      },
+      "tokens_in_one_pass": 333677,
+      "prompt_tokens_in_one_pass": 317882,
+      "system_text_tokens_in_one_pass": 185628,
+      "system_text_share_percent": 55.6,
+      "characters_per_token": 3.02,
+      "longest": [
+        {
+          "example_id": "HIG/2011/page_188.pdf-1",
+          "tokens": 916
+        },
+        {
+          "example_id": "MAS/2012/page_70.pdf-1",
+          "tokens": 906
+        },
+        {
+          "example_id": "FITB/2013/page_163.pdf-1",
+          "tokens": 900
+        },
+        {
+          "example_id": "MAS/2012/page_70.pdf-3",
+          "tokens": 896
+        },
+        {
+          "example_id": "MAS/2012/page_70.pdf-2",
+          "tokens": 891
+        },
+        {
+          "example_id": "IPG/2012/page_89.pdf-3",
+          "tokens": 880
+        },
+        {
+          "example_id": "MRK/2013/page_116.pdf-1",
+          "tokens": 871
+        },
+        {
+          "example_id": "MRK/2013/page_116.pdf-2",
+          "tokens": 869
+        },
+        {
+          "example_id": "IPG/2009/page_89.pdf-2",
+          "tokens": 866
+        },
+        {
+          "example_id": "IPG/2017/page_38.pdf-1",
+          "tokens": 866
+        }
+      ]
+    },
+    "quick_dev": {
+      "records": 200,
+      "system_text_tokens": 372,
+      "template_tokens": 17,
+      "user_text_tokens": {
+        "min": 68,
+        "p50": 256,
+        "p90": 380,
+        "p98": 446,
+        "p99": 449,
+        "max": 462
+      },
+      "target_tokens_with_end_token": {
+        "min": 14,
+        "p50": 30,
+        "p90": 46,
+        "p98": 54,
+        "p99": 59,
+        "max": 70
+      },
+      "prompt_tokens": {
+        "min": 457,
+        "p50": 645,
+        "p90": 769,
+        "p98": 835,
+        "p99": 838,
+        "max": 851
+      },
+      "full_sequence_tokens": {
+        "min": 481,
+        "p50": 676,
+        "p90": 803,
+        "p98": 865,
+        "p99": 869,
+        "max": 880
+      },
+      "full_sequences_longer_than": {
+        "768": 45,
+        "1024": 0,
+        "1280": 0,
+        "1536": 0,
+        "2048": 0
+      },
+      "tokens_in_one_pass": 134936,
+      "prompt_tokens_in_one_pass": 128495,
+      "system_text_tokens_in_one_pass": 74400,
+      "system_text_share_percent": 55.1,
+      "characters_per_token": 3.02,
+      "longest": [
+        {
+          "example_id": "IPG/2012/page_89.pdf-3",
+          "tokens": 880
+        },
+        {
+          "example_id": "MRK/2013/page_116.pdf-1",
+          "tokens": 871
+        },
+        {
+          "example_id": "MRK/2013/page_116.pdf-2",
+          "tokens": 869
+        },
+        {
+          "example_id": "IPG/2008/page_93.pdf-4",
+          "tokens": 865
+        },
+        {
+          "example_id": "IPG/2014/page_36.pdf-4",
+          "tokens": 865
+        },
+        {
+          "example_id": "MRK/2013/page_116.pdf-4",
+          "tokens": 865
+        },
+        {
+          "example_id": "IPG/2015/page_37.pdf-1",
+          "tokens": 857
+        },
+        {
+          "example_id": "IPG/2008/page_68.pdf-2",
+          "tokens": 847
+        },
+        {
+          "example_id": "MRK/2013/page_3.pdf-1",
+          "tokens": 845
+        },
+        {
+          "example_id": "IPG/2013/page_35.pdf-2",
+          "tokens": 844
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "T1",
+      "name": "Fits",
+      "passed": true,
+      "detail": "longest full sequence is 1,862 of 2,048 tokens"
+    },
+    {
+      "id": "T2",
+      "name": "Reply limit",
+      "passed": true,
+      "detail": "longest target is 80 of 192 tokens"
+    },
+    {
+      "id": "T3",
+      "name": "Tokenizer",
+      "passed": true,
+      "detail": "Qwen/Qwen3-4B at 1cfa9a720891..."
+    },
+    {
+      "id": "T4",
+      "name": "Thinking off",
+      "passed": true,
+      "detail": "every prompt ends with the empty think block"
+    },
+    {
+      "id": "T5",
+      "name": "Template constant",
+      "passed": true,
+      "detail": "the template adds 17 tokens to every record"
+    },
+    {
+      "id": "T6",
+      "name": "Same records",
+      "passed": true,
+      "detail": "prompt id d63742a62b76..., digests as pinned"
+    }
+  ]
+}

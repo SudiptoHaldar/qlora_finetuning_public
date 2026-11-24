@@ -1,0 +1,79 @@
+# Path A, QLoRA training (req_003 v3.02): every hyperparameter of a training run.
+# The values are the plan's defaults (plan 4.6). Each is passed to the trainer explicitly,
+# also where the library's own default is already the same: a default can change with a
+# version. Change one value at a time, after a stable first run, and record why.
+#
+# Not here: the model and its commit, and the training length max_length (token_budget.yaml);
+# the 4-bit loading values (local_qlora.yaml).
+version: 1
+verified_on: "2026-11-19"
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: all-linear       # every linear layer except the output head
+
+optimizer:
+  name: paged_adamw_8bit           # the 8-bit AdamW of bitsandbytes
+  learning_rate: 2.0e-4
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+
+schedule:
+  type: cosine
+  warmup_fraction: 0.05            # of the optimizer steps, rounded up to a whole step
+
+batch:
+  size: 2                          # sequences per forward pass
+  accumulation: 8                  # forward passes per optimizer step: 16 sequences a step
+
+# Passes over fit. 3 on 2026-11-19 (the owner's decision, spec section 8): checkpoints are
+# kept and the best is chosen on dev, so a third epoch only adds candidates.
+epochs: 3
+seed: 42
+precision: bf16
+gradient_checkpointing: true
+
+checkpoint:
+  save_steps: 100                  # optimizer steps between checkpoints; all are kept
+  dev_loss: true                   # the loss on dev at each checkpoint: a diagnostic only
+logging_steps: 10
+
+adapters_dir: artifacts/adapters   # git-ignored; one folder per completed training run
+
+# The smoke run (qlora_train --smoke): the same code on a few records, to prove the path.
+smoke:
+  examples: 64                     # the longest records that fill one batch, then the first of fit
+  epochs: 3
+  save_steps: 4
+  logging_steps: 1
+  dev_examples: 16                 # the first of dev, for the loss at each checkpoint
+  generate_examples: 24            # quick-dev prompts the reloaded adapter is asked
+  generate_batch_size: 8           # asked one at a time, and again in batches of this size
+  max_final_loss_ratio: 0.5        # the last quarter's mean loss must be under this times the first
+
+# Which checkpoint becomes arm A1 (req_003 v3.04; `python -m scripts.qlora_select`): the one
+# with the best execution accuracy on `split`. Never the lowest loss. The two thresholds do
+# not choose anything: a selected checkpoint under either has "missed", which offers the one
+# corrective iteration of v3.05. They are the owner's decision of 2026-11-20: 40% is about
+# what untuned Nova Pro scores on dev; 98% is Path B's figure.
+# Nothing here decides an adapter's weights, so it is not part of a run's settings.
+selection:
+  split: dev
+  min_execution_accuracy_percent: 40
+  min_format_validity_percent: 98
+  record_file: reports/local_qlora/adapter_selection.json   # committed; the .md is beside it
+  noise_examples: 10               # two checkpoints, or two runs, closer than this are not told apart
+iteration:                         # req_003 v3.05: the one corrective change, if arm A1 missed
+  record_file: reports/local_qlora/iteration.json          # committed: the change, before it is paid for
+  analysis_file: reports/local_qlora/error_analysis.json   # committed: counts and example ids
+  changes:                         # what each finding of the analysis changes: one variable
+    T1: {variable: epochs, value: 5}
+    T2: {variable: optimizer.learning_rate, value: 1.0e-4}
+    T3: {variable: lora.r, value: 32}          # alpha follows at twice r
+local_run:                         # req_003 v3.06: the optional full run on this machine; a side note
+  min_free_gpu_gib: 14.0           # the preflight refuses with less free: a resumed run reserved 13.6,
+                                   # and the Windows desktop alone holds 1.1 to 1.4 of the 16 (14.3 to 14.5 free)
+  min_free_disk_gb: 10             # ten checkpoints are 1.4 GB; the rest is margin
+  note_file: reports/local_qlora/local_run.json            # committed; never read as a selection

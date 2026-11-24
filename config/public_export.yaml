@@ -1,0 +1,75 @@
+# The public copy of this repository (req_006 v6.04): what is left out, what is replaced,
+# and what may not remain. Read by qlora_finetuning/public_export/ and by
+# scripts/public_export.py. The copy is written to a folder outside this repository, named
+# on the command line (--to) or in .env (QLORA_PUBLIC_EXPORT_DIR), never here.
+# Relative paths are resolved from the repository root.
+version: 1
+verified_on: "2026-11-24"
+
+report_dir: reports/public_export     # committed here: what the last export published
+public_repository: SudiptoHaldar/qlora_finetuning_public
+
+# Not copied. A name that ends with "/" is a folder; any other is one file.
+left_out:
+  - .claude/
+  - track_progress/
+  - docs/old_references/
+  - administration/                   # all of it but the runbook, which is moved (below)
+  - reqspecs/0. PLANNING/planning_material/
+  - reqspecs/0. PLANNING/execution_plan_reference/
+  - tests/test_process_scaffold.py    # checks folders that are left out
+  - .github/copilot-instructions.md
+  - .github/instructions/
+  - reports/public_export/            # the record of an export names an earlier commit
+
+# Copied under another name, though its folder is left out.
+moved:
+  - from: docs/runbook.md
+    to: docs/runbook.md
+
+# Literal replacements, made in every text file of the copy. `from_config` reads the value
+# to replace from another config file at export time, so it is written in one place only.
+replacements:
+  - name: the AWS account number
+    from_config: aws.account_id
+    to: "123456789012"                # the account number of AWS's own documentation
+  - name: the private repository's name
+    from: SudiptoHaldar/qlora_finetuning_public
+    to: SudiptoHaldar/qlora_finetuning_public
+  - name: a folder on the owner's machine
+    from: 'C:\projects'
+    to: 'C:\projects'
+
+# Paths that changed, rewritten in documents, code, and tests alike.
+path_rewrites:
+  - from: docs/runbook.md
+    to: docs/runbook.md
+
+# What no text file of the copy may hold, besides the originals of the replacements above.
+may_not_remain:
+  - name: an AWS access key
+    pattern: '(?<![0-9A-Z])A[KS]IA[0-9A-Z]{16}(?![0-9A-Z])'
+  - name: a Hugging Face token
+    pattern: '(?<![0-9A-Za-z])hf_[0-9A-Za-z]{20,}'
+  - name: a path on someone's machine
+    pattern: '(?i)(?<![a-z])[a-z]:\\+(users|sudipto)(?![a-z])'
+# Values that tests plant on purpose to prove that a scan finds them. They look private
+# and are invented: the first is the access key of AWS's own documentation. They are set
+# aside before a file is scanned.
+invented_values:
+  - AKIAIOSFODNN7EXAMPLE
+  - AKIAABCDEFGHIJKLMNOP
+  - hf_abcdefghijklmnopqrstuvwx
+  - 'C:\\Users\\someone'
+# An email address is allowed only at these domains: invented ones, and GitHub's own.
+allowed_email_domains: [example.com, example.org, users.noreply.github.com]
+
+# What may sit in the destination folder without being part of the copy.
+ignored_at_destination:
+  [.git, venv, .venv, .pytest_cache, .ruff_cache, __pycache__, artifacts, .vscode, .idea, .env]
+
+limits:
+  max_file_mb: 5
+  forbidden_suffixes: [.pdf, .zip, .tar, .gz, .7z, .safetensors, .bin, .pt, .gguf, .parquet]
+
+suite_timeout_minutes: 30             # lint and the test suite, run in a copy of the copy

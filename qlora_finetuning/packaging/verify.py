@@ -52,6 +52,7 @@ MANIFEST_NAME = "manifest.json"
 RESULT_NAME = "card_result.json"
 SCRIPT_NAME = "card_code.py"
 RESULT_FIELDS = ("system", "user", "text", "reply")
+TOKEN_VARIABLES = ("HF_TOKEN", "HUGGING_FACE_HUB_TOKEN", "HUGGINGFACE_HUB_TOKEN")
 IDS_LISTED = 10  # how many differing example ids a record lists
 _CODE_BLOCK = re.compile(r"```python\n(.*?)\n```", re.DOTALL)
 # Appended to a card's code: it hands the four texts back through a file, so nothing a
@@ -186,18 +187,31 @@ def run_card_code(
     *,
     timeout: int,
     python: str | None = None,
+    online: bool = False,
+    token: str | None = None,
 ) -> dict[str, Any]:
     """Run a card's code in an empty directory and return the texts it made.
 
     ``values`` replaces assignments of the code: the package folder for the repository
-    name, and a switch where the card has one. The process may not reach the network
-    (``HF_HUB_OFFLINE``) and does not see the project's code. Returns ``system``, ``user``,
+    name, and a switch where the card has one. The process does not see the project's
+    code. By default it may not reach the network (``HF_HUB_OFFLINE``). With ``online``
+    it loads from the Hub by name (req_006 v6.03): with ``token`` in its environment for
+    a private repository, and otherwise with no token at all, not even a saved login,
+    so that it sees what the world sees. Returns ``system``, ``user``,
     ``text``, ``reply``, and ``seconds``. Raises ``ConfigError`` with the end of the
     process's output when it fails.
     """
     script = assign(code, values) + TRAILER
     environment = {key: value for key, value in os.environ.items() if key != "PYTHONPATH"}
-    environment.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1", PYTHONIOENCODING="utf-8")
+    environment["PYTHONIOENCODING"] = "utf-8"
+    for name in TOKEN_VARIABLES:
+        environment.pop(name, None)
+    if not online:
+        environment.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1")
+    elif token:
+        environment["HF_TOKEN"] = token  # in the child's environment, never an argument
+    else:
+        environment["HF_HUB_DISABLE_IMPLICIT_TOKEN"] = "1"
     with tempfile.TemporaryDirectory(prefix="card-code-") as folder:
         path = Path(folder) / SCRIPT_NAME
         path.write_text(script, encoding="utf-8", newline="\n")

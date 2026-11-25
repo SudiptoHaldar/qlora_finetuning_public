@@ -24,6 +24,15 @@ TRAINING_STACK = {
     "tokenizers", "safetensors", "huggingface_hub",
 }  # fmt: skip
 STACK_MODULE = "merge.py"
+# The one module that talks to the Hugging Face Hub (req_006 v6.03): it may import the
+# Hub's library, inside its methods, and name the calls that create and upload.
+HUB_MODULE = "hub.py"
+HUB_CALLS = {"HfApi", "upload_folder", "create_repo"}
+# Never, anywhere: these are the owner's, on the website.
+NEVER = {
+    "delete_repo", "move_repo", "update_repo_settings", "update_repo_visibility",
+    "delete_file", "delete_files", "delete_folder", "upload_large_folder",
+}  # fmt: skip
 AWS = {"boto3", "botocore"}
 # Uploading, reading a split, starting a run, and evaluating text as code.
 FORBIDDEN_NAMES = {
@@ -70,7 +79,7 @@ def test_the_package_has_the_modules_the_guards_were_written_for():
     assert {path.name for path in MODULES} == {
         "__init__.py", "adapter_package.py", "cards.py", "config.py", "files.py", "merge.py",
         "merged_package.py", "predictors.py", "record.py", "scan.py", "sources.py", "verify.py",
-        "workflow.py",
+        "workflow.py", "hub.py", "publish.py",
     }  # fmt: skip
     for name in ("adapter_card.md", "merged_card.md", "adapter_usage.py.txt",
                  "merged_usage.py.txt", "apache-2.0.txt"):  # fmt: skip
@@ -80,14 +89,18 @@ def test_the_package_has_the_modules_the_guards_were_written_for():
 @pytest.mark.parametrize("path", MODULES, ids=lambda path: path.name)
 def test_only_the_merge_imports_the_training_stack_and_never_at_module_level(path):
     assert not top_level_imports(path) & TRAINING_STACK
-    if path.name != STACK_MODULE:
+    if path.name == HUB_MODULE:
+        assert imports(path) & TRAINING_STACK == {"huggingface_hub"}
+    elif path.name != STACK_MODULE:
         assert not imports(path) & TRAINING_STACK, path.name
     assert not imports(path) & AWS
 
 
 @pytest.mark.parametrize("path", MODULES, ids=lambda path: path.name)
 def test_no_module_uploads_reads_a_split_starts_a_run_or_evaluates_text(path):
-    assert not names_used(path) & FORBIDDEN_NAMES
+    allowed = HUB_CALLS if path.name == HUB_MODULE else set()
+    assert not names_used(path) & (FORBIDDEN_NAMES - allowed)
+    assert not names_used(path) & NEVER
     called = {
         node.func.id
         for node in ast.walk(ast.parse(path.read_text(encoding="utf-8")))

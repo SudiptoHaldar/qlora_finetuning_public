@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "generated_by": "python -m scripts.hf_publish check",
+  "checked_on": "2026-11-25",
+  "packages": {
+    "adapter": {
+      "repository": "sudiptoHaldar/qwen3-4b-finqa-program-qlora",
+      "visibility": "public",
+      "hub_commit": "789ee8536389db3f11402e787dacd068798b0fe4",
+      "files": 12,
+      "bytes": 82346054,
+      "card_code": [
+        {
+          "label": "adapter",
+          "code_sha256": "4951432bd6ab20070faefdc5ff34d88cccabcc0091567d7d262a0658114bcd96",
+          "problems": [],
+          "program_ran": true,
+          "in_the_format": true,
+          "value": 0.1256140350877193,
+          "error_code": null,
+          "seconds": 31.6
+        }
+      ],
+      "checks": [
+        {
+          "id": "U1",
+          "name": "The package is the one that was checked",
+          "passed": true,
+          "detail": "12 files, 82,346,054 bytes, each with the size and hash of the package record"
+        },
+        {
+          "id": "U4",
+          "name": "The Hub holds the package",
+          "passed": true,
+          "detail": "the same 12 files by name, size, and hash; nothing else but .gitattributes"
+        },
+        {
+          "id": "U5",
+          "name": "The card's code runs from the Hub",
+          "passed": true,
+          "detail": "1 run(s) by repository name, each to the sample's expected result"
+        },
+        {
+          "id": "U6",
+          "name": "Visibility",
+          "passed": true,
+          "detail": "public, at commit 789ee8536389; read without a token"
+        },
+        {
+          "id": "U7",
+          "name": "Nothing leaked",
+          "passed": true,
+          "detail": "the token's value is in no line of this record"
+        }
+      ]
+    },
+    "merged": {
+      "repository": "sudiptoHaldar/qwen3-4b-finqa-program-merged",
+      "visibility": "public",
+      "hub_commit": "16a5853112630af48997d4dbfa32563f9007a3d0",
+      "files": 16,
+      "bytes": 8060925735,
+      "card_code": [
+        {
+          "label": "merged_4bit",
+          "code_sha256": "5436b7195101de190c23748eef2361590d2d62dade8a6a60cf0877570b1c81b2",
+          "problems": [],
+          "program_ran": true,
+          "in_the_format": true,
+          "value": 0.1256140350877193,
+          "error_code": null,
+          "seconds": 19.2
+        },
+        {
+          "label": "merged_full",
+          "code_sha256": "5436b7195101de190c23748eef2361590d2d62dade8a6a60cf0877570b1c81b2",
+          "problems": [],
+          "program_ran": true,
+          "in_the_format": true,
+          "value": 0.1256140350877193,
+          "error_code": null,
+          "seconds": 13.3
+        }
+      ],
+      "checks": [
+        {
+          "id": "U1",
+          "name": "The package is the one that was checked",
+          "passed": true,
+          "detail": "16 files, 8,060,925,735 bytes, each with the size and hash of the package record"
+        },
+        {
+          "id": "U4",
+          "name": "The Hub holds the package",
+          "passed": true,
+          "detail": "the same 16 files by name, size, and hash; nothing else but .gitattributes"
+        },
+        {
+          "id": "U5",
+          "name": "The card's code runs from the Hub",
+          "passed": true,
+          "detail": "2 run(s) by repository name, each to the sample's expected result"
+        },
+        {
+          "id": "U6",
+          "name": "Visibility",
+          "passed": true,
+          "detail": "public, at commit 16a585311263; read without a token"
+        },
+        {
+          "id": "U7",
+          "name": "Nothing leaked",
+          "passed": true,
+          "detail": "the token's value is in no line of this record"
+        }
+      ]
+    }
+  },
+  "passed": true,
+  "published": true
+}

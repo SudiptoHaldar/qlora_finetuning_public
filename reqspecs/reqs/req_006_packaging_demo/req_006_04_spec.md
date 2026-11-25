@@ -3,7 +3,7 @@
 Spec Group      :   req_006_packaging_demo  
 Feature Name    :   packaging_demo  
 Version         :   4  
-Status          :   🟡 Built and verified 2026-11-24 (section 11): the public folder is written and checked; the owner commits there, pushes, and makes the repository public  
+Status          :   ✅ Complete 2026-11-24 (section 11): the public folder was written and checked, and the owner pushed it and made the repository public  
 Last updated    :   2026-11-24  
 
 ## 1. v6.04 — Public repository export
@@ -393,3 +393,5 @@ New: `tests/public_export/` (37 tests in three files).
    CI passes. The workflow has a ten-minute limit and the suite takes about six minutes
    here.
 4. Switch the repository to public.
+
+**All four done on 2026-11-24.** The owner committed in the public folder with the noreply address (`641fa18`), pushed, saw the README and both diagrams render and CI pass on GitHub, and made `SudiptoHaldar/qlora_finetuning_public` public on 2026-11-24. CI there took under ten minutes on Linux, inside the workflow's limit.

@@ -222,12 +222,12 @@ not a measurement.
 
 ## The tuned model
 
-Path A's result is packaged for the Hugging Face Hub in two forms:
+Path A's result is published on the Hugging Face Hub in two forms:
 
-| Package | What it is | Loads with |
+| Model | What it is | Loads with |
 |---|---|---|
-| `sudiptoHaldar/qwen3-4b-finqa-program-qlora` | The adapter that was measured (arm A1): 66 MB of weights, 82 MB with its tokenizer | `peft`, on top of `Qwen/Qwen3-4B` |
-| `sudiptoHaldar/qwen3-4b-finqa-program-merged` | The base model with the adapter merged into its weights, 8 GB | `transformers` alone |
+| [`sudiptoHaldar/qwen3-4b-finqa-program-qlora`](https://huggingface.co/sudiptoHaldar/qwen3-4b-finqa-program-qlora) | The adapter that was measured (arm A1): 66 MB of weights, 82 MB with its tokenizer | `peft`, on top of `Qwen/Qwen3-4B` |
+| [`sudiptoHaldar/qwen3-4b-finqa-program-merged`](https://huggingface.co/sudiptoHaldar/qwen3-4b-finqa-program-merged) | The base model with the adapter merged into its weights, 8 GB | `transformers` alone |
 
 Each has a model card, built from the committed records:
 [reports/packaging/adapter_card.md](reports/packaging/adapter_card.md) and
@@ -236,12 +236,10 @@ each card is executed before the card is accepted.
 [reports/packaging/package_record.md](reports/packaging/package_record.md) lists what each
 package holds and the checks it passed.
 
-Uploading is a separate step by the owner. Until the two repositories exist, build the
-packages locally:
-
-```powershell
-venv\Scripts\python -m scripts.hf_package status
-```
+What is on the Hub was compared with those packages file by file, and each card's code
+was run again by repository name:
+[reports/packaging/publish_record.md](reports/packaging/publish_record.md). To build
+the packages yourself, see `python -m scripts.hf_package` in the runbook.
 
 > **Do not report the tuned model's score on the official FinQA test split.** The training
 > questions were drawn from all of FinQA, the official validation and test files included,

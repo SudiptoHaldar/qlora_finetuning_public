@@ -41,6 +41,9 @@ REQUIRED_KEYS = (
     "records.cost",
     "verification.split",
     "verification.card_code_timeout_seconds",
+    "publish.token_env",
+    "publish.hub_files",
+    "publish.card_code_timeout_seconds",
     "licences.max_age_days",
     "licences.entries",
     "forbidden",
@@ -102,6 +105,9 @@ class PackagingConfig:
     licence_max_age_days: int
     licences: tuple[LicenceEntry, ...]
     forbidden: tuple[tuple[str, re.Pattern[str]], ...]
+    token_env: str = "HF_TOKEN"
+    hub_files: tuple[str, ...] = (".gitattributes",)
+    publish_timeout_seconds: int = 7200
 
     @property
     def record_json(self) -> Path:
@@ -118,6 +124,14 @@ class PackagingConfig:
     @property
     def merged_card(self) -> Path:
         return self.report_dir / "merged_card.md"
+
+    @property
+    def publish_json(self) -> Path:
+        return self.report_dir / "publish_record.json"
+
+    @property
+    def publish_markdown(self) -> Path:
+        return self.report_dir / "publish_record.md"
 
     @property
     def card_runs_file(self) -> Path:
@@ -273,5 +287,12 @@ def load_packaging_config(
         ),
         licence_max_age_days=_whole(raw["licences"]["max_age_days"], "licences.max_age_days", 1),
         licences=_licences(raw["licences"]["entries"]),
+        token_env=_text(raw["publish"]["token_env"], "publish.token_env").strip(),
+        hub_files=tuple(raw["publish"]["hub_files"]),
+        publish_timeout_seconds=_whole(
+            raw["publish"]["card_code_timeout_seconds"],
+            "publish.card_code_timeout_seconds",
+            1,
+        ),
         forbidden=_forbidden(raw["forbidden"]),
     )

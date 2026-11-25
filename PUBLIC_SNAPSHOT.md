@@ -5,8 +5,8 @@ edited by hand: a change is made in the private repository and exported again.
 
 | | |
 |---|---|
-| Exported commit | `d35ba5ee63f2266028e97df53a09b1a3429afdb2` of the private repository, committed 2026-11-24 |
-| Files | 542 copied, 28 left out, 1 generated (this one) |
+| Exported commit | `45b2006886aee16458c99668110ef39a9ece16c9` of the private repository, committed 2026-11-25 |
+| Files | 552 copied, 30 left out, 1 generated (this one) |
 
 ## How it differs from the private repository
 

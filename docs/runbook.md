@@ -2481,3 +2481,80 @@ The freeze can be verified here only. `PUBLIC_SNAPSHOT.md` says so.
 | `FAIL  E8` | A test was marked that does not need it, or a marked one was not skipped. See section 12.6 |
 | `FAIL  E9` | Work is in progress here. Commit it and export again, or check with a clean tree |
 | CI fails in the public repository and passed here | Usually the ten-minute limit of the workflow, or Linux. Change it here and export again |
+
+## 13. Publishing the packages on the Hugging Face Hub (req_006 v6.03)
+
+The two folders of section 11 go to two model repositories under `sudiptoHaldar`:
+`qwen3-4b-finqa-program-qlora` and `qwen3-4b-finqa-program-merged`. Each is uploaded
+private, checked, read on the Hub, and then made public by the owner. **Uploading is the
+owner's step. No command makes a repository public.**
+
+### 13.1 The token
+
+A Hugging Face token with write access to your own repositories (huggingface.co, Settings,
+Access Tokens). Put it in `.env`:
+
+```
+HF_TOKEN=<the token>
+```
+
+`.env` is git-ignored. The token is never given on a command line, and the tool never
+prints it. To withdraw it later, delete it on the same page of the website.
+
+### 13.2 The steps
+
+```powershell
+venv\Scripts\python -m scripts.hf_publish plan                   # no network, no token
+venv\Scripts\python -m scripts.hf_publish upload adapter --yes   # THE OWNER: 82 MB
+venv\Scripts\python -m scripts.hf_publish check adapter          # needs the GPU; about a minute
+venv\Scripts\python -m scripts.hf_publish upload merged --yes    # THE OWNER: 8 GB
+venv\Scripts\python -m scripts.hf_publish check merged           # downloads the 8 GB once, then two runs
+```
+
+Then, on the Hub, for each repository while it is private: read the card as rendered (the
+badges under the title, the results box, the code block, the tables, the licence), and look
+at the Files tab. Then make them public under Settings, "Change repository visibility":
+**the merged copy first**, so the link on the adapter's card never leads nowhere.
+
+Last, without a token:
+
+```powershell
+venv\Scripts\python -m scripts.hf_publish check                  # both; prints PUBLISHED
+```
+
+Commit `reports/packaging/publish_record.json` and `.md`.
+
+### 13.3 The checks
+
+| Check | Passes when |
+|---|---|
+| U1 | The folder on disk is the package that was checked: every file has the size and hash of the package record |
+| U2 | The repository does not exist, or holds only files of the package (an upload refuses otherwise) |
+| U3 | The token is set (an upload refuses otherwise) |
+| U4 | The Hub holds the same files by name, size, and hash, and nothing else but `.gitattributes`, which the Hub adds |
+| U5 | The card's code, run by repository name in an empty directory, gives the sample's expected result |
+| U6 | The visibility and the Hub's commit are recorded |
+| U7 | The token's value is in no line of the record |
+
+A public repository is checked without any token, not even a saved login: the check then
+sees what a visitor sees.
+
+### 13.4 Publishing a rebuilt package
+
+After `hf_package` rebuilt a package (a changed card, a new merge): `plan`, `upload <package>
+--yes`, `check`. It is a new commit in the same repository. **Never edit a card on the Hub**:
+U4 would report it as a file that is not the package's.
+
+### 13.5 Troubleshooting
+
+| Symptom | Cause and fix |
+|---|---|
+| `REFUSED: ... add --yes` | An upload is the owner's. Run it yourself, with `--yes` |
+| `CONFIG ERROR: no token` | Put `HF_TOKEN` in `.env` |
+| `the Hub could not be read ... (HTTP 401)` | The token is wrong, expired, or has no write access. Make a new one |
+| `... is not the one that was checked` | A file of the folder changed since `hf_package cards`. Run `hf_package status`, then `cards` |
+| `... already holds other content` | The repository on the Hub has a file the package does not. Look at it on the website; the tool will not overwrite it |
+| `FAIL  U4 ... does not exist, or it is private and no token was given` | Not uploaded yet, or still private and `HF_TOKEN` is not set |
+| `FAIL  U4 ... not the package's file: README.md` | The card was edited on the Hub. Upload the package again |
+| `FAIL  U5` | The card's code failed from the Hub. The last lines of its output follow. Often the GPU's memory is held by something else |
+| The upload stops part way | Run the same command again: files already sent are not sent twice |

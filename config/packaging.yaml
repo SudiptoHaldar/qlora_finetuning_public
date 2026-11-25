@@ -39,6 +39,14 @@ verification:
   allowance_examples: null
   card_code_timeout_seconds: 1200  # one run of a card's code: a model load and one reply
 
+# Publishing to the Hugging Face Hub (req_006 v6.03; scripts/hf_publish.py). The token is
+# read from this variable in the environment or in .env. Its value is never written here,
+# never given on a command line, and never printed.
+publish:
+  token_env: HF_TOKEN
+  hub_files: [.gitattributes]        # files the Hub adds to every repository itself
+  card_code_timeout_seconds: 7200    # the merged card's code downloads 8 GB on its first run
+
 # Licences, read again at their source before a card is built (spec D30, D31). An entry
 # says what the source said on the day it was read. `confirmed_on` is the day the owner
 # confirmed the entry; a card is not built while one is null or older than max_age_days.

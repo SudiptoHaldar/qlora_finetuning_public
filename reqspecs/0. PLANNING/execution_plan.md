@@ -200,8 +200,8 @@ graph TD
   v2_01 --> v6_01
   v6_01 --> v6_02[✅ v6.02 Model card, package, README]
   v5_03 --> v6_02
-  v6_02 -.-> v6_03[⏸ v6.03 Publish adapter]
-  v6_02 --> v6_04[🟡 v6.04 Public repository export]
+  v6_02 --> v6_03[✅ v6.03 Publish adapter]
+  v6_02 --> v6_04[✅ v6.04 Public repository export]
   v5_03 -.-> v7[⏸ req_007 future extensions]
 
   %% Colour = spec group (stable); dashed border = conditional version (⏸);
@@ -296,8 +296,8 @@ Notes on that order:
 | v5.03 | v5.02 | ✅ | Complete 2026-11-24: `reports/comparison_report.md` committed (`3dbf2b2`), R1 to R8 pass with no reservation; **M8**. Tuning gains 39.82 to 72.26 points; tuned Nova Pro ahead of A1 by 2.00 points (settled); A1 ahead of tuned Nova Lite by 1.79 (not settled); A1 the cheapest of the three to make and cheaper per question than tuned Nova Pro |
 | v6.01 | v3.04, v2.01 | ✅ | Built and verified 2026-11-23: `python -m qlora_finetuning.demo` answers the invented sample with the selected adapter on the local GPU (program runs, executed value as expected, the model's answer agrees); nothing billed, no AWS call |
 | v6.02 | v5.03, v6.01 | ✅ | Built and verified 2026-11-24: the adapter package and the merged copy are ready under `artifacts/release/`, checks P1 to P10 pass (the package gives the adapter's 499 dev replies; the merged copy has 361 and 357 right against 358), both cards and the package record are in `reports/packaging/`, README rewritten. Nothing uploaded, nothing billed. M9 reached |
-| v6.03 | v6.02 | ⏸ | trigger: decision to publish |
-| v6.04 | v6.02 | 🟡 | Built and checked 2026-11-24: `scripts.public_export` writes the public folder from a commit, with the account number replaced and a snapshot notice; checks E1 to E10; five freeze tests skipped in a copy by a marker. The owner commits there, pushes, and makes the repository public. Recommended before v6.03 |
+| v6.03 | v6.02 | ✅ | Complete 2026-11-25: both models are public on the Hugging Face Hub and the final check passed without a token. The trigger fired on 2026-11-24; built and tested the same day: `scripts.hf_publish` uploads the two packages to private repositories after comparing every file with the package record, and checks the Hub against it (U1 to U7). The uploads and making the repositories public are the owner's |
+| v6.04 | v6.02 | ✅ | Complete 2026-11-24, the repository is public. Built and checked: `scripts.public_export` writes the public folder from a commit, with the account number replaced and a snapshot notice; checks E1 to E10; five freeze tests skipped in a copy by a marker. The owner commits there, pushes, and makes the repository public. Recommended before v6.03 |
 | req_007 | v5.03 | ⏸ | trigger: accepted follow-up |
 
 ---
@@ -554,7 +554,7 @@ Status glyphs follow the roadmap legend: ⏸ Conditional · 📋 Planned · 📝
 | `req_003_qlora_local` | 2026-11-13 | `req_003_roadmap.md` | v3.06 (all six versions) | — | ✅ Complete 2026-11-21 (A1 is checkpoint 500, 71.74% on dev; v3.05 ended as analysis only) |
 | `req_004_frontier_tuning` | 2026-11-13 | `req_004_roadmap.md` | — | v4.01 ✅; v4.02 ✅; v4.03 ✅; v4.04 ✅; v4.05 ⏸ not needed | ✅ Complete |
 | `req_005_comparison` | 2026-11-13 | `req_005_roadmap.md` | — | — | ✅ All three versions complete: v5.01 2026-11-23 (M7); v5.02 and v5.03 2026-11-24 (M8). Phase P5 complete |
-| `req_006_packaging_demo` | 2026-11-13 | `req_006_roadmap.md` | v6.01 | v6.02 | ✅ v6.01 built and verified 2026-11-23; ✅ v6.02 built and verified 2026-11-24 (M9); v6.04 (public repository export) 🟡 built and checked 2026-11-24, the push is the owner's; v6.03 ⏸ is the owner's |
+| `req_006_packaging_demo` | 2026-11-13 | `req_006_roadmap.md` | v6.01 | v6.02 | ✅ v6.01 built and verified 2026-11-23; ✅ v6.02 built and verified 2026-11-24 (M9); ✅ v6.04 (public repository export) complete 2026-11-24, the repository is public; ✅ v6.03 complete 2026-11-25, both models public |
 | `req_007_future_extensions` | — | — | — | — | ⏸ Conditional (do not create) |
 
 ### Versions
@@ -589,8 +589,8 @@ Status glyphs follow the roadmap legend: ⏸ Conditional · 📋 Planned · 📝
 | v5.03 | Comparison report | ✅ `req_005_03_spec.md` | ✅ `prp_005_comparison_report_v3.md` | ✅ `comparison/` (`statistics`, `outcomes`, `report_record`, `report_tables`, `chart`, `report_build`, `report_examples`, `report_config`), `comparison_report`, `config/report.yaml`, `config/report_deviations.yaml` | ✅ | 2026-11-24 |
 | v6.01 | Demo CLI | ✅ `req_006_01_spec.md` | ✅ `prp_006_demo_cli_v1.md` | ✅ `demo/` (`inputs`, `answer`, `render`, `cli`, the invented sample), `answer_agrees` in the metrics, `resolve_tuned_adapter`; `impl_006_20261123_174500.md` | ✅ | 2026-11-23 |
 | v6.02 | Model card, adapter package, README | ✅ `req_006_02_spec.md` | ✅ `prp_006_model_card_package_v2.md` | ✅ `packaging/` (sources, the two packages, the merge, three predictors, verification, the cards, the record), `scripts/hf_package.py`, `load_folder_backend`; `impl_006_20261124_051500.md` | ✅ | 2026-11-24 |
-| v6.03 | Publish adapter | — | — | — | ⏸ | — |
-| v6.04 | Public repository export | ✅ `req_006_04_spec.md` | ✅ `prp_006_public_export_v4.md` | 🟡 `public_export/` (source, transform, build, checks, snapshot), `scripts/public_export.py`, the marker `private_records`; `impl_006_20261124_083000.md`; the owner's push remains | 🟡 | 2026-11-24 |
+| v6.03 | Publish adapter | ✅ `req_006_03_spec.md` | ✅ `prp_006_publish_models_v3.md` | 🟡 `packaging/hub.py`, `packaging/publish.py`, `scripts/hf_publish.py`; `impl_006_20261124_093000.md`; uploaded and made public by the owner | ✅ | 2026-11-25 |
+| v6.04 | Public repository export | ✅ `req_006_04_spec.md` | ✅ `prp_006_public_export_v4.md` | 🟡 `public_export/` (source, transform, build, checks, snapshot), `scripts/public_export.py`, the marker `private_records`; `impl_006_20261124_083000.md`; pushed and made public by the owner | ✅ | 2026-11-24 |
 
 ### Milestones
 

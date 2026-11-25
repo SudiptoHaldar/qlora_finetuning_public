@@ -10,6 +10,8 @@ Read the following files for generating PRPs
         - **req_006_01_spec.md**: Demo CLI
     - [--version 2] | 
         - **req_006_02_spec.md**: Model card, adapter package, README
+    - [--version 3] | 
+        - **req_006_03_spec.md**: Publish the adapter and the merged copy
     - [--version 4] | 
         - **req_006_04_spec.md**: Public repository export
 
